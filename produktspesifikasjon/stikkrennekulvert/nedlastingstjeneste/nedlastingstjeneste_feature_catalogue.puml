@@ -1,0 +1,88 @@
+@startuml
+title Stedsnavn (komplett SSR) - nedlastingstjeneste - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class StikkrenneKulvert <<featureType>> {
+    + eier [0..1] : EierStikkrenneKulvert
+    + etableringsår [0..1] : int
+    + FKB_ID [0..1] : CharacterString
+    + gjennomløpForElvBekk [0..1] : GjennomløpForElvBekkStikkrenneKulvert
+    + harInnløpsrist [0..1] : HarInnløpsristStikkrenneKulvert
+    + indreBredde [0..1] : Real
+    + indreHøyde [0..1] : Real
+    + lengde [0..1] : Real
+    + materialtype [0..1] : MaterialtypeStikkrenneKulvert
+    + overfyllingInnløp [0..1] : Real
+    + tilknyttetLukkaDren [0..1] : TilknyttetLukkaDrenStikkrenneKulvert
+    + tilleggsinformasjon [0..1] : CharacterString
+    + tverrsnittsform [0..1] : TverrsnittsformStikkrenneKulvert
+    + typeInnløp [0..1] : TypeInnløpStikkrenneKulvert
+    + typeUtløp [0..1] : TypeUtløpStikkrenneKulvert
+    + varmekabler [0..1] : VarmekablerStikkrenneKulvert
+    + vedlikeholdsansvarlig [0..1] : VedlikeholdsansvarligStikkrenneKulvert
+    + datafangstdato [1] : Date
+    + høydereferanse [0..1] : LedningHøydereferanse
+    + informasjon [0..1] : CharacterString
+    + kvalitet [1] : Posisjonskvalitet
+    + medium [0..1] : Medium
+    + verifiseringsdato [0..1] : Date
+    + eksternPeker [0..1] : URI
+    + identifikasjon [1] : Identifikasjon
+    + nvdbPeker [0..1] : URI
+    + senterlinje [1] : GM_Curve
+  }
+
+  abstract class "StikkrenneKulvert-NVDB" as StikkrenneKulvert_NVDB <<featureType>> {
+    ' Ingen attributter
+  }
+
+  abstract class "Fellesegenskaper-StikkrenneKulvert" as Fellesegenskaper_StikkrenneKulvert <<featureType>> {
+    ' Ingen attributter
+  }
+
+  abstract class "Fellesegenskaper-Objektidentifikasjon" as Fellesegenskaper_Objektidentifikasjon <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class Posisjonskvalitet {
+    + datafangstmetode [1] : Datafangstmetode
+    + datafangstmetodeHøyde [0..1] : Datafangstmetode
+    + nøyaktighet [0..1] : Integer
+    + nøyaktighetHøyde [0..1] : Integer
+    + synbarhet [0..1] : Synbarhet
+  }
+
+  class Identifikasjon {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+}
+
+  StikkrenneKulvert_NVDB <|-- StikkrenneKulvert
+  Fellesegenskaper_StikkrenneKulvert <|-- StikkrenneKulvert_NVDB
+  Fellesegenskaper_Objektidentifikasjon <|-- Fellesegenskaper_StikkrenneKulvert
+
+@enduml
