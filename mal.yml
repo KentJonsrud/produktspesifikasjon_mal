@@ -1,7 +1,8 @@
 # metadataId: 041f1e6e-bdbc-4091-b48f-8a5990f3cc5b
+#metadataId: e1c50348-962d-4047-8325-bdc265c853ed
 metadataId: e1c50348-962d-4047-8325-bdc265c853ed
 output_directory: produktspesifikasjon
-product_slug: StedsnavnKomplett
+product_slug: StikkrenneKulvert
 updated: 2026-03-09
 # 
 #ogc_feature_api: https://kos-pygeoapi.atkv3-dev.kartverket.cloud/collections
@@ -10,11 +11,16 @@ updated: 2026-03-09
 #include_only_features:
 #  - Uttak
 #
+#scopes: 
+#- name: nedlastingstjeneste
+#  url: https://sosi.geonorge.no/svn/SOSI/SOSI Del 3/Statens kartverk/StedsnavnKomplett-5.1.xml
+#  generator: xmi
+#  description: Datamodellen beskriver et produkt med komplett innhold fra Sentralt Stedsnavnregister.
 scopes: 
 - name: nedlastingstjeneste
-  url: https://sosi.geonorge.no/svn/SOSI/SOSI Del 3/Statens kartverk/StedsnavnKomplett-5.1.xml
+  url: https://sosi.geonorge.no/svn/SOSI/StikkrenneKulvert-1.0.xml
   generator: xmi
-  description: Datamodellen beskriver et produkt med komplett innhold fra Sentralt Stedsnavnregister.
+  description: Datamodellen beskriver et produkt med stikkrenner og kulverter.
 #   - name: innsynstjeneste
 #     url: https://plandata.ft.dibk.no/services/planleggingigangsatt/collections
 #     generator: ogc_feature_api
