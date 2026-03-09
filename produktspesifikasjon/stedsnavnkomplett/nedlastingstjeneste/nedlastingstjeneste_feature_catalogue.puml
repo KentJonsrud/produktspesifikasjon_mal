@@ -1,0 +1,93 @@
+@startuml
+title Stedsnavn (komplett SSR) - nedlastingstjeneste - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class Sted <<featureType>> {
+    + gyldigFra [0..1] : Date
+    + gyldigTil [0..1] : Date
+    + identifikasjon [1] : Identifikasjon
+    + oppdateringsdato [1] : Date
+    + kommune [0..*] : Kommune
+    + land [1] : LandKode
+    + navneobjektgruppe [1] : Navneobjektgruppe
+    + navneobjekthovedgruppe [1] : Navneobjekthovedgruppe
+    + navneobjekttype [1] : Navneobjekttype
+    + posisjon [1] : GM_Object
+    + sortering [1] : Sortering
+    + språkprioritering [0..1] : SpråkprioriteringKode
+    + stedsnummer [1] : Integer
+    + stedstatus [1] : StedstatusKode
+    + tilleggsopplysninger [0..*] : Tilleggsopplysning
+    + vedtaksmyndighet [1] : VedtaksmyndighetKode
+  }
+
+  class "Vedtaksområde" as Vedtaksomr_de <<featureType>> {
+    + gyldigFra [0..1] : Date
+    + gyldigTil [0..1] : Date
+    + identifikasjon [1] : Identifikasjon
+    + oppdateringsdato [1] : Date
+    + område [1] : CharacterString
+    + oppdatertdato [1] : Date
+    + polygon [1] : GM_Surface
+    + registrertdato [1] : Date
+  }
+
+  abstract class Fellesegenskaper <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class Kommune {
+    + fylkesnavn [1] : CharacterString
+    + fylkesnummer [1] : Fylkesnummer
+    + kommunenavn [1] : CharacterString
+    + kommunenummer [1] : Kommunenummer
+  }
+
+  class Sortering {
+    + sortering1Kode [1] : Sortering1Kode
+    + sortering2Kode [1] : Sortering2Kode
+  }
+
+  class Tilleggsopplysning {
+    + eksterneOpplysninger [0..1] : URI
+    + oppdateringsdato [1] : Date
+    + registreringsdato [1] : Date
+    + tekst [0..*] : CharacterString
+    + tilleggsopplysningstype [1] : TilleggsopplysningtypeKode
+  }
+
+  class Identifikasjon {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+}
+
+  Fellesegenskaper <|-- Sted
+  Sted --> Stedsnavn : stedsnavn [1..*]
+  Sted --> Matrikkelreferanse : matrikkelreferanse [0..1]
+  Fellesegenskaper <|-- Vedtaksomr_de
+
+@enduml
