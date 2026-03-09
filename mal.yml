@@ -1,20 +1,20 @@
 # metadataId: 041f1e6e-bdbc-4091-b48f-8a5990f3cc5b
 metadataId: e1c50348-962d-4047-8325-bdc265c853ed
 output_directory: produktspesifikasjon
-product_slug: stedsnavn
+product_slug: StedsnavnKomplett
 updated: 2026-03-09
 # 
 #ogc_feature_api: https://kos-pygeoapi.atkv3-dev.kartverket.cloud/collections
 #xmi_url: https://sosi.geonorge.no/svn/SOSI/SOSI Del 3/Statens kartverk/Havnedata_testing.xml
-xmi_url: https://sosi.geonorge.no/svn/SOSI/SOSI Del 3/Statens kartverk/StedsnavnKomplett-5.1.xml
+#xmi_url: https://sosi.geonorge.no/svn/SOSI/SOSI Del 3/Statens kartverk/StedsnavnKomplett-5.1.xml
 #include_only_features:
 #  - Uttak
 #
-# scopes: 
-#   - name: datafangst
-#     url: https://sosi.geonorge.no/svn/SOSI/SOSI Del 3/Kommunal- og moderniseringsdepartementet/Arealplan/Arealplan 5.0/PlanleggingIgangsatt.xml
-#     generator: xmi
-#     description: Datamodellen brukes for å legge ved gml filer for planområdet som brukes i tjenesten for varsel om planoppstart.
+scopes: 
+- name: datafangst
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI Del 3/Statens kartverk/StedsnavnKomplett-5.1.xml
+  generator: xmi
+  description: Datamodellen beskriver et produkt med komplett innhold fra Sentralt Stedsnavnregister.
 #   - name: innsynstjeneste
 #     url: https://plandata.ft.dibk.no/services/planleggingigangsatt/collections
 #     generator: ogc_feature_api
