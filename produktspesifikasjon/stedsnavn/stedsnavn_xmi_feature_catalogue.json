@@ -1,0 +1,4615 @@
+[
+  {
+    "name": "Sted",
+    "description": "Sted inneholder all egenskapene som er felles for de ulike stedsnavnene (og deres skrivemåter) for en lokalitet, uavhengig av språk.\n\nMed felles egenskaper menes posisjon, presentasjonsinformasjon, land, kommune, matrikkelnummer, navnetype, osv.",
+    "attributes": [
+      {
+        "name": "kommune",
+        "type": "Kommune",
+        "description": "Stedets kommunetilknytning avhenger av stedets geografiske beligenhet og viser hvlke kommuner stedet ligger i.",
+        "cardinality": "0..*",
+        "attributes": [
+          {
+            "name": "fylkesnavn",
+            "type": "CharacterString",
+            "description": "Navnet på fylket, navnet vises på flere språk med riktig rekkefølge på spårkene dersom fylket er flerspråklig.",
+            "cardinality": "1"
+          },
+          {
+            "name": "fylkesnummer",
+            "type": "Fylkesnummer",
+            "description": "Fylkesnummer er definerte identifikasjonskoder for norske fylker og to territorier (Svalbard og Jan Mayen)",
+            "cardinality": "1",
+            "valueDomain": {
+              "listedValues": [
+                {
+                  "value": "01",
+                  "label": "Østfold"
+                },
+                {
+                  "value": "02",
+                  "label": "Akershus"
+                },
+                {
+                  "value": "03",
+                  "label": "Oslo"
+                },
+                {
+                  "value": "04",
+                  "label": "Hedmark"
+                },
+                {
+                  "value": "05",
+                  "label": "Oppland"
+                },
+                {
+                  "value": "06",
+                  "label": "Buskerud"
+                },
+                {
+                  "value": "07",
+                  "label": "Vestfold"
+                },
+                {
+                  "value": "08",
+                  "label": "Telemark"
+                },
+                {
+                  "value": "09",
+                  "label": "Aust-Agder"
+                },
+                {
+                  "value": "10",
+                  "label": "Vest-Agder"
+                },
+                {
+                  "value": "11",
+                  "label": "Rogaland"
+                },
+                {
+                  "value": "12",
+                  "label": "Hordaland"
+                },
+                {
+                  "value": "13",
+                  "label": "Bergen (utgått)"
+                },
+                {
+                  "value": "14",
+                  "label": "Sogn og Fjordane"
+                },
+                {
+                  "value": "15",
+                  "label": "Møre og Romsdal"
+                },
+                {
+                  "value": "16",
+                  "label": "Sør-Trøndelag (utgått)"
+                },
+                {
+                  "value": "17",
+                  "label": "Nord-Trøndelag (utgått)"
+                },
+                {
+                  "value": "18",
+                  "label": "Nordland"
+                },
+                {
+                  "value": "19",
+                  "label": "Troms - Romsa"
+                },
+                {
+                  "value": "20",
+                  "label": "Finnmark - Finnmárku"
+                },
+                {
+                  "value": "21",
+                  "label": "Svalbard"
+                },
+                {
+                  "value": "22",
+                  "label": "Jan Mayen"
+                },
+                {
+                  "value": "23",
+                  "label": "Kontinentalsokkelen"
+                },
+                {
+                  "value": "50",
+                  "label": "Trøndelag"
+                }
+              ],
+              "definition": "nummerering av fylker i henhold til Statistisk sentralbyrå sin offisielle liste\n\nMerknad:\nDet presiseres at fylkesnummer alltid skal ha 2 sifre, dvs. eventuelt med ledende null. Fylkesnummer benyttes for kopling mot en rekke andre registre som også benytter 2 sifre."
+            }
+          },
+          {
+            "name": "kommunenavn",
+            "type": "CharacterString",
+            "description": "Navnet på kommunen, navnet vises på flere språk dersom kommunen er flerspråklig.",
+            "cardinality": "1"
+          },
+          {
+            "name": "kommunenummer",
+            "type": "Kommunenummer",
+            "description": "Kommunenummer er nummer for å identifisere kommunerer og er et firesifret nummer (eks.: 0101) som er unikt for hver kommune i Norge",
+            "cardinality": "1",
+            "valueDomain": {
+              "listedValues": [
+                {
+                  "value": "0101",
+                  "label": "Halden"
+                },
+                {
+                  "value": "0102",
+                  "label": "Sarpsborg (utgått)"
+                },
+                {
+                  "value": "0103",
+                  "label": "Fredrikstad (utgått)"
+                },
+                {
+                  "value": "0104",
+                  "label": "Moss"
+                },
+                {
+                  "value": "0105",
+                  "label": "Sarpsborg"
+                },
+                {
+                  "value": "0106",
+                  "label": "Fredrikstad"
+                },
+                {
+                  "value": "0111",
+                  "label": "Hvaler"
+                },
+                {
+                  "value": "0113",
+                  "label": "Borge (utgått)"
+                },
+                {
+                  "value": "0114",
+                  "label": "Varteig (utgått)"
+                },
+                {
+                  "value": "0115",
+                  "label": "Skjeberg (utgått)"
+                },
+                {
+                  "value": "0118",
+                  "label": "Aremark"
+                },
+                {
+                  "value": "0119",
+                  "label": "Marker"
+                },
+                {
+                  "value": "0121",
+                  "label": "Rømskog"
+                },
+                {
+                  "value": "0122",
+                  "label": "Trøgstad"
+                },
+                {
+                  "value": "0123",
+                  "label": "Spydeberg"
+                },
+                {
+                  "value": "0124",
+                  "label": "Askim"
+                },
+                {
+                  "value": "0125",
+                  "label": "Eidsberg"
+                },
+                {
+                  "value": "0127",
+                  "label": "Skiptvet"
+                },
+                {
+                  "value": "0128",
+                  "label": "Rakkestad"
+                },
+                {
+                  "value": "0130",
+                  "label": "Tune (utgått)"
+                },
+                {
+                  "value": "0131",
+                  "label": "Rolvsøy (utgått)"
+                },
+                {
+                  "value": "0133",
+                  "label": "Kråkerøy (utgått)"
+                },
+                {
+                  "value": "0134",
+                  "label": "Onsøy (utgått)"
+                },
+                {
+                  "value": "0135",
+                  "label": "Råde"
+                },
+                {
+                  "value": "0136",
+                  "label": "Rygge"
+                },
+                {
+                  "value": "0137",
+                  "label": "Våler i Østfold"
+                },
+                {
+                  "value": "0138",
+                  "label": "Hobøl"
+                },
+                {
+                  "value": "0211",
+                  "label": "Vestby"
+                },
+                {
+                  "value": "0213",
+                  "label": "Ski"
+                },
+                {
+                  "value": "0214",
+                  "label": "Ås"
+                },
+                {
+                  "value": "0215",
+                  "label": "Frogn"
+                },
+                {
+                  "value": "0216",
+                  "label": "Nesodden"
+                },
+                {
+                  "value": "0217",
+                  "label": "Oppegård"
+                },
+                {
+                  "value": "0219",
+                  "label": "Bærum"
+                },
+                {
+                  "value": "0220",
+                  "label": "Asker"
+                },
+                {
+                  "value": "0221",
+                  "label": "Aurskog-Høland"
+                },
+                {
+                  "value": "0226",
+                  "label": "Sørum"
+                },
+                {
+                  "value": "0227",
+                  "label": "Fet"
+                },
+                {
+                  "value": "0228",
+                  "label": "Rælingen"
+                },
+                {
+                  "value": "0229",
+                  "label": "Enebakk"
+                },
+                {
+                  "value": "0230",
+                  "label": "Lørenskog"
+                },
+                {
+                  "value": "0231",
+                  "label": "Skedsmo"
+                },
+                {
+                  "value": "0233",
+                  "label": "Nittedal"
+                },
+                {
+                  "value": "0234",
+                  "label": "Gjerdrum"
+                },
+                {
+                  "value": "0235",
+                  "label": "Ullensaker"
+                },
+                {
+                  "value": "0236",
+                  "label": "Nes i Akershus"
+                },
+                {
+                  "value": "0237",
+                  "label": "Eidsvoll"
+                },
+                {
+                  "value": "0238",
+                  "label": "Nannestad"
+                },
+                {
+                  "value": "0239",
+                  "label": "Hurdal"
+                },
+                {
+                  "value": "0301",
+                  "label": "Oslo"
+                },
+                {
+                  "value": "0401",
+                  "label": "Hamar (utgått)"
+                },
+                {
+                  "value": "0402",
+                  "label": "Kongsvinger"
+                },
+                {
+                  "value": "0403",
+                  "label": "Hamar"
+                },
+                {
+                  "value": "0412",
+                  "label": "Ringsaker"
+                },
+                {
+                  "value": "0414",
+                  "label": "Vang (utgått)"
+                },
+                {
+                  "value": "0415",
+                  "label": "Løten"
+                },
+                {
+                  "value": "0417",
+                  "label": "Stange"
+                },
+                {
+                  "value": "0418",
+                  "label": "Nord-Odal"
+                },
+                {
+                  "value": "0419",
+                  "label": "Sør-Odal"
+                },
+                {
+                  "value": "0420",
+                  "label": "Eidskog"
+                },
+                {
+                  "value": "0423",
+                  "label": "Grue"
+                },
+                {
+                  "value": "0425",
+                  "label": "Åsnes"
+                },
+                {
+                  "value": "0426",
+                  "label": "Våler i Hedmark"
+                },
+                {
+                  "value": "0427",
+                  "label": "Elverum"
+                },
+                {
+                  "value": "0428",
+                  "label": "Trysil"
+                },
+                {
+                  "value": "0429",
+                  "label": "Åmot"
+                },
+                {
+                  "value": "0430",
+                  "label": "Stor-Elvdal"
+                },
+                {
+                  "value": "0432",
+                  "label": "Rendalen"
+                },
+                {
+                  "value": "0434",
+                  "label": "Engerdal"
+                },
+                {
+                  "value": "0436",
+                  "label": "Tolga"
+                },
+                {
+                  "value": "0437",
+                  "label": "Tynset"
+                },
+                {
+                  "value": "0438",
+                  "label": "Alvdal"
+                },
+                {
+                  "value": "0439",
+                  "label": "Folldal"
+                },
+                {
+                  "value": "0441",
+                  "label": "Os i Hedmark"
+                },
+                {
+                  "value": "0501",
+                  "label": "Lillehammer"
+                },
+                {
+                  "value": "0502",
+                  "label": "Gjøvik"
+                },
+                {
+                  "value": "0511",
+                  "label": "Dovre"
+                },
+                {
+                  "value": "0512",
+                  "label": "Lesja"
+                },
+                {
+                  "value": "0513",
+                  "label": "Skjåk"
+                },
+                {
+                  "value": "0514",
+                  "label": "Lom"
+                },
+                {
+                  "value": "0515",
+                  "label": "Vågå"
+                },
+                {
+                  "value": "0516",
+                  "label": "Nord-Fron"
+                },
+                {
+                  "value": "0517",
+                  "label": "Sel"
+                },
+                {
+                  "value": "0519",
+                  "label": "Sør-Fron"
+                },
+                {
+                  "value": "0520",
+                  "label": "Ringebu"
+                },
+                {
+                  "value": "0521",
+                  "label": "Øyer"
+                },
+                {
+                  "value": "0522",
+                  "label": "Gausdal"
+                },
+                {
+                  "value": "0528",
+                  "label": "Østre Toten"
+                },
+                {
+                  "value": "0529",
+                  "label": "Vestre Toten"
+                },
+                {
+                  "value": "0532",
+                  "label": "Jevnaker"
+                },
+                {
+                  "value": "0533",
+                  "label": "Lunner"
+                },
+                {
+                  "value": "0534",
+                  "label": "Gran"
+                },
+                {
+                  "value": "0536",
+                  "label": "Søndre Land"
+                },
+                {
+                  "value": "0538",
+                  "label": "Nordre Land"
+                },
+                {
+                  "value": "0540",
+                  "label": "Sør-Aurdal"
+                },
+                {
+                  "value": "0541",
+                  "label": "Etnedal"
+                },
+                {
+                  "value": "0542",
+                  "label": "Nord-Aurdal"
+                },
+                {
+                  "value": "0543",
+                  "label": "Vestre Slidre"
+                },
+                {
+                  "value": "0544",
+                  "label": "Øystre Slidre"
+                },
+                {
+                  "value": "0545",
+                  "label": "Vang"
+                },
+                {
+                  "value": "0602",
+                  "label": "Drammen"
+                },
+                {
+                  "value": "0604",
+                  "label": "Kongsberg"
+                },
+                {
+                  "value": "0605",
+                  "label": "Ringerike"
+                },
+                {
+                  "value": "0612",
+                  "label": "Hole"
+                },
+                {
+                  "value": "0615",
+                  "label": "Flå"
+                },
+                {
+                  "value": "0616",
+                  "label": "Nes i Buskerud"
+                },
+                {
+                  "value": "0617",
+                  "label": "Gol"
+                },
+                {
+                  "value": "0618",
+                  "label": "Hemsedal"
+                },
+                {
+                  "value": "0619",
+                  "label": "Ål"
+                },
+                {
+                  "value": "0620",
+                  "label": "Hol"
+                },
+                {
+                  "value": "0621",
+                  "label": "Sigdal"
+                },
+                {
+                  "value": "0622",
+                  "label": "Krødsherad"
+                },
+                {
+                  "value": "0623",
+                  "label": "Modum"
+                },
+                {
+                  "value": "0624",
+                  "label": "Øvre Eiker"
+                },
+                {
+                  "value": "0625",
+                  "label": "Nedre Eiker"
+                },
+                {
+                  "value": "0626",
+                  "label": "Lier"
+                },
+                {
+                  "value": "0627",
+                  "label": "Røyken"
+                },
+                {
+                  "value": "0628",
+                  "label": "Hurum"
+                },
+                {
+                  "value": "0631",
+                  "label": "Flesberg"
+                },
+                {
+                  "value": "0632",
+                  "label": "Rollag"
+                },
+                {
+                  "value": "0633",
+                  "label": "Nore og Uvdal"
+                },
+                {
+                  "value": "0701",
+                  "label": "Horten"
+                },
+                {
+                  "value": "0702",
+                  "label": "Holmestrand (utgått)"
+                },
+                {
+                  "value": "0703",
+                  "label": "Horten (utgått)"
+                },
+                {
+                  "value": "0704",
+                  "label": "Tønsberg"
+                },
+                {
+                  "value": "0705",
+                  "label": "Tønsberg (utgått)"
+                },
+                {
+                  "value": "0706",
+                  "label": "Sandefjord (utgått)"
+                },
+                {
+                  "value": "0707",
+                  "label": "Larvik (utgått)"
+                },
+                {
+                  "value": "0708",
+                  "label": "Stavern (utgått)"
+                },
+                {
+                  "value": "0709",
+                  "label": "Larvik (utgått)"
+                },
+                {
+                  "value": "0710",
+                  "label": "Sandefjord"
+                },
+                {
+                  "value": "0711",
+                  "label": "Svelvik"
+                },
+                {
+                  "value": "0712",
+                  "label": "Larvik"
+                },
+                {
+                  "value": "0713",
+                  "label": "Sande i Vestfold"
+                },
+                {
+                  "value": "0714",
+                  "label": "Hof (utgått)"
+                },
+                {
+                  "value": "0715",
+                  "label": "Holmestrand"
+                },
+                {
+                  "value": "0716",
+                  "label": "Re"
+                },
+                {
+                  "value": "0717",
+                  "label": "Borre (utgått)"
+                },
+                {
+                  "value": "0718",
+                  "label": "Ramnes (utgått)"
+                },
+                {
+                  "value": "0719",
+                  "label": "Andebu (utgått)"
+                },
+                {
+                  "value": "0720",
+                  "label": "Stokke (utgått)"
+                },
+                {
+                  "value": "0721",
+                  "label": "Sem (utgått)"
+                },
+                {
+                  "value": "0722",
+                  "label": "Nøtterøy (utgått)"
+                },
+                {
+                  "value": "0723",
+                  "label": "Tjøme (utgått)"
+                },
+                {
+                  "value": "0725",
+                  "label": "Tjølling (utgått)"
+                },
+                {
+                  "value": "0726",
+                  "label": "Brunlanes (utgått)"
+                },
+                {
+                  "value": "0727",
+                  "label": "Hedrum (utgått)"
+                },
+                {
+                  "value": "0728",
+                  "label": "Lardal (utgått)"
+                },
+                {
+                  "value": "0729",
+                  "label": "Færder"
+                },
+                {
+                  "value": "0805",
+                  "label": "Porsgrunn"
+                },
+                {
+                  "value": "0806",
+                  "label": "Skien"
+                },
+                {
+                  "value": "0807",
+                  "label": "Notodden"
+                },
+                {
+                  "value": "0811",
+                  "label": "Siljan"
+                },
+                {
+                  "value": "0814",
+                  "label": "Bamble"
+                },
+                {
+                  "value": "0815",
+                  "label": "Kragerø"
+                },
+                {
+                  "value": "0817",
+                  "label": "Drangedal"
+                },
+                {
+                  "value": "0819",
+                  "label": "Nome"
+                },
+                {
+                  "value": "0821",
+                  "label": "Bø i Telemark"
+                },
+                {
+                  "value": "0822",
+                  "label": "Sauherad"
+                },
+                {
+                  "value": "0826",
+                  "label": "Tinn"
+                },
+                {
+                  "value": "0827",
+                  "label": "Hjartdal"
+                },
+                {
+                  "value": "0828",
+                  "label": "Seljord"
+                },
+                {
+                  "value": "0829",
+                  "label": "Kviteseid"
+                },
+                {
+                  "value": "0830",
+                  "label": "Nissedal"
+                },
+                {
+                  "value": "0831",
+                  "label": "Fyresdal"
+                },
+                {
+                  "value": "0833",
+                  "label": "Tokke"
+                },
+                {
+                  "value": "0834",
+                  "label": "Vinje"
+                },
+                {
+                  "value": "0901",
+                  "label": "Risør"
+                },
+                {
+                  "value": "0903",
+                  "label": "Arendal (utgått)"
+                },
+                {
+                  "value": "0904",
+                  "label": "Grimstad"
+                },
+                {
+                  "value": "0906",
+                  "label": "Arendal"
+                },
+                {
+                  "value": "0911",
+                  "label": "Gjerstad"
+                },
+                {
+                  "value": "0912",
+                  "label": "Vegårshei"
+                },
+                {
+                  "value": "0914",
+                  "label": "Tvedestrand"
+                },
+                {
+                  "value": "0918",
+                  "label": "Moland (utgått)"
+                },
+                {
+                  "value": "0919",
+                  "label": "Froland"
+                },
+                {
+                  "value": "0920",
+                  "label": "Øyestad (utgått)"
+                },
+                {
+                  "value": "0921",
+                  "label": "Tromøy (utgått)"
+                },
+                {
+                  "value": "0922",
+                  "label": "Hisøy (utgått)"
+                },
+                {
+                  "value": "0926",
+                  "label": "Lillesand"
+                },
+                {
+                  "value": "0928",
+                  "label": "Birkenes"
+                },
+                {
+                  "value": "0929",
+                  "label": "Åmli"
+                },
+                {
+                  "value": "0935",
+                  "label": "Iveland"
+                },
+                {
+                  "value": "0937",
+                  "label": "Evje og Hornnes"
+                },
+                {
+                  "value": "0938",
+                  "label": "Bygland"
+                },
+                {
+                  "value": "0940",
+                  "label": "Valle"
+                },
+                {
+                  "value": "0941",
+                  "label": "Bykle"
+                },
+                {
+                  "value": "1001",
+                  "label": "Kristiansand"
+                },
+                {
+                  "value": "1002",
+                  "label": "Mandal"
+                },
+                {
+                  "value": "1003",
+                  "label": "Farsund"
+                },
+                {
+                  "value": "1004",
+                  "label": "Flekkefjord"
+                },
+                {
+                  "value": "1014",
+                  "label": "Vennesla"
+                },
+                {
+                  "value": "1017",
+                  "label": "Songdalen"
+                },
+                {
+                  "value": "1018",
+                  "label": "Søgne"
+                },
+                {
+                  "value": "1021",
+                  "label": "Marnardal"
+                },
+                {
+                  "value": "1026",
+                  "label": "Åseral"
+                },
+                {
+                  "value": "1027",
+                  "label": "Audnedal"
+                },
+                {
+                  "value": "1029",
+                  "label": "Lindesnes"
+                },
+                {
+                  "value": "1032",
+                  "label": "Lyngdal"
+                },
+                {
+                  "value": "1034",
+                  "label": "Hægebostad"
+                },
+                {
+                  "value": "1037",
+                  "label": "Kvinesdal"
+                },
+                {
+                  "value": "1046",
+                  "label": "Sirdal"
+                },
+                {
+                  "value": "1101",
+                  "label": "Eigersund"
+                },
+                {
+                  "value": "1102",
+                  "label": "Sandnes"
+                },
+                {
+                  "value": "1103",
+                  "label": "Stavanger"
+                },
+                {
+                  "value": "1106",
+                  "label": "Haugesund"
+                },
+                {
+                  "value": "1111",
+                  "label": "Sokndal"
+                },
+                {
+                  "value": "1112",
+                  "label": "Lund"
+                },
+                {
+                  "value": "1114",
+                  "label": "Bjerkreim"
+                },
+                {
+                  "value": "1119",
+                  "label": "Hå"
+                },
+                {
+                  "value": "1120",
+                  "label": "Klepp"
+                },
+                {
+                  "value": "1121",
+                  "label": "Time"
+                },
+                {
+                  "value": "1122",
+                  "label": "Gjesdal"
+                },
+                {
+                  "value": "1124",
+                  "label": "Sola"
+                },
+                {
+                  "value": "1127",
+                  "label": "Randaberg"
+                },
+                {
+                  "value": "1129",
+                  "label": "Forsand"
+                },
+                {
+                  "value": "1130",
+                  "label": "Strand"
+                },
+                {
+                  "value": "1133",
+                  "label": "Hjelmeland"
+                },
+                {
+                  "value": "1134",
+                  "label": "Suldal"
+                },
+                {
+                  "value": "1135",
+                  "label": "Sauda"
+                },
+                {
+                  "value": "1141",
+                  "label": "Finnøy"
+                },
+                {
+                  "value": "1142",
+                  "label": "Rennesøy"
+                },
+                {
+                  "value": "1144",
+                  "label": "Kvitsøy"
+                },
+                {
+                  "value": "1145",
+                  "label": "Bokn"
+                },
+                {
+                  "value": "1146",
+                  "label": "Tysvær"
+                },
+                {
+                  "value": "1149",
+                  "label": "Karmøy"
+                },
+                {
+                  "value": "1151",
+                  "label": "Utsira"
+                },
+                {
+                  "value": "1154",
+                  "label": "Vindafjord ((utgått)"
+                },
+                {
+                  "value": "1159",
+                  "label": "Ølen (utgått)"
+                },
+                {
+                  "value": "1160",
+                  "label": "Vindafjord"
+                },
+                {
+                  "value": "1201",
+                  "label": "Bergen"
+                },
+                {
+                  "value": "1211",
+                  "label": "Etne"
+                },
+                {
+                  "value": "1214",
+                  "label": "Ølen (utgått)"
+                },
+                {
+                  "value": "1216",
+                  "label": "Sveio"
+                },
+                {
+                  "value": "1219",
+                  "label": "Bømlo"
+                },
+                {
+                  "value": "1221",
+                  "label": "Stord"
+                },
+                {
+                  "value": "1222",
+                  "label": "Fitjar"
+                },
+                {
+                  "value": "1223",
+                  "label": "Tysnes"
+                },
+                {
+                  "value": "1224",
+                  "label": "Kvinnherad"
+                },
+                {
+                  "value": "1227",
+                  "label": "Jondal"
+                },
+                {
+                  "value": "1228",
+                  "label": "Odda"
+                },
+                {
+                  "value": "1231",
+                  "label": "Ullensvang"
+                },
+                {
+                  "value": "1232",
+                  "label": "Eidfjord"
+                },
+                {
+                  "value": "1233",
+                  "label": "Ulvik"
+                },
+                {
+                  "value": "1234",
+                  "label": "Granvin"
+                },
+                {
+                  "value": "1235",
+                  "label": "Voss"
+                },
+                {
+                  "value": "1238",
+                  "label": "Kvam"
+                },
+                {
+                  "value": "1241",
+                  "label": "Fusa"
+                },
+                {
+                  "value": "1242",
+                  "label": "Samnanger"
+                },
+                {
+                  "value": "1243",
+                  "label": "Os i Hordaland"
+                },
+                {
+                  "value": "1244",
+                  "label": "Austevoll"
+                },
+                {
+                  "value": "1245",
+                  "label": "Sund"
+                },
+                {
+                  "value": "1246",
+                  "label": "Fjell"
+                },
+                {
+                  "value": "1247",
+                  "label": "Askøy"
+                },
+                {
+                  "value": "1251",
+                  "label": "Vaksdal"
+                },
+                {
+                  "value": "1252",
+                  "label": "Modalen"
+                },
+                {
+                  "value": "1253",
+                  "label": "Osterøy"
+                },
+                {
+                  "value": "1256",
+                  "label": "Meland"
+                },
+                {
+                  "value": "1259",
+                  "label": "Øygarden"
+                },
+                {
+                  "value": "1260",
+                  "label": "Radøy"
+                },
+                {
+                  "value": "1263",
+                  "label": "Lindås"
+                },
+                {
+                  "value": "1264",
+                  "label": "Austrheim"
+                },
+                {
+                  "value": "1265",
+                  "label": "Fedje"
+                },
+                {
+                  "value": "1266",
+                  "label": "Masfjorden"
+                },
+                {
+                  "value": "1401",
+                  "label": "Flora"
+                },
+                {
+                  "value": "1411",
+                  "label": "Gulen"
+                },
+                {
+                  "value": "1412",
+                  "label": "Solund"
+                },
+                {
+                  "value": "1413",
+                  "label": "Hyllestad"
+                },
+                {
+                  "value": "1416",
+                  "label": "Høyanger"
+                },
+                {
+                  "value": "1417",
+                  "label": "Vik"
+                },
+                {
+                  "value": "1418",
+                  "label": "Balestrand"
+                },
+                {
+                  "value": "1419",
+                  "label": "Leikanger"
+                },
+                {
+                  "value": "1420",
+                  "label": "Sogndal"
+                },
+                {
+                  "value": "1421",
+                  "label": "Aurland"
+                },
+                {
+                  "value": "1422",
+                  "label": "Lærdal"
+                },
+                {
+                  "value": "1424",
+                  "label": "Årdal"
+                },
+                {
+                  "value": "1426",
+                  "label": "Luster"
+                },
+                {
+                  "value": "1428",
+                  "label": "Askvoll"
+                },
+                {
+                  "value": "1429",
+                  "label": "Fjaler"
+                },
+                {
+                  "value": "1430",
+                  "label": "Gaular"
+                },
+                {
+                  "value": "1431",
+                  "label": "Jølster"
+                },
+                {
+                  "value": "1432",
+                  "label": "Førde"
+                },
+                {
+                  "value": "1433",
+                  "label": "Naustdal"
+                },
+                {
+                  "value": "1438",
+                  "label": "Bremanger"
+                },
+                {
+                  "value": "1439",
+                  "label": "Vågsøy"
+                },
+                {
+                  "value": "1441",
+                  "label": "Selje"
+                },
+                {
+                  "value": "1443",
+                  "label": "Eid"
+                },
+                {
+                  "value": "1444",
+                  "label": "Hornindal"
+                },
+                {
+                  "value": "1445",
+                  "label": "Gloppen"
+                },
+                {
+                  "value": "1449",
+                  "label": "Stryn"
+                },
+                {
+                  "value": "1502",
+                  "label": "Molde"
+                },
+                {
+                  "value": "1504",
+                  "label": "Ålesund"
+                },
+                {
+                  "value": "1505",
+                  "label": "Kristiansund"
+                },
+                {
+                  "value": "1511",
+                  "label": "Vanylven"
+                },
+                {
+                  "value": "1514",
+                  "label": "Sande i Møre og Romsdal"
+                },
+                {
+                  "value": "1515",
+                  "label": "Herøy i Møre og Romsdal"
+                },
+                {
+                  "value": "1516",
+                  "label": "Ulstein"
+                },
+                {
+                  "value": "1517",
+                  "label": "Hareid"
+                },
+                {
+                  "value": "1519",
+                  "label": "Volda"
+                },
+                {
+                  "value": "1520",
+                  "label": "Ørsta"
+                },
+                {
+                  "value": "1523",
+                  "label": "Ørskog"
+                },
+                {
+                  "value": "1524",
+                  "label": "Norddal"
+                },
+                {
+                  "value": "1525",
+                  "label": "Stranda"
+                },
+                {
+                  "value": "1526",
+                  "label": "Stordal"
+                },
+                {
+                  "value": "1528",
+                  "label": "Sykkylven"
+                },
+                {
+                  "value": "1529",
+                  "label": "Skodje"
+                },
+                {
+                  "value": "1531",
+                  "label": "Sula"
+                },
+                {
+                  "value": "1532",
+                  "label": "Giske"
+                },
+                {
+                  "value": "1534",
+                  "label": "Haram"
+                },
+                {
+                  "value": "1535",
+                  "label": "Vestnes"
+                },
+                {
+                  "value": "1539",
+                  "label": "Rauma"
+                },
+                {
+                  "value": "1543",
+                  "label": "Nesset"
+                },
+                {
+                  "value": "1545",
+                  "label": "Midsund"
+                },
+                {
+                  "value": "1546",
+                  "label": "Sandøy"
+                },
+                {
+                  "value": "1547",
+                  "label": "Aukra"
+                },
+                {
+                  "value": "1548",
+                  "label": "Fræna"
+                },
+                {
+                  "value": "1551",
+                  "label": "Eide"
+                },
+                {
+                  "value": "1554",
+                  "label": "Averøy"
+                },
+                {
+                  "value": "1557",
+                  "label": "Gjemnes"
+                },
+                {
+                  "value": "1560",
+                  "label": "Tingvoll"
+                },
+                {
+                  "value": "1563",
+                  "label": "Sunndal"
+                },
+                {
+                  "value": "1566",
+                  "label": "Surnadal"
+                },
+                {
+                  "value": "1567",
+                  "label": "Rindal"
+                },
+                {
+                  "value": "1569",
+                  "label": "Aure (utgått)"
+                },
+                {
+                  "value": "1571",
+                  "label": "Halsa"
+                },
+                {
+                  "value": "1572",
+                  "label": "Tustna (utgått)"
+                },
+                {
+                  "value": "1573",
+                  "label": "Smøla"
+                },
+                {
+                  "value": "1576",
+                  "label": "Aure"
+                },
+                {
+                  "value": "1601",
+                  "label": "Trondheim (utgått)"
+                },
+                {
+                  "value": "1612",
+                  "label": "Hemne (utgått)"
+                },
+                {
+                  "value": "1613",
+                  "label": "Snillfjord (utgått)"
+                },
+                {
+                  "value": "1617",
+                  "label": "Hitra (utgått)"
+                },
+                {
+                  "value": "1620",
+                  "label": "Frøya (utgått)"
+                },
+                {
+                  "value": "1621",
+                  "label": "Ørland (utgått)"
+                },
+                {
+                  "value": "1622",
+                  "label": "Agdenes (utgått)"
+                },
+                {
+                  "value": "1624",
+                  "label": "Rissa (utgått)"
+                },
+                {
+                  "value": "1627",
+                  "label": "Bjugn (utgått)"
+                },
+                {
+                  "value": "1630",
+                  "label": "Åfjord (utgått)"
+                },
+                {
+                  "value": "1632",
+                  "label": "Roan (utgått)"
+                },
+                {
+                  "value": "1633",
+                  "label": "Osen (utgått)"
+                },
+                {
+                  "value": "1634",
+                  "label": "Oppdal (utgått)"
+                },
+                {
+                  "value": "1635",
+                  "label": "Rennebu (utgått)"
+                },
+                {
+                  "value": "1636",
+                  "label": "Meldal (utgått)"
+                },
+                {
+                  "value": "1638",
+                  "label": "Orkdal (utgått)"
+                },
+                {
+                  "value": "1640",
+                  "label": "Røros (utgått)"
+                },
+                {
+                  "value": "1644",
+                  "label": "Holtålen (utgått)"
+                },
+                {
+                  "value": "1648",
+                  "label": "Midtre Gauldal (utgått)"
+                },
+                {
+                  "value": "1653",
+                  "label": "Melhus (utgått)"
+                },
+                {
+                  "value": "1657",
+                  "label": "Skaun (utgått)"
+                },
+                {
+                  "value": "1662",
+                  "label": "Klæbu (utgått)"
+                },
+                {
+                  "value": "1663",
+                  "label": "Malvik (utgått)"
+                },
+                {
+                  "value": "1664",
+                  "label": "Selbu (utgått)"
+                },
+                {
+                  "value": "1665",
+                  "label": "Tydal (utgått)"
+                },
+                {
+                  "value": "1702",
+                  "label": "Steinkjer (utgått)"
+                },
+                {
+                  "value": "1703",
+                  "label": "Namsos (utgått)"
+                },
+                {
+                  "value": "1711",
+                  "label": "Meråker (utgått)"
+                },
+                {
+                  "value": "1714",
+                  "label": "Stjørdal (utgått)"
+                },
+                {
+                  "value": "1717",
+                  "label": "Frosta (utgått)"
+                },
+                {
+                  "value": "1718",
+                  "label": "Leksvik (utgått)"
+                },
+                {
+                  "value": "1719",
+                  "label": "Levanger (utgått)"
+                },
+                {
+                  "value": "1721",
+                  "label": "Verdal (utgått)"
+                },
+                {
+                  "value": "1723",
+                  "label": "Mosvik (utgått)"
+                },
+                {
+                  "value": "1724",
+                  "label": "Verran (utgått)"
+                },
+                {
+                  "value": "1725",
+                  "label": "Namdalseid (utgått)"
+                },
+                {
+                  "value": "1729",
+                  "label": "Inderøy (utgått)"
+                },
+                {
+                  "value": "1736",
+                  "label": "Snåase – Snåsa (utgått)"
+                },
+                {
+                  "value": "1738",
+                  "label": "Lierne (utgått)"
+                },
+                {
+                  "value": "1739",
+                  "label": "Raarvihke – Røyrvik (utgått)"
+                },
+                {
+                  "value": "1740",
+                  "label": "Namsskogan (utgått)"
+                },
+                {
+                  "value": "1742",
+                  "label": "Grong (utgått)"
+                },
+                {
+                  "value": "1743",
+                  "label": "Høylandet (utgått)"
+                },
+                {
+                  "value": "1744",
+                  "label": "Overhalla (utgått)"
+                },
+                {
+                  "value": "1748",
+                  "label": "Fosnes (utgått)"
+                },
+                {
+                  "value": "1749",
+                  "label": "Flatanger (utgått)"
+                },
+                {
+                  "value": "1750",
+                  "label": "Vikna (utgått)"
+                },
+                {
+                  "value": "1751",
+                  "label": "Nærøy (utgått)"
+                },
+                {
+                  "value": "1755",
+                  "label": "Leka (utgått)"
+                },
+                {
+                  "value": "1756",
+                  "label": "Inderøy (utgått)"
+                },
+                {
+                  "value": "1804",
+                  "label": "Bodø"
+                },
+                {
+                  "value": "1805",
+                  "label": "Narvik"
+                },
+                {
+                  "value": "1811",
+                  "label": "Bindal"
+                },
+                {
+                  "value": "1812",
+                  "label": "Sømna"
+                },
+                {
+                  "value": "1813",
+                  "label": "Brønnøy"
+                },
+                {
+                  "value": "1815",
+                  "label": "Vega"
+                },
+                {
+                  "value": "1816",
+                  "label": "Vevelstad"
+                },
+                {
+                  "value": "1818",
+                  "label": "Herøy i Nordland"
+                },
+                {
+                  "value": "1820",
+                  "label": "Alstahaug"
+                },
+                {
+                  "value": "1822",
+                  "label": "Leirfjord"
+                },
+                {
+                  "value": "1824",
+                  "label": "Vefsn"
+                },
+                {
+                  "value": "1825",
+                  "label": "Grane"
+                },
+                {
+                  "value": "1826",
+                  "label": "Hattfjelldal"
+                },
+                {
+                  "value": "1827",
+                  "label": "Dønna"
+                },
+                {
+                  "value": "1828",
+                  "label": "Nesna"
+                },
+                {
+                  "value": "1832",
+                  "label": "Hemnes"
+                },
+                {
+                  "value": "1833",
+                  "label": "Rana"
+                },
+                {
+                  "value": "1834",
+                  "label": "Lurøy"
+                },
+                {
+                  "value": "1835",
+                  "label": "Træna"
+                },
+                {
+                  "value": "1836",
+                  "label": "Rødøy"
+                },
+                {
+                  "value": "1837",
+                  "label": "Meløy"
+                },
+                {
+                  "value": "1838",
+                  "label": "Gildeskål"
+                },
+                {
+                  "value": "1839",
+                  "label": "Beiarn"
+                },
+                {
+                  "value": "1840",
+                  "label": "Saltdal"
+                },
+                {
+                  "value": "1841",
+                  "label": "Fauske – Fuossko"
+                },
+                {
+                  "value": "1842",
+                  "label": "Skjerstad (utgått)"
+                },
+                {
+                  "value": "1845",
+                  "label": "Sørfold"
+                },
+                {
+                  "value": "1848",
+                  "label": "Steigen"
+                },
+                {
+                  "value": "1849",
+                  "label": "Hamarøy – Hábmer"
+                },
+                {
+                  "value": "1850",
+                  "label": "Divtasvuodna – Tysfjord"
+                },
+                {
+                  "value": "1851",
+                  "label": "Lødingen"
+                },
+                {
+                  "value": "1852",
+                  "label": "Tjeldsund"
+                },
+                {
+                  "value": "1853",
+                  "label": "Evenes"
+                },
+                {
+                  "value": "1854",
+                  "label": "Ballangen"
+                },
+                {
+                  "value": "1856",
+                  "label": "Røst"
+                },
+                {
+                  "value": "1857",
+                  "label": "Værøy"
+                },
+                {
+                  "value": "1859",
+                  "label": "Flakstad"
+                },
+                {
+                  "value": "1860",
+                  "label": "Vestvågøy"
+                },
+                {
+                  "value": "1865",
+                  "label": "Vågan"
+                },
+                {
+                  "value": "1866",
+                  "label": "Hadsel"
+                },
+                {
+                  "value": "1867",
+                  "label": "Bø i Nordland"
+                },
+                {
+                  "value": "1868",
+                  "label": "Øksnes"
+                },
+                {
+                  "value": "1870",
+                  "label": "Sortland – Suortá"
+                },
+                {
+                  "value": "1871",
+                  "label": "Andøy"
+                },
+                {
+                  "value": "1874",
+                  "label": "Moskenes"
+                },
+                {
+                  "value": "1901",
+                  "label": "Harstad (utgått)"
+                },
+                {
+                  "value": "1902",
+                  "label": "Tromsø"
+                },
+                {
+                  "value": "1903",
+                  "label": "Harstad – Hárstták"
+                },
+                {
+                  "value": "1911",
+                  "label": "Kvæfjord"
+                },
+                {
+                  "value": "1913",
+                  "label": "Skånland"
+                },
+                {
+                  "value": "1915",
+                  "label": "Bjarkøy (utgått)"
+                },
+                {
+                  "value": "1917",
+                  "label": "Ibestad"
+                },
+                {
+                  "value": "1919",
+                  "label": "Gratangen"
+                },
+                {
+                  "value": "1920",
+                  "label": "Loabák – Lavangen"
+                },
+                {
+                  "value": "1922",
+                  "label": "Bardu"
+                },
+                {
+                  "value": "1923",
+                  "label": "Salangen"
+                },
+                {
+                  "value": "1924",
+                  "label": "Målselv"
+                },
+                {
+                  "value": "1925",
+                  "label": "Sørreisa"
+                },
+                {
+                  "value": "1926",
+                  "label": "Dyrøy"
+                },
+                {
+                  "value": "1927",
+                  "label": "Tranøy"
+                },
+                {
+                  "value": "1928",
+                  "label": "Torsken"
+                },
+                {
+                  "value": "1929",
+                  "label": "Berg"
+                },
+                {
+                  "value": "1931",
+                  "label": "Lenvik"
+                },
+                {
+                  "value": "1933",
+                  "label": "Balsfjord"
+                },
+                {
+                  "value": "1936",
+                  "label": "Karlsøy"
+                },
+                {
+                  "value": "1938",
+                  "label": "Lyngen"
+                },
+                {
+                  "value": "1939",
+                  "label": "Storfjord – Omasvuotna – Omasvuono"
+                },
+                {
+                  "value": "1940",
+                  "label": "Gáivuotna – Kåfjord – Kaivuono"
+                },
+                {
+                  "value": "1941",
+                  "label": "Skjervøy"
+                },
+                {
+                  "value": "1942",
+                  "label": "Nordreisa"
+                },
+                {
+                  "value": "1943",
+                  "label": "Kvænangen"
+                },
+                {
+                  "value": "2001",
+                  "label": "Hammerfest (utgått)"
+                },
+                {
+                  "value": "2002",
+                  "label": "Vardø"
+                },
+                {
+                  "value": "2003",
+                  "label": "Vadsø"
+                },
+                {
+                  "value": "2004",
+                  "label": "Hammerfest"
+                },
+                {
+                  "value": "2011",
+                  "label": "Guovdageaidnu – Kautokeino"
+                },
+                {
+                  "value": "2012",
+                  "label": "Alta"
+                },
+                {
+                  "value": "2014",
+                  "label": "Loppa"
+                },
+                {
+                  "value": "2015",
+                  "label": "Hasvik"
+                },
+                {
+                  "value": "2016",
+                  "label": "Sørøysund (utgått)"
+                },
+                {
+                  "value": "2017",
+                  "label": "Kvalsund"
+                },
+                {
+                  "value": "2018",
+                  "label": "Måsøy"
+                },
+                {
+                  "value": "2019",
+                  "label": "Nordkapp"
+                },
+                {
+                  "value": "2020",
+                  "label": "Porsanger – Porsá?gu – Porsanki"
+                },
+                {
+                  "value": "2021",
+                  "label": "Kárášjohka – Karasjok"
+                },
+                {
+                  "value": "2022",
+                  "label": "Lebesby"
+                },
+                {
+                  "value": "2023",
+                  "label": "Gamvik"
+                },
+                {
+                  "value": "2024",
+                  "label": "Berlevåg"
+                },
+                {
+                  "value": "2025",
+                  "label": "Deatnu – Tana"
+                },
+                {
+                  "value": "2027",
+                  "label": "Unjárga – Nesseby"
+                },
+                {
+                  "value": "2028",
+                  "label": "Båtsfjord"
+                },
+                {
+                  "value": "2030",
+                  "label": "Sør-Varanger"
+                },
+                {
+                  "value": "2111",
+                  "label": "Spitsbergen"
+                },
+                {
+                  "value": "2121",
+                  "label": "Bjørnøya"
+                },
+                {
+                  "value": "2131",
+                  "label": "Hopen"
+                },
+                {
+                  "value": "2211",
+                  "label": "Jan Mayen"
+                },
+                {
+                  "value": "2311",
+                  "label": "Sokkelen sør for 62 grader Nord"
+                },
+                {
+                  "value": "2321",
+                  "label": "Sokkelen nord for 62 grader Nord"
+                },
+                {
+                  "value": "5001",
+                  "label": "Trondheim"
+                },
+                {
+                  "value": "5004",
+                  "label": "Steinkjer"
+                },
+                {
+                  "value": "5005",
+                  "label": "Namsos"
+                },
+                {
+                  "value": "5011",
+                  "label": "Hemne"
+                },
+                {
+                  "value": "5012",
+                  "label": "Snillfjord"
+                },
+                {
+                  "value": "5013",
+                  "label": "Hitra"
+                },
+                {
+                  "value": "5014",
+                  "label": "Frøya"
+                },
+                {
+                  "value": "5015",
+                  "label": "Ørland"
+                },
+                {
+                  "value": "5016",
+                  "label": "Agdenes"
+                },
+                {
+                  "value": "5017",
+                  "label": "Bjugn"
+                },
+                {
+                  "value": "5018",
+                  "label": "Åfjord"
+                },
+                {
+                  "value": "5019",
+                  "label": "Roan"
+                },
+                {
+                  "value": "5020",
+                  "label": "Osen"
+                },
+                {
+                  "value": "5021",
+                  "label": "Oppdal"
+                },
+                {
+                  "value": "5022",
+                  "label": "Rennebu"
+                },
+                {
+                  "value": "5023",
+                  "label": "Meldal"
+                },
+                {
+                  "value": "5024",
+                  "label": "Orkdal"
+                },
+                {
+                  "value": "5025",
+                  "label": "Røros"
+                },
+                {
+                  "value": "5026",
+                  "label": "Holtålen"
+                },
+                {
+                  "value": "5027",
+                  "label": "Midtre Gauldal"
+                },
+                {
+                  "value": "5028",
+                  "label": "Melhus"
+                },
+                {
+                  "value": "5029",
+                  "label": "Skaun"
+                },
+                {
+                  "value": "5030",
+                  "label": "Klæbu"
+                },
+                {
+                  "value": "5031",
+                  "label": "Malvik"
+                },
+                {
+                  "value": "5032",
+                  "label": "Selbu"
+                },
+                {
+                  "value": "5033",
+                  "label": "Tydal"
+                },
+                {
+                  "value": "5034",
+                  "label": "Meråker"
+                },
+                {
+                  "value": "5035",
+                  "label": "Stjørdal"
+                },
+                {
+                  "value": "5036",
+                  "label": "Frosta"
+                },
+                {
+                  "value": "5037",
+                  "label": "Levanger"
+                },
+                {
+                  "value": "5038",
+                  "label": "Verdal"
+                },
+                {
+                  "value": "5039",
+                  "label": "Verran"
+                },
+                {
+                  "value": "5040",
+                  "label": "Namdalseid"
+                },
+                {
+                  "value": "5041",
+                  "label": "Snåase – Snåsa"
+                },
+                {
+                  "value": "5042",
+                  "label": "Lierne"
+                },
+                {
+                  "value": "5043",
+                  "label": "Raarvihke – Røyrvik"
+                },
+                {
+                  "value": "5044",
+                  "label": "Namsskogan"
+                },
+                {
+                  "value": "5045",
+                  "label": "Grong"
+                },
+                {
+                  "value": "5046",
+                  "label": "Høylandet"
+                },
+                {
+                  "value": "5047",
+                  "label": "Overhalla"
+                },
+                {
+                  "value": "5048",
+                  "label": "Frosnes"
+                },
+                {
+                  "value": "5049",
+                  "label": "Flatanger"
+                },
+                {
+                  "value": "5050",
+                  "label": "Vikna"
+                },
+                {
+                  "value": "5051",
+                  "label": "Nærøy"
+                },
+                {
+                  "value": "5052",
+                  "label": "Leka"
+                },
+                {
+                  "value": "5053",
+                  "label": "Inderøy"
+                },
+                {
+                  "value": "5054",
+                  "label": "Indre Fosen"
+                }
+              ],
+              "definition": "nummerering av kommuner i henhold til Statistisk sentralbyrå sin offisielle liste samt et utvalg av utgåtte numre\n\nMerknad: Det presiseres at kommune alltid skal ha 4 sifre, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 sifre.",
+              "asDictionary": "false"
+            }
+          }
+        ]
+      },
+      {
+        "name": "land",
+        "type": "LandKode",
+        "description": "Hvilke land steder ligger i.\n\nTobokstavers kodeliste, subsett av ISO 3166-1 alpha-2.",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": [
+            {
+              "value": "Danmark",
+              "label": "Danmark"
+            },
+            {
+              "value": "Finland",
+              "label": "Finland"
+            },
+            {
+              "value": "Færøyene",
+              "label": "Færøyene"
+            },
+            {
+              "value": "Grønland",
+              "label": "Grønland"
+            },
+            {
+              "value": "internasjonaltFarvann",
+              "label": "Brukerdefinert"
+            },
+            {
+              "value": "Island",
+              "label": "Island"
+            },
+            {
+              "value": "Norge",
+              "label": "Norge"
+            },
+            {
+              "value": "Russland",
+              "label": "Russland"
+            },
+            {
+              "value": "Storbritannia",
+              "label": "Storbritannia"
+            },
+            {
+              "value": "Svalbard_og_Jan_Mayen",
+              "label": "Svalbard og Jan Mayen"
+            },
+            {
+              "value": "Sverige",
+              "label": "Sverige"
+            },
+            {
+              "value": "Tyskland",
+              "label": "Tyskland"
+            },
+            {
+              "value": "uspesifisert",
+              "label": "Brukerdefinert"
+            }
+          ],
+          "definition": "Landkoder, subsett av<b> ISO 3166-1 alpha-2</b> som kun inneholder de landkodene som vi har bruk for for å konvertere SSR til SSR 2.0. Etter produksjonsetting utvides kodelista ved behov.\n\nMerk: XZ - \"Internasjonalt farvann\" og ZZ \"Uspesifisert\" er brukerdefinerte koder (tillatt etter ISO-beskrivelsen). Det vil si at koden ikke har noen bestemt betydning i ISO-kodelista, og vår kodeliste må være tilgjengelig for at eksterne parter kan tolke vår bruk av kodeverdiene.",
+          "asDictionary": "false",
+          "codeList": "http://skjema.geonorge.no/SOSI/produktspesifikasjon/Stedsnavn/5.0Utkast/2016-03-30/LandKode"
+        }
+      },
+      {
+        "name": "navneobjektgruppe",
+        "type": "Navneobjektgruppe",
+        "description": "Inndeling i kategorier under hver hovedgruppe.",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": [
+            {
+              "value": "administrativeIndelinger",
+              "label": "Samlegruppe for objekttyper som beskriver alle typer administrative inndelinger."
+            },
+            {
+              "value": "bane",
+              "label": "Samlegruppe for objekttyper som beskriver funksjoner knyttet til skinnegående kjøretøy."
+            },
+            {
+              "value": "bartFjell",
+              "label": "Samlegruppe for objekttyper som beskriver overflater av bart fjell."
+            },
+            {
+              "value": "bebyggelsesområder",
+              "label": "Samlegruppe for objekttyper som beskriver områder med flere bygninger samlet innenfor et begrenset område."
+            },
+            {
+              "value": "bolighus",
+              "label": "Samlegruppe for objekttyper som beskriver enkeltbygninger til boligformål som er bebodd midlertidig eller permanent."
+            },
+            {
+              "value": "detaljerIFerskvann",
+              "label": "Samlegruppe for objekttyper som beskriver detaljer i ferskvann."
+            },
+            {
+              "value": "detaljISjø",
+              "label": "Samlegruppe for objekttyper som beskriver detaljer i sjøen."
+            },
+            {
+              "value": "dyrkamark",
+              "label": "Samlegruppe for objekttyper som beskriver ulike typer dyrket mark."
+            },
+            {
+              "value": "energi",
+              "label": "Samlegruppe for objekttyper som beskriver anlegg for energi produksjon og transport."
+            },
+            {
+              "value": "farvann",
+              "label": "Samlegruppe for objekttyper som beskriver større områder av sjø."
+            },
+            {
+              "value": "ferskvannskontur",
+              "label": "Samlegruppe for objekttyper som beskriver omrisset av objekter med ferskvann."
+            },
+            {
+              "value": "flater",
+              "label": "Samlegruppe for objekttyper som flate terrengområder."
+            },
+            {
+              "value": "fritidsanlegg",
+              "label": "Samlegruppe for objekttyper som beskriver bygningsmessige og naturlige anlegg for rekreasjon og fritidsaktiviteter."
+            },
+            {
+              "value": "gardsbebyggelse",
+              "label": "Samlegruppe for objekttyper som beskriver områder med samling av bebyggelse som hovedsakelig er knyttet til landbruk."
+            },
+            {
+              "value": "grunnerIFerskvann",
+              "label": "Samlegruppe for objekttyper under vannflaten som stikker høyere opp enn resten av området, men ikke vesentlig over vannflaten."
+            },
+            {
+              "value": "grunnerISjø",
+              "label": "Samlegruppe for objekttyper under havflaten som stikker høyere opp enn resten av området, men ikke vesentlig over vannflaten."
+            },
+            {
+              "value": "høyder",
+              "label": "Samlegruppe for objekttyper som er høyere enn andre objektyper i samme område."
+            },
+            {
+              "value": "institusjoner",
+              "label": "Samlegruppe for objekttyper som beskriver enkeltbygninger eller mindre samlinger av bygninger av institusjonell karakter."
+            },
+            {
+              "value": "isOgPermafrost",
+              "label": "Samlegruppe for objekttyper som er fryst."
+            },
+            {
+              "value": "kommunikasjon",
+              "label": "Samlegruppe for objekttyper som beskriver anlegg for radiokommunikasjon."
+            },
+            {
+              "value": "kulturinstitusjoner",
+              "label": "Samlegruppe for objekttyper som beskriver institusjoner for kulturell aktivitet."
+            },
+            {
+              "value": "kulturminner",
+              "label": "Samlegruppe for objekttyper som er vernet som kulturminner."
+            },
+            {
+              "value": "kystkontur",
+              "label": "Samlegruppe for objekttyper som beskriver grensa mellom sjø og tørt land."
+            },
+            {
+              "value": "luftfart",
+              "label": "Samlegruppe for objekttyper som beskriver anlegg hvor luftfartøy lander og tar av."
+            },
+            {
+              "value": "løsmasseavsetninger",
+              "label": "Samlegruppe for objekttyper som beskriver avsetting av løse masser."
+            },
+            {
+              "value": "navigasjon",
+              "label": "Samlegruppe for objekttyper som beskriver navigasjonshjelpemidler for skipsfart."
+            },
+            {
+              "value": "næring",
+              "label": "Samlegruppe for objekttyper som beskriver enkeltbygninger til næringsformål."
+            },
+            {
+              "value": "rennendeVann",
+              "label": "Samlegruppe for objekttyper som beskriver rennenede ferskvann."
+            },
+            {
+              "value": "samferdselsanlegg",
+              "label": "Samlegruppe for objekttyper som beskriver anlegg som brukes i forbindelse med transport, både for kjøretøy og til fots."
+            },
+            {
+              "value": "senkninger",
+              "label": "Samlegruppe for objekttyper som er senket ned i forhold til andre objekttyper i samme område."
+            },
+            {
+              "value": "sjøbunn",
+              "label": "Samlegruppe for objekttyper som beskriver sjøbunnen."
+            },
+            {
+              "value": "sjøfart",
+              "label": "Samlegruppe for objekttyper som beskriver anlegg som har tilknytning til sjøfart."
+            },
+            {
+              "value": "skråninger",
+              "label": "Samlegruppe for objekttyper som beskriver hellende terreng."
+            },
+            {
+              "value": "stilleståendeVann",
+              "label": "Samlegruppe for objekttyper av ferskvann som ser ut til å stå stille."
+            },
+            {
+              "value": "terrengdetaljer",
+              "label": "Samlegruppe for objekttyper som beskriver spesielle terrengdetaljer."
+            },
+            {
+              "value": "terrengområder",
+              "label": "Samlegruppe for objekttyper som beskriver terrengoverflate over større områder."
+            },
+            {
+              "value": "uttakOgDeponi",
+              "label": "Samlegruppe for objekttyper av menneskeskapte uttak eller fyllinger."
+            },
+            {
+              "value": "veg",
+              "label": "Samlegruppe for objekttyper som beskriver objekter som brukes til ferdsel, både motorisert og til fots."
+            },
+            {
+              "value": "vegetasjon",
+              "label": "Samlegruppe for objekttyper som beskriver vegetasjonen."
+            },
+            {
+              "value": "verne-OgBruksområder",
+              "label": "Samlegruppe for objekttyper som regulerer vern og bruksrettigheter."
+            },
+            {
+              "value": "våtmark",
+              "label": "Samlegruppe for objekttyper som beskriver våt/fuktig mark."
+            }
+          ],
+          "definition": "Gruppeinndelingen av navneobjekttypene",
+          "asDictionary": "true",
+          "codeList": "http://skjema.geonorge.no/SOSI/produktspesifikasjon/Stedsnavn/5.0/Navneobjektgruppe"
+        }
+      },
+      {
+        "name": "navneobjekthovedgruppe",
+        "type": "Navneobjekthovedgruppe",
+        "description": "Hovedgruppene følger i hovedsak Inspire \"NamedPlaceTypeValue\", men populatedPlace og building er samlet under bebyggelse og hydrography er delt mellom sjø og ferskvann.",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": [
+            {
+              "value": "bebyggelse",
+              "label": "Alle grupper som er relevante under hovedgruppe bebyggelse. Tilsvarer Inspire temaet \"building\" og \"populatedPlace\"."
+            },
+            {
+              "value": "ferskvann",
+              "label": "Alle grupper som er relevante under hovedgruppe Ferskvann. Under Inspire temaet \"hydrography\" som vi har delt i to."
+            },
+            {
+              "value": "infrastruktur",
+              "label": "Alle grupper som er relevante under hovedgruppe infrastruktur. Tilsvarer Inspire temaet \"transportNetwork\"."
+            },
+            {
+              "value": "kultur",
+              "label": "Alle grupper som er relevante under hovedgruppe Kultur.\nTilsvarer Inspire temaet \"protctedSite\"."
+            },
+            {
+              "value": "markslag",
+              "label": "Alle grupper som er relevante under hovedgruppe Markslag. Tilsvarer Inspire temaet \"landcover\"."
+            },
+            {
+              "value": "offentligAdministrasjon",
+              "label": "Alle grupper som er relevante under hovedgruppe offentlig administrasjon. Tilsvarer Inspire temaet \"administrativUnit\"."
+            },
+            {
+              "value": "sjø",
+              "label": "Alle grupper som er relevante under hovedgruppe Sjø. Under Inspire temaet \"hydrography\" som vi har delt i to."
+            },
+            {
+              "value": "terreng",
+              "label": "Alle  grupper som beskriver terrengformasjoner.\nTilsvarer Inspire temaet \"landform\"."
+            }
+          ],
+          "definition": "Hovedgruppeinndelingen av navneobjekttyper.",
+          "asDictionary": "true",
+          "codeList": "http://skjema.geonorge.no/SOSI/produktspesifikasjon/Stedsnavn/5.0/Navneobjekthovedgruppe"
+        }
+      },
+      {
+        "name": "navneobjekttype",
+        "type": "Navneobjekttype",
+        "description": "Stedets navneobjekttype er en underinndeling av navneobjektgruppene som igjen er inndeling av navneobjekthovedgruppene.",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": [
+            {
+              "value": "administrativBydel",
+              "label": "Offisielt navn på bydelsforvaltningen i et angitt område."
+            },
+            {
+              "value": "adressenavn",
+              "label": "Offisielt adressenavn, veg-/gatenavn eller områdenavn, jf. § 2 bokstav e i matrikkelforskriften."
+            },
+            {
+              "value": "adressetilleggsnavn",
+              "label": "Et stedsnavn som er en del av den offisielle (veg-)adressen, jf. § 54 i matrikkelforskriften; vanligvis bruksnavn eller sjeldnere bygnings-/institusjonsnavn."
+            },
+            {
+              "value": "allmenning",
+              "label": "Område hvor rettighetene er regulert og fordelt på flere."
+            },
+            {
+              "value": "alpinanlegg",
+              "label": "Anlegg for slalåm, utfor, snøbrett osv."
+            },
+            {
+              "value": "ankringsplass",
+              "label": "Opplagsplass for store fartøy."
+            },
+            {
+              "value": "annenAdministrativInndeling",
+              "label": "Andre administrative inndelinger som ikke tilhører øvrige navneobjekttyper."
+            },
+            {
+              "value": "annenBygningForReligionsutøvelse",
+              "label": "Synagoge, moské, frikirke, menighetshus, kloster, gravkapell, bårehus, krematorium."
+            },
+            {
+              "value": "annenIndustri-OgLagerbygning",
+              "label": "Mindre industri- og produksjonsbedrift eller lager."
+            },
+            {
+              "value": "annenKulturdetalj",
+              "label": "Alle andre typer kulturdetaljer, f.eks. lekeplass, utkikkstårn, fiskeplass, og lignende."
+            },
+            {
+              "value": "annenTerrengdetalj",
+              "label": "Små detaljer som ikke dekkes av andre navneobjekttyper innenfor kategorien."
+            },
+            {
+              "value": "annenVanndetalj",
+              "label": "Andre navngitte forhold i ferskvann."
+            },
+            {
+              "value": "badeplass",
+              "label": "Offentlig eller privat badeplass."
+            },
+            {
+              "value": "bakke",
+              "label": "Terrengskråning, særlig om siden av en ås eller haug."
+            },
+            {
+              "value": "bakkeISjø",
+              "label": "Skrånende sjøbunn."
+            },
+            {
+              "value": "bakketoppISjø",
+              "label": "Undersjøisk knaus, kolle eller haug."
+            },
+            {
+              "value": "bakkeVeg",
+              "label": "Allment kjent bakke på alle typer veger og gater."
+            },
+            {
+              "value": "banestrekning",
+              "label": "Jernbanestrekning, tunnelbane eller trikkelinje/-strekning."
+            },
+            {
+              "value": "banke",
+              "label": "Flatt, større undervannsområde."
+            },
+            {
+              "value": "bankeISjø",
+              "label": "Større grunt område i sjøen med dypere vann omkring; fiskegrunn."
+            },
+            {
+              "value": "barnehage",
+              "label": "Offentlig og privat barnehage."
+            },
+            {
+              "value": "bassengISjø",
+              "label": "Vid, undersjøisk dal."
+            },
+            {
+              "value": "bekk",
+              "label": "Rennende vann i naturlig vannvei, vanligvis smalere enn 3 meter."
+            },
+            {
+              "value": "berg",
+              "label": "Markert eller avrunda høyde med stein, steinmasse (med eller uten vegetasjon)."
+            },
+            {
+              "value": "bergverk",
+              "label": "Gruve, skjerp og mineraluttak i dagen eller under jorda."
+            },
+            {
+              "value": "boinstitusjon",
+              "label": "Dekker både tilrettelagte boliger og asyl-/flykningmottak."
+            },
+            {
+              "value": "boligblokk",
+              "label": "Stort (bolig)hus av mur, betong med over fire boliger som har felles trapp(er) eller heis(er)."
+            },
+            {
+              "value": "boligfelt",
+              "label": "Regulert boligområde."
+            },
+            {
+              "value": "bomstasjon",
+              "label": "Større bomanlegg på offentlig veg."
+            },
+            {
+              "value": "borettslag",
+              "label": "Bofellesskap i blokk eller flerbebyggelse."
+            },
+            {
+              "value": "botn",
+              "label": "Innerste del av en dal; rundaktig, bratt dal eller uthulning i fjellet."
+            },
+            {
+              "value": "bru",
+              "label": "Både på veg og jernbane."
+            },
+            {
+              "value": "bruk",
+              "label": "Navn på (landbruks)eiendom med ett eller flere bruksnummer under ett gardsnummer, jf. lov om stadnamn §§ 2 og 8."
+            },
+            {
+              "value": "brygge",
+              "label": "Mindre, fastbygd bryggeanlegg."
+            },
+            {
+              "value": "busstasjon",
+              "label": "Større busstopp der flere busslinjer kobles, knutepunkt."
+            },
+            {
+              "value": "busstopp",
+              "label": "Stoppested for rutegående vegtrafikk."
+            },
+            {
+              "value": "by",
+              "label": "Tettbygd sted som er større og (til dels) innehar viktigere funksjoner enn andre tettbygde steder / tettsteder."
+            },
+            {
+              "value": "bydel",
+              "label": "Kulturmessig del av by."
+            },
+            {
+              "value": "bygdelagBygd",
+              "label": "Stort, uregulert gards- og boligområde."
+            },
+            {
+              "value": "byggForJordbrukFiskeOgFangst",
+              "label": "Til primærnæring, f.eks. naust, uthus, sommerfjøs eller gamme."
+            },
+            {
+              "value": "båe",
+              "label": "Fjell eller stein under vannflaten."
+            },
+            {
+              "value": "båeISjø",
+              "label": "Spiss grunne; blindskjær som sjøen bryter over."
+            },
+            {
+              "value": "båke",
+              "label": "Fast sjømerke. Sprinkelverk bygget i tre eller metall."
+            },
+            {
+              "value": "campingplass",
+              "label": "Alle typer, med/uten campinghytter, campingvogner og telt."
+            },
+            {
+              "value": "dal",
+              "label": "Mellomstor eller liten dal."
+            },
+            {
+              "value": "dalføre",
+              "label": "Stor dal med sidedaler."
+            },
+            {
+              "value": "dam",
+              "label": "Både store reguleringsdammer og små fløtningsdammer. Angi kurve for lange og ett punkt midt på for korte damkroner."
+            },
+            {
+              "value": "delAvInnsjø",
+              "label": "Mindre del av innsjø."
+            },
+            {
+              "value": "delAvVann",
+              "label": "Mindre del av vann."
+            },
+            {
+              "value": "egg",
+              "label": "Skarp fjellegg der det går bratt ned på begge sider."
+            },
+            {
+              "value": "eggISjø",
+              "label": "Undersjøisk kant mot havdyp."
+            },
+            {
+              "value": "eid",
+              "label": "Lavt eller smalt parti mellom to vannkanter (elv eller vann)."
+            },
+            {
+              "value": "eidISjø",
+              "label": "Landstripe med sjø på begge sider som binder sammen to landområder."
+            },
+            {
+              "value": "eiendom",
+              "label": "Navn på eiendomer som ikke er bruksnavn, ev. felles stedsnavn for flere eiendommer."
+            },
+            {
+              "value": "eiendomsteig",
+              "label": "Et stykke eiendom som ikke henger sammen med resten av eindommen."
+            },
+            {
+              "value": "elv",
+              "label": "Rennende vann i naturlig vannvei, vanligvis bredere enn 3 meter."
+            },
+            {
+              "value": "elvemel",
+              "label": "Bratt sand-/grusskråning langs elv eller vann."
+            },
+            {
+              "value": "elvesving",
+              "label": "Naturlig sving i elv eller bekk."
+            },
+            {
+              "value": "eneboligMindreBoligbygg",
+              "label": "Navn på mindre eiendom for fast bosetting. Hovedsakelig eiendom hvor eier kan bestemme skrivemåten (jf. § 8 i lov om stadnamn og § 54 i matrikkelforskriften). Kan også omfatte eget navn på bygg, eller våningshus/gardsbruk som ikke er gitt eget matrikkelnummer."
+            },
+            {
+              "value": "eng",
+              "label": "Kultivert slåtte-/gressmark."
+            },
+            {
+              "value": "fabrikk",
+              "label": "Større industrivirksomhet."
+            },
+            {
+              "value": "farledSkipslei",
+              "label": "Allment kjent seglingslei/farvannsområde med dybdeforhold passende for skip av en viss størrelse."
+            },
+            {
+              "value": "fengsel",
+              "label": "Bygning der arresterte eller dømte personer soner straff."
+            },
+            {
+              "value": "ferjekai",
+              "label": "Ferjekai i fast regulert ferjesamband."
+            },
+            {
+              "value": "ferjestrekning",
+              "label": "Ferjesamband som inngår i områdets samferdselsnett."
+            },
+            {
+              "value": "fiskeplassISjø",
+              "label": "Navngitt fiskested; fiskemed."
+            },
+            {
+              "value": "fjell",
+              "label": "Høyereliggende område (over tregrensa) med stein og sva og lite vegetasjon som reiser seg over landskapet omkring (med høye berg og nuter)."
+            },
+            {
+              "value": "fjellheis",
+              "label": "Gondolbane og trallebane for frakt av folk."
+            },
+            {
+              "value": "fjellIDagen",
+              "label": "Lite/ingen vegetasjon; sva, svaberg. Erstattes av sva."
+            },
+            {
+              "value": "fjellkant",
+              "label": "Aksel, skulder, nese og bryn."
+            },
+            {
+              "value": "fjellkjedeISjø",
+              "label": "Lengre, sammenhengende undersjøisk fjellformasjon."
+            },
+            {
+              "value": "fjellområde",
+              "label": "Større område med fjell og fjellandskap."
+            },
+            {
+              "value": "fjellovergang",
+              "label": "Vegstrekning som krysser værutsatt fjellparti."
+            },
+            {
+              "value": "fjellside",
+              "label": "Åpent, skrånende terreng i fjellet."
+            },
+            {
+              "value": "fjelltoppISjø",
+              "label": "Undersjøisk fjelltopp."
+            },
+            {
+              "value": "fjellvegg",
+              "label": "Tilnærmet loddrett vegg i fjellside."
+            },
+            {
+              "value": "fjord",
+              "label": "Arm av havet inn i fastlandet."
+            },
+            {
+              "value": "fjordmunning",
+              "label": "Område ytterst i en fjord."
+            },
+            {
+              "value": "flyplass",
+              "label": "Offentlig godkjent, avgrenset område med start- og landingsplass for fly."
+            },
+            {
+              "value": "fløtningsanlegg",
+              "label": "Kunstig fløtningsanlegg."
+            },
+            {
+              "value": "fonn",
+              "label": "Liten snø- eller isflate som vanligvis ikke smelter om sommeren."
+            },
+            {
+              "value": "fornøyelsespark",
+              "label": "Store, regulerte anlegg."
+            },
+            {
+              "value": "forretningsbygg",
+              "label": "Bygning for kontor-, salg- og servicevirksomhet."
+            },
+            {
+              "value": "forsamlingshusKulturhus",
+              "label": "Teater, kino, samfunnshus, grendehus o.l."
+            },
+            {
+              "value": "forskningsstasjon",
+              "label": "Bemannet forskningsstasjon eller meteorologisk stasjon med bygningsmasse."
+            },
+            {
+              "value": "foss",
+              "label": "Vann i tilnærmet fritt fall."
+            },
+            {
+              "value": "friluftsområde",
+              "label": "Et område som er avsatt for friluftsliv."
+            },
+            {
+              "value": "fritidsbolig",
+              "label": "Eget navn på hytter og hus som ikke er ment for fast bosetting."
+            },
+            {
+              "value": "fylke",
+              "label": "Offisielt navn."
+            },
+            {
+              "value": "fyllplass",
+              "label": "Plass for deponering av masse som stein, jord og søppel."
+            },
+            {
+              "value": "fyrlykt",
+              "label": "Linse og lyskilde anbrakt i hus eller liknende. Ikke flytende."
+            },
+            {
+              "value": "fyrstasjon",
+              "label": "Automatisk og ubemannet. Et fast anlegg hvor linse og lyskilde er anbrakt i hus, tårn eller spesielt bygg. Ikke flytende."
+            },
+            {
+              "value": "gammelBosettingsplass",
+              "label": "Nedlagt bruk, seter, boplass hvor bygningen(e) er borte eller bare tuftene er tilbake."
+            },
+            {
+              "value": "garasjeHangarbygg",
+              "label": "Trikkestall, bussgarasje, flyhangar eller lokomotivstall."
+            },
+            {
+              "value": "gard",
+              "label": "Felles navn for et helt gardsnummer (jf. § 8 i lov om stadnamn)."
+            },
+            {
+              "value": "gass-OljefeltISjø",
+              "label": "Navngitt gass- eller oljefelt i havet."
+            },
+            {
+              "value": "geologiskStruktur",
+              "label": "Navngitt struktur/formasjon i berggrunnen."
+            },
+            {
+              "value": "gjerde",
+              "label": "Oppsatt stengsel, vern, skille mellom jordstykker, eiendommer eller beiteområder."
+            },
+            {
+              "value": "gravplass",
+              "label": "Alle typer gravlunder, gravplasser."
+            },
+            {
+              "value": "grend",
+              "label": "Mindre uregulert gards-, seter- og boligområde."
+            },
+            {
+              "value": "grensemerke",
+              "label": "Offisielt grensemerke: Varde, tre, stein, bolt, kors o.l."
+            },
+            {
+              "value": "grind",
+              "label": "Port i gjerde."
+            },
+            {
+              "value": "grotte",
+              "label": "Naturlig fjellgrotte."
+            },
+            {
+              "value": "grunne",
+              "label": "Lite område under vann som hever seg fra området rundt."
+            },
+            {
+              "value": "grunneISjø",
+              "label": "Markant forhøyning av havbunnen."
+            },
+            {
+              "value": "grunnkrets",
+              "label": "Offisielt navn på grunnkrets."
+            },
+            {
+              "value": "gruppeAvTjern",
+              "label": "To eller flere små tjern."
+            },
+            {
+              "value": "gruppeAvVann",
+              "label": "To eller flere vann."
+            },
+            {
+              "value": "grustakSteinbrudd",
+              "label": "Uttaksplass/-område for sand, grus, pukk, skifer eller stein."
+            },
+            {
+              "value": "grøft",
+              "label": "Rennende vann i oppgravd vannvei, f.eks. dreneringsgrøft i myr."
+            },
+            {
+              "value": "halvøy",
+              "label": "Større nes i ferskvann med smalt eid mot fastland."
+            },
+            {
+              "value": "halvøyISjø",
+              "label": "Større nes med smalt eid mot fastland."
+            },
+            {
+              "value": "hammar",
+              "label": "hammar"
+            },
+            {
+              "value": "haug",
+              "label": "Liten, markant forhøynet terrengform."
+            },
+            {
+              "value": "havdyp",
+              "label": "Stort, dypt område i havet."
+            },
+            {
+              "value": "havn",
+              "label": "Sted der fartøy laster, losser eller søker ly for vær og sjø."
+            },
+            {
+              "value": "havnehage",
+              "label": "Inngjerdet beitemark."
+            },
+            {
+              "value": "havområde",
+              "label": "Del av et hav."
+            },
+            {
+              "value": "havstrøm",
+              "label": "Kontinuerlig bevegelse av vann (i havet) på grunn av klimatiske forhold eller tidevann."
+            },
+            {
+              "value": "hei",
+              "label": "Berglendt, høyere beliggende område med beitemark."
+            },
+            {
+              "value": "helikopterlandingsplass",
+              "label": "Landingsplass for helikopter."
+            },
+            {
+              "value": "heller",
+              "label": "Utoverhengende bergvegg eller berghule."
+            },
+            {
+              "value": "helseinstitusjon",
+              "label": "Aldershjem, rekreasjonshjem og lignende."
+            },
+            {
+              "value": "historiskBosetting",
+              "label": "Ubebodd eller forlatt bosetting med bestående bygningsmasse eller ruiner."
+            },
+            {
+              "value": "holdeplass",
+              "label": "Ubetjent stoppested for jernbane, tunnelbane og/eller trikk."
+            },
+            {
+              "value": "holme",
+              "label": "Liten øy i ferskvann."
+            },
+            {
+              "value": "holmegruppeISjø",
+              "label": "To eller flere små øyer."
+            },
+            {
+              "value": "holmeISjø",
+              "label": "Liten øy."
+            },
+            {
+              "value": "hotell",
+              "label": "Større, offentlig godkjent overnattingssted."
+            },
+            {
+              "value": "hylle",
+              "label": "Flatt, tilnærmet vannrett område i fjellside."
+            },
+            {
+              "value": "hylleISjø",
+              "label": "Undersjøisk benk; klippeavsats, kant, fremspring, avsats."
+            },
+            {
+              "value": "hyttefelt",
+              "label": "Offentlig eller privat hyttefelt. Regulert område med høy utnyttelsesgrad."
+            },
+            {
+              "value": "høl",
+              "label": "Dyp elvebunn under foss eller etter et stryk."
+            },
+            {
+              "value": "høyde",
+              "label": "Høyereliggende terrengform, mindre omfattende enn ås og større enn haug."
+            },
+            {
+              "value": "idrettsanlegg",
+              "label": "Alle typer utendørsanlegg for idrett."
+            },
+            {
+              "value": "idrettshall",
+              "label": "Alle typer innendørsanlegg, f.eks. ishall, svømmehall, idrettshall og ridehall."
+            },
+            {
+              "value": "industriområde",
+              "label": "Større, sammenhengende område til industri- og næringsformål."
+            },
+            {
+              "value": "innsjø",
+              "label": "Stort vann."
+            },
+            {
+              "value": "isbre",
+              "label": "Større sammenhengende snø- eller isområde som ikke smelter i løpet av sommeren."
+            },
+            {
+              "value": "iskuppel",
+              "label": "Konveks ismasse av en viss tykkelse i større bre eller innlandsis."
+            },
+            {
+              "value": "jernbanebru",
+              "label": "Bru for jernbane."
+            },
+            {
+              "value": "jernbanetunnel",
+              "label": "Tunnel for jernbane. Bruk kurve/linje for tunnelstrekning på jerbane eller punkt for navn på tunnelåpning/kort tunnel."
+            },
+            {
+              "value": "jernstang",
+              "label": "Fast sjømerke av typen jernstang eller jernsøyle."
+            },
+            {
+              "value": "jorde",
+              "label": "Kultivert dyrkningsmark."
+            },
+            {
+              "value": "juv",
+              "label": "Kløftlignende dal eller canyon."
+            },
+            {
+              "value": "kabel",
+              "label": "Alle typer kabler i sjø eller i ferskvann."
+            },
+            {
+              "value": "kai",
+              "label": "Større, fastbygd bryggeanlegg."
+            },
+            {
+              "value": "kanal",
+              "label": "Kunstig eller naturlig vannvei eller gjennomseiling."
+            },
+            {
+              "value": "kilde",
+              "label": "Oppkomme, olle, kildeutspring, osv."
+            },
+            {
+              "value": "kirke",
+              "label": "Kirke, kapell, arbeidskirke o.l."
+            },
+            {
+              "value": "klakkISjø",
+              "label": "Fjellknatt på sjøbunnen."
+            },
+            {
+              "value": "klopp",
+              "label": "Liten gangbru av stokker og/eller stein over bekker og elver, i myr eller i fjæra."
+            },
+            {
+              "value": "kommune",
+              "label": "Offisielt navn."
+            },
+            {
+              "value": "kontinentalsokkel",
+              "label": "Område med grunt hav rundt kontinentene. Ofte brukt om et lands økonomiske interessesone til sjøs."
+            },
+            {
+              "value": "korallrev",
+              "label": "Rev som er dannet av koraller."
+            },
+            {
+              "value": "kraftgateRørgate",
+              "label": "Store tilførselsrør for kraftanlegg."
+            },
+            {
+              "value": "kraftledning",
+              "label": "Stor strømoverføringsledning."
+            },
+            {
+              "value": "kraftstasjon",
+              "label": "Alle typer / alle størrelser til energiproduksjon (f.eks. el. og varme)."
+            },
+            {
+              "value": "krater",
+              "label": "Skål- eller traktformet senkning i jordoverflaten forårsaket av vulkansk aktivitet eller av meteorittnedslag."
+            },
+            {
+              "value": "kulturMessehall",
+              "label": "Stort anlegg/hall til flerbruk - varemesse, konserter, idrettsarrangement."
+            },
+            {
+              "value": "landingsplass",
+              "label": "Landingsplass for privatfly."
+            },
+            {
+              "value": "landskapsområde",
+              "label": "Område der drag i landskapet, naturforhold, arealbruk og bosetting er samlende og skiller seg fra tilgrensende områder."
+            },
+            {
+              "value": "lanterne",
+              "label": "En innretning hvor linsen med eller uten beskyttelsesglass utgjør en del av den bærende del av konstruksjonen. Ikke flytende."
+            },
+            {
+              "value": "li",
+              "label": "Skrånende terreng."
+            },
+            {
+              "value": "lon",
+              "label": "Utbuktning i elv eller bekk der vannet renner stille."
+            },
+            {
+              "value": "lysbøye",
+              "label": "Flytende innretning for farvannsmerking med en lanterne som lyskilde."
+            },
+            {
+              "value": "matrikkeladressenavn",
+              "label": "Et stedsnavn som inngår i den offiselle adressen ved matrikkeladresser, jf. § 55 tredje ledd i matrikkelforskriften."
+            },
+            {
+              "value": "melkeplass",
+              "label": "Seterplass uten hus (ev. med enkelt skur) brukt til melking av husdyr."
+            },
+            {
+              "value": "militærtByggAnlegg",
+              "label": "Militærleir."
+            },
+            {
+              "value": "mindreBrukonstruksjon",
+              "label": "Korte bruer eller kulverter hvor navnet er av liten allmenn interresse eller av teknisk art."
+            },
+            {
+              "value": "mo",
+              "label": "Større, flatt landområde (ofte skogkledd)."
+            },
+            {
+              "value": "molo",
+              "label": "Fast byggverk, utstikkende voll i sjøen."
+            },
+            {
+              "value": "moreneryggISjø",
+              "label": "Marin israndavsetning."
+            },
+            {
+              "value": "museumGalleriBibliotek",
+              "label": "Alle typer museum, galleri og bibliotek."
+            },
+            {
+              "value": "myr",
+              "label": "Alle typer fra åpen gressmyr til våt moldjord dekket med kjerr."
+            },
+            {
+              "value": "nasjon",
+              "label": "Offisielt navn på selvstendig stat eller land."
+            },
+            {
+              "value": "navnegard",
+              "label": "Opprinnelig navn fra før garden ble oppdelt i gards- og bruksenheter. Navnegardens utbredelse kan omfatte flere enn ett gardsnummer."
+            },
+            {
+              "value": "nes",
+              "label": "Landområde stikkende ut i ferskvann."
+            },
+            {
+              "value": "nesISjø",
+              "label": "Landområde stikkende ut i sjø."
+            },
+            {
+              "value": "nesVedElver",
+              "label": "Landet mellom to møtende elver."
+            },
+            {
+              "value": "offersted",
+              "label": "Alle typer offersted."
+            },
+            {
+              "value": "oljeinstallasjon",
+              "label": "Stasjonær olje- og gassinstallasjon (fast eller flytende)."
+            },
+            {
+              "value": "oppdrettsanlegg",
+              "label": "Anlegg for foring og stell av husdyr til de kan settes i produksjon eller slaktes; oppforing av fisk (og andre sjødyr) i fangenskap."
+            },
+            {
+              "value": "os",
+              "label": "Innløp eller utløp av elv eller bekk i innsjø/vann/tjern eller sjø (saltvann)."
+            },
+            {
+              "value": "overbygg",
+              "label": "Overbygg over veg eller jernbane for beskyttelse mot ras, for å gjemme f.eks. veg i bebyggelseområde eller som viltoverganger."
+            },
+            {
+              "value": "overett",
+              "label": "To sjømerker, med eller uten lys, som, når de peiles på linje, viser kurs for gjennomseiling."
+            },
+            {
+              "value": "park",
+              "label": "Kultivert grøntområde i by/tettsted."
+            },
+            {
+              "value": "parkeringsplass",
+              "label": "Tomt (eller bygning) for parkering av biler."
+            },
+            {
+              "value": "pensjonat",
+              "label": "Mindre, offentlig godkjent overnattingssted."
+            },
+            {
+              "value": "platåISjø",
+              "label": "Stor, flat forhøyning som skiller seg fra havbunnen omkring."
+            },
+            {
+              "value": "poststed",
+              "label": "Offisielt poststed/postnummerområde."
+            },
+            {
+              "value": "pytt",
+              "label": "Lite vannhull (mindre enn tjern)."
+            },
+            {
+              "value": "rasISjø",
+              "label": "Undersjøisk rasområde med stein, jord, sand eller leire."
+            },
+            {
+              "value": "rasteplass",
+              "label": "Rasteplass definert og lagt til rette av Statens vegvesen eller annen offentlig myndighet."
+            },
+            {
+              "value": "reinbeitedistrikt",
+              "label": "Reinbeitedistrikt."
+            },
+            {
+              "value": "renneKløftISjø",
+              "label": "Undersjøisk dal, kanal, senkning, ravine, fure, spor, rille o.l."
+            },
+            {
+              "value": "revISjø",
+              "label": "Grunne, banke av stein/fjell (som strekker seg ut fra en kyst)."
+            },
+            {
+              "value": "rygg",
+              "label": "Langstrakt terrengform."
+            },
+            {
+              "value": "ryggISjø",
+              "label": "Undersjøisk ås, åskam eller fjellrygg."
+            },
+            {
+              "value": "rørledning",
+              "label": "Alle typer rørledninger: Olje, gass, vann o.l."
+            },
+            {
+              "value": "rådhus",
+              "label": "Administrasjonssenteret i den administrative enheten, f.eks. stat, fylke, kommune."
+            },
+            {
+              "value": "sadelISjø",
+              "label": "Undersjøisk skar mellom to høyere topper/rygger."
+            },
+            {
+              "value": "sand",
+              "label": "Finkornede avsetninger (sand og/eller grus)."
+            },
+            {
+              "value": "senkning",
+              "label": "Flat forsenkning, dalsenkning."
+            },
+            {
+              "value": "serveringssted",
+              "label": "Serveringssted uten overnatting."
+            },
+            {
+              "value": "seterStøl",
+              "label": "Enklere landbruksbebyggelse med hus. Kan ha periodisk fast bosetting, vanligvis sommerstid."
+            },
+            {
+              "value": "setervoll",
+              "label": "Ryddet, gressbevokst område på seter uten hus."
+            },
+            {
+              "value": "severdighet",
+              "label": "Minnesmerke, arkeologiske funn o.l."
+            },
+            {
+              "value": "sjødetalj",
+              "label": "Detalj som ikke dekkes av andre sjø-navneobjekttyper."
+            },
+            {
+              "value": "sjømerkeMedIndirekteBelysning",
+              "label": "Sjømerke med indirekte belyst struktur, skilt, fundament eller plasseringspunkt."
+            },
+            {
+              "value": "sjøstykke",
+              "label": "Stykke av sjøen utanfor land, vanligvis innaskjærs eller i kystnære farvann."
+            },
+            {
+              "value": "sjøvarde",
+              "label": "Varde av stein eller betong primært for navigering til sjøs."
+            },
+            {
+              "value": "skar",
+              "label": "Markant senkning i fjell eller berg."
+            },
+            {
+              "value": "skiheis",
+              "label": "Skitrekk og stolheis i skianlegg."
+            },
+            {
+              "value": "skjær",
+              "label": "Fjell eller stein i vannflaten."
+            },
+            {
+              "value": "skjærISjø",
+              "label": "Bergrunn nær eller rett over vannflaten."
+            },
+            {
+              "value": "skog",
+              "label": "Alle typer fra stor barskog til og med vierkratt i Finnmark."
+            },
+            {
+              "value": "skogholt",
+              "label": "Mindre samling av trær."
+            },
+            {
+              "value": "skogområde",
+              "label": "Større område med skog og mark."
+            },
+            {
+              "value": "skole",
+              "label": "Offentlig og privat skole."
+            },
+            {
+              "value": "skolekrets",
+              "label": "Skolekrets definert av kommunen."
+            },
+            {
+              "value": "skredområde",
+              "label": "Område der det går eller har gått skred."
+            },
+            {
+              "value": "skytebane",
+              "label": "Bane for øvelse el. konkurranse i skyting."
+            },
+            {
+              "value": "skytefelt",
+              "label": "Militært sprengingsfelt, bombe- og skytefelt, både på land og sjø."
+            },
+            {
+              "value": "slette",
+              "label": "Åpent, flatt område."
+            },
+            {
+              "value": "sluse",
+              "label": "Kunstig løfteanretning for båter i vassdrag."
+            },
+            {
+              "value": "småbåthavn",
+              "label": "Regulert havneanlegg for småbåter."
+            },
+            {
+              "value": "sokkelISjø",
+              "label": "Undersjøisk fjellfot."
+            },
+            {
+              "value": "sokn",
+              "label": "Kirkesokn i Den norske kirke."
+            },
+            {
+              "value": "soneinndelingTilHavs",
+              "label": "Fiskerisone, havrettssone og lignende."
+            },
+            {
+              "value": "stake",
+              "label": "Flytende sjømerke. Ofte kalt bøyestake, stakebøye, kubbestake."
+            },
+            {
+              "value": "stasjon",
+              "label": "Stoppested for jernbane, tunnelbane og/eller trikk. Som regel betjent."
+            },
+            {
+              "value": "statistiskTettsted",
+              "label": "Tettsted etter Statistisk sentralbyrås klassifisering som brukes for å lage statistikk over befolkning og tettsteder."
+            },
+            {
+              "value": "stein",
+              "label": "Frittliggende steinblokk."
+            },
+            {
+              "value": "sti",
+              "label": "Stistrekning, råk, slepe (gammel drifteveg), reindriftsveg."
+            },
+            {
+              "value": "strand",
+              "label": "Sand-, grus- eller steindekket område i vannkanten ved elv eller vann."
+            },
+            {
+              "value": "strandISjø",
+              "label": "Sand-, grus- eller steindekket område i sjøkanten."
+            },
+            {
+              "value": "stryk",
+              "label": "Del av elv, bekk der vannet går i stryk (og skiller seg tydelig fra resten av elva/bekken)."
+            },
+            {
+              "value": "stup",
+              "label": "Loddrett, svært bratt berg."
+            },
+            {
+              "value": "stø",
+              "label": "Båtplass i vannkanten uten naust."
+            },
+            {
+              "value": "stølsSetereiendom",
+              "label": "stølsSetereiendom"
+            },
+            {
+              "value": "sund",
+              "label": "Innsnevret område i vann eller vassdrag."
+            },
+            {
+              "value": "sundISjø",
+              "label": "Innsnevret område mellom øyer eller fastland."
+            },
+            {
+              "value": "sva",
+              "label": "Bart, avrundet glatt fjell"
+            },
+            {
+              "value": "sykehus",
+              "label": "Offentlig og privat sykehus."
+            },
+            {
+              "value": "søkk",
+              "label": "Mindre markant, begrenset fordypning."
+            },
+            {
+              "value": "søkkISjø",
+              "label": "Stor eller liten grop på sjøbunnen."
+            },
+            {
+              "value": "taubane",
+              "label": "Heis til frakt av gods/høy, ikke persontrafikk."
+            },
+            {
+              "value": "tettbebyggelse",
+              "label": "Bebygd område uten sentrumskarakter."
+            },
+            {
+              "value": "tettsted",
+              "label": "Mindre, bymessig bebygd område med sentrumskarakter."
+            },
+            {
+              "value": "tettsteddel",
+              "label": "Kulturmessig del av tettsted."
+            },
+            {
+              "value": "tjern",
+              "label": "Lite vann."
+            },
+            {
+              "value": "topp",
+              "label": "Tind, markant topp på fjell, berg, ås osv."
+            },
+            {
+              "value": "torg",
+              "label": "Stor, åpen plass i en by."
+            },
+            {
+              "value": "torvtak",
+              "label": "Sted for uttak av myrtorv, brenntorv eller veksttorv."
+            },
+            {
+              "value": "traktorveg",
+              "label": "Driftsveg anlagt for traktorbruk. Ikke fremkommelig med vanlig personbil."
+            },
+            {
+              "value": "tuft",
+              "label": "Sted som har hatt bebyggelse, men som antagelig ikke har vært bebodd. Ruin."
+            },
+            {
+              "value": "tunnel",
+              "label": "Vanlig tunnel på veg. Bruk kurve/linje for tunnelstrekning eller punkt for navn på tunnelåpning."
+            },
+            {
+              "value": "turisthytte",
+              "label": "Overnattingssted utenfor tettbygd område."
+            },
+            {
+              "value": "tV-Radio-EllerMobiltelefontårn",
+              "label": "Alle typer bakkebasert telekommunikasjon."
+            },
+            {
+              "value": "tømmervelte",
+              "label": "Midlertidig lagringsplass for tømmer."
+            },
+            {
+              "value": "undersjøiskVegg",
+              "label": "Fjellside i havet."
+            },
+            {
+              "value": "universitetHøgskole",
+              "label": "Offentlig og privat høgskole og universitet."
+            },
+            {
+              "value": "ur",
+              "label": "Steinområde, steinrøys eller steinur."
+            },
+            {
+              "value": "utmark",
+              "label": "Beitemark i skog og mark vekk fra garden (og innmarka)."
+            },
+            {
+              "value": "utsiktspunkt",
+              "label": "Både fra tårn og på bakken."
+            },
+            {
+              "value": "utstikker",
+              "label": "Flytende bryggeanlegg."
+            },
+            {
+              "value": "vad",
+              "label": "Vadested, vanligvis der en stistrekning krysser elv, bekk eller vann."
+            },
+            {
+              "value": "vaktstasjonBeredsskapsbygning",
+              "label": "Bygning for politi/brann/los/toll/ambulanse/fly- og skipsovervåkning."
+            },
+            {
+              "value": "valgkrets",
+              "label": "Valgkrets definert av kommunen."
+            },
+            {
+              "value": "vann",
+              "label": "Middels stort vann."
+            },
+            {
+              "value": "vannstandsmåler",
+              "label": "Innretning for å måle vann eller tidevannsnivå."
+            },
+            {
+              "value": "vannverk",
+              "label": "Inntak for drikkevann/vanningsvann."
+            },
+            {
+              "value": "varde",
+              "label": "(Som oftest) oppstablet stein som skal markere sti, grensemerke, trigonometrisk punkt o.l."
+            },
+            {
+              "value": "vegbom",
+              "label": "Mindre bomanlegg på privat veg."
+            },
+            {
+              "value": "vegkryss",
+              "label": "Allment kjent vegkryss i alle typer veger og gater."
+            },
+            {
+              "value": "vegstrekning",
+              "label": "Navn på vegstrekning som ikke nødvendigvis har et formelt vedtak, og ikke er det samme som adressenavnet. Det kan være f.eks. turistrekninger og ringveger rundt en by."
+            },
+            {
+              "value": "vegsving",
+              "label": "Allment kjent sving på alle typer veger og gater."
+            },
+            {
+              "value": "verneområde",
+              "label": "Et område med spesiell natur- og/eller kulturverdi som er formelt vedtatt vernet etter offentlig regelverk. Alle typer, både på sjø og land."
+            },
+            {
+              "value": "vidde",
+              "label": "Høyereliggende (fjell)område med lite høydevariasjoner innenfor området, som regel over tregrensa."
+            },
+            {
+              "value": "vik",
+              "label": "Kil eller bukt i vann eller vassdrag."
+            },
+            {
+              "value": "vikISjø",
+              "label": "Kil, bukt."
+            },
+            {
+              "value": "vulkanISjø",
+              "label": "Vulkan eller slamvulkan på havbunnen."
+            },
+            {
+              "value": "vågISjø",
+              "label": "Fjordarm, større vik."
+            },
+            {
+              "value": "våtmarksområde",
+              "label": "Sump, område med våtmark."
+            },
+            {
+              "value": "øy",
+              "label": "Tørt landområde i ferskvann atskilt fra fastlandet."
+            },
+            {
+              "value": "øygruppe",
+              "label": "To eller flere øyer i ferskvann."
+            },
+            {
+              "value": "øygruppeISjø",
+              "label": "To eller flere øyer."
+            },
+            {
+              "value": "øyISjø",
+              "label": "Tørt landområde atskilt fra fastlandet."
+            },
+            {
+              "value": "øyr",
+              "label": "Sand-/grusområde i elvemunning, elvedelta både mot innsjø/vann og saltvann."
+            },
+            {
+              "value": "ås",
+              "label": "Langstrakt høydedrag."
+            }
+          ],
+          "definition": "Detaljert klassifisering av hvilke type fenomen stedsnavnet står til.",
+          "asDictionary": "true",
+          "codeList": "http://skjema.geonorge.no/SOSI/produktspesifikasjon/Stedsnavn/5.0/Navneobjekttype"
+        }
+      },
+      {
+        "name": "posisjon",
+        "type": "GM_Object",
+        "description": "Stedfesting av objektet med eller uten utstrekning. Flate, kurve, punkt eller punktsky.",
+        "cardinality": "1"
+      },
+      {
+        "name": "sortering",
+        "type": "Sortering",
+        "description": "Sorteringsegenskapene skal benyttes til å angi stedets viktighet i forskjellige målestokker (i forhold til andre stedsnavn).",
+        "cardinality": "1",
+        "attributes": [
+          {
+            "name": "sortering1Kode",
+            "type": "Sortering1Kode",
+            "description": "Bokstavkode fra A til N der N er viktigste objekttype som tegnes først, mens A er de minst viktige som vises dersom det er plass.",
+            "cardinality": "1",
+            "valueDomain": {
+              "listedValues": [
+                {
+                  "value": "viktighetA",
+                  "label": "Minst viktige objekt tegnes til slutt vanligvis i små målestokker."
+                },
+                {
+                  "value": "viktighetB",
+                  "label": "Viktigere enn A"
+                },
+                {
+                  "value": "viktighetC",
+                  "label": "Viktigere enn A og B"
+                },
+                {
+                  "value": "viktighetD",
+                  "label": "Viktigere enn C men mindre viktig enn E"
+                },
+                {
+                  "value": "viktighetE",
+                  "label": "Viktigere enn D men mindre viktig enn F"
+                },
+                {
+                  "value": "viktighetF",
+                  "label": "Viktigere enn E men mindre viktig enn G"
+                },
+                {
+                  "value": "viktighetG",
+                  "label": "Viktigere enn F men mindre viktig enn H"
+                },
+                {
+                  "value": "viktighetH",
+                  "label": "Viktigere enn G men mindre viktig enn I"
+                },
+                {
+                  "value": "viktighetI",
+                  "label": "Viktigere enn H men mindre viktig enn J"
+                },
+                {
+                  "value": "viktighetJ",
+                  "label": "Viktigere enn I men mindre viktig enn K"
+                },
+                {
+                  "value": "viktighetK",
+                  "label": "Viktigere enn J men mindre viktig enn L"
+                },
+                {
+                  "value": "viktighetL",
+                  "label": "Viktigere enn K men mindre viktig enn M"
+                },
+                {
+                  "value": "viktighetM",
+                  "label": "Viktigere enn L men mindre viktig enn N"
+                },
+                {
+                  "value": "viktighetN",
+                  "label": "Høyest prioritet, de viktigste navnene, tegnes vanligvis fra små målestokker."
+                }
+              ],
+              "definition": "Alle store bokstaver fra og med A til og med N.",
+              "asDictionary": "false",
+              "codeList": "http://skjema.geonorge.no/SOSI/produktspesifikasjon/Stedsnavn/5.0Utkast/2016-03-30/Sortering1Kode"
+            }
+          },
+          {
+            "name": "sortering2Kode",
+            "type": "Sortering2Kode",
+            "description": "Tall fra 1 til 99 som brukes til å sortere innefor sortering1kode, der 99 har høyest prioritet.",
+            "cardinality": "1",
+            "valueDomain": {
+              "listedValues": [
+                {
+                  "value": "viktighet01",
+                  "label": "Minst viktig av de navnene med samme sorteringsbokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet02",
+                  "label": "Viktigere enn de med 01 under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet03",
+                  "label": "Viktigere enn de med 02 under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet04",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet05",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet06",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet07",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet08",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet09",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet10",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet11",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet12",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet13",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet14",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet15",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet16",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet17",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet18",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet19",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet20",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet21",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet22",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet23",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet24",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet25",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet26",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet27",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet28",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet29",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet30",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet31",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet32",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet33",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet34",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet35",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet36",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet37",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet38",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet39",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet40",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet41",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet42",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet43",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet44",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet45",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet46",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet47",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet48",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet49",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet50",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet51",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet52",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet53",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet54",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet55",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet56",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet57",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet58",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet59",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet60",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet61",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet62",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet63",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet64",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet65",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet66",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet67",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet68",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet69",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet70",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet71",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet72",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet73",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet74",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet75",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet76",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet77",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet78",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet79",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet80",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet81",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet82",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet83",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet84",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet85",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet86",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet87",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet88",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet89",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet90",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet91",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet92",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet93",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet94",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet95",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet96",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet97",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet98",
+                  "label": "Viktigere enn de med lavere nummer under samme bokstav i Sortering1Kode."
+                },
+                {
+                  "value": "viktighet99",
+                  "label": "Viktigtse navn av de med samme sorteringsbokstav, har høyest prioritet."
+                }
+              ],
+              "definition": "Tall fra og med 01 til og med 99.",
+              "asDictionary": "false",
+              "codeList": "http://skjema.geonorge.no/SOSI/produktspesifikasjon/Stedsnavn/5.0Utkast/2016-03-30/Sortering2Kode"
+            }
+          }
+        ]
+      },
+      {
+        "name": "språkprioritering",
+        "type": "SpråkprioriteringKode",
+        "description": "Angir rekkefølgen av navn på forskjellige språk som skal vises på skilt og kart, jf. forskriften § 7 annet ledd.",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "listedValues": [
+            {
+              "value": "kvensk-nordsamisk-lulesamisk-sørsamisk-norsk",
+              "label": "Brukes i samisk forvaltningsområde, dersom kvensk skal prioriteres over samisk."
+            },
+            {
+              "value": "kvensk-nordsamisk-skoltesamisk-lulesamisk-sørsamisk-norsk",
+              "label": "Brukes i samisk forvaltningsområde, nordsamisk område, dersom kvensk skal prioriteres over samisk."
+            },
+            {
+              "value": "kvensk-norsk-nordsamisk-lulesamisk-sørsamisk",
+              "label": "Brukes i norsk forvaltningsområde dersom kvensk skal prioriteres over norsk."
+            },
+            {
+              "value": "kvensk-norsk-nordsamisk-skoltesamisk-lulesamisk-sørsamisk",
+              "label": "Brukes i norsk forvaltningsområde dersom kvensk skal prioriteres over norsk, men nordsamisk kan forekomme."
+            },
+            {
+              "value": "kvensk-norsk-skoltesamisk-nordsamisk-lulesamisk-sørsamisk",
+              "label": "Brukes i norsk forvaltningsområde dersom kvensk skal prioriteres over norsk, men skoltesamisk kan forekomme."
+            },
+            {
+              "value": "kvensk-skoltesamisk-nordsamisk-lulesamisk-sørsamisk-norsk",
+              "label": "Brukes i samisk forvaltningsområde, skoltesamisk område, dersom kvensk skal prioriteres over samisk."
+            },
+            {
+              "value": "lulesamisk-nordsamisk-skoltesamisk-sørsamisk-norsk-kvensk",
+              "label": "Brukes i samisk forvaltningsområde, lulesamisk område der nordsamisk kan forekomme."
+            },
+            {
+              "value": "lulesamisk-nordsamisk-sørsamisk-norsk-kvensk",
+              "label": "Brukes i samisk forvaltningsområde, lulesamisk område der nordsamisk kan forekomme."
+            },
+            {
+              "value": "lulesamisk-sørsamisk-nordsamisk-norsk-kvensk",
+              "label": "Brukes i samisk forvaltningsområde, lulesamisk område der sørsamisk kan forekomme."
+            },
+            {
+              "value": "lulesamisk-sørsamisk-nordsamisk-skoltesamisk-norsk-kvensk",
+              "label": "Brukes i samisk forvaltningsområde, lulesamisk område der sørsamisk kan forekomme."
+            },
+            {
+              "value": "nordsamisk-lulesamisk-sørsamisk-norsk-kvensk",
+              "label": "Brukes i samisk forvaltningsområde, nordsamisk område."
+            },
+            {
+              "value": "nordsamisk-skoltesamisk-lulesamisk-sørsamisk-norsk-kvensk",
+              "label": "Brukes i samisk forvaltningsområde, nordsamisk område."
+            },
+            {
+              "value": "norsk-lulesamisk-nordsamisk-skoltesamisk-sørsamisk-kvensk",
+              "label": "Brukes i norsk forvaltingsområde, lulesamisk område der nordsamisk kan forekomme sammen med lulesamisk."
+            },
+            {
+              "value": "norsk-lulesamisk-nordsamisk-sørsamisk-kvensk",
+              "label": "Brukes i norsk forvaltingsområde, lulesamisk område der nordsamisk kan forekomme sammen med lulesamisk."
+            },
+            {
+              "value": "norsk-lulesamisk-sørsamisk-nordsamisk-kvensk",
+              "label": "Brukes i norsk forvaltingsområde, lulesamisk område der sørdsamisk kan forekomme sammen med lulesamisk."
+            },
+            {
+              "value": "norsk-lulesamisk-sørsamisk-nordsamisk-skoltesamisk-kvensk",
+              "label": "Brukes i norsk forvaltingsområde, lulesamisk område der sørdsamisk kan forekomme sammen med lulesamisk."
+            },
+            {
+              "value": "norsk-nordsamisk-lulesamisk-sørsamisk-kvensk",
+              "label": "Brukes i norsk forvaltingsområde, nordsamisk område der lulesamisk kan forekomme sammen med nordsamisk."
+            },
+            {
+              "value": "norsk-nordsamisk-skoltesamisk-lulesamisk-sørsamisk-kvensk",
+              "label": "Brukes i norsk forvaltingsområde, nordsamisk område der skoltesamisk kan forekomme sammen med nordsamisk."
+            },
+            {
+              "value": "norsk-skoltesamisk-nordsamisk-lulesamisk-sørsamisk-kvensk",
+              "label": "Brukes i norsk forvaltingsområde, skoltesamisk område der nordsamisk kan forekomme sammen med skoltesamisk."
+            },
+            {
+              "value": "norsk-sørsamisk-lulesamisk-nordsamisk-kvensk",
+              "label": "Brukes i norsk forvaltingsområde, sørsamisk område der lulesamisk kan forekomme sammen med sørsamisk."
+            },
+            {
+              "value": "norsk-sørsamisk-lulesamisk-nordsamisk-skoltesamisk-kvensk",
+              "label": "Brukes i norsk forvaltingsområde, sørsamisk område der lulesamisk kan forekomme sammen med sørsamisk."
+            },
+            {
+              "value": "skoltesamisk-nordsamisk-lulesamisk-sørsamisk-norsk-kvensk",
+              "label": "Brukes i samisk forvaltningsområde, skoltesamisk område."
+            },
+            {
+              "value": "sørsamisk-lulesamisk-nordsamisk-norsk-kvensk",
+              "label": "Brukes i samisk forvaltningsområde, sørdsamisk område."
+            },
+            {
+              "value": "sørsamisk-lulesamisk-nordsamisk-skoltesamisk-norsk-kvensk",
+              "label": "Brukes i samisk forvaltningsområde, sørsamisk område."
+            }
+          ],
+          "definition": "Kodeliste som angir visningsrekkefølgen til stedsnavn på forskjellig språk.\n\n<b>Det er de første fem verdiene i kodene (de norske språkene) som varierer mellom kodene</b>, ellers er det lik (alfabetisk i forhold til ISO-kodeverdien) rekkefølge på språkene som ikke er aktuelle for behandling etter lov om stadnamn.",
+          "asDictionary": "false",
+          "codeList": "http://skjema.geonorge.no/SOSI/produktspesifikasjon/Stedsnavn/5.0Utkast/2016-03-30/SpråkprioriteringKode"
+        }
+      },
+      {
+        "name": "stedsnummer",
+        "type": "Integer",
+        "description": "Stedsnummer, stedsnavnsnummer og skrivemåtenummer skal sammen utgjøre en såkalt tematisk id som brukes av registerførere som opplslagsnummer. Identifikatoren ligner litt på Gnr/Bnr/Fnr.\n\n<b>Stedsnummeret</b> er et løpende nummer systemet gir stedet som en identifikator. Stedsnummeret er unikt og kan ikke brukes om igjen.",
+        "cardinality": "1"
+      },
+      {
+        "name": "stedstatus",
+        "type": "StedstatusKode",
+        "description": "Stedstatus forteller om stedet (navneobjektet) eksisterer, er historisk eller er planlagt.",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": [
+            {
+              "value": "aktiv",
+              "label": "Objektet eksisterer."
+            },
+            {
+              "value": "feilført",
+              "label": "Objektet er feilaktig registrert."
+            },
+            {
+              "value": "planlagt",
+              "label": "Objektet eksisterer ikke ennå, men er planlagt. Denne statusen vil være aktuell ved for eksempel registrering av adressenavn for planlagte veier."
+            },
+            {
+              "value": "relikt",
+              "label": "Objektet eksisterer ikke lengre, men stedsnavnet kan fortsatt være i bruk."
+            }
+          ],
+          "definition": "Kodeliste som gir status til Sted. Om det er f.eks. aktiv, relikt eller planlagt.",
+          "asDictionary": "false",
+          "codeList": "http://skjema.geonorge.no/SOSI/produktspesifikasjon/Stedsnavn/5.0Utkast/2016-03-30/StedstatusKode"
+        }
+      },
+      {
+        "name": "tilleggsopplysninger",
+        "type": "Tilleggsopplysning",
+        "description": "Her kan registerføreren legge inn opplysninger som er relevante for stedet.",
+        "cardinality": "0..*",
+        "attributes": [
+          {
+            "name": "eksterneOpplysninger",
+            "type": "URI",
+            "description": "Lenke til opplysnnger som ligger utenfor registeret/databasen, for eksempel en nettside.",
+            "cardinality": "0..1"
+          },
+          {
+            "name": "oppdateringsdato",
+            "type": "DateTime",
+            "description": "Dato for siste oppdatering.",
+            "cardinality": "1"
+          },
+          {
+            "name": "registreringsdato",
+            "type": "DateTime",
+            "description": "Dato for første registrering.",
+            "cardinality": "1"
+          },
+          {
+            "name": "tekst",
+            "type": "CharacterString",
+            "description": "Her føres opplysninger som ikke er direkte knyttet til etymologi.",
+            "cardinality": "0..*"
+          },
+          {
+            "name": "tilleggsopplysningstype",
+            "type": "TilleggsopplysningtypeKode",
+            "description": "Viser hvilken type opplysning dette er. For eksempel kan en slik kode være \"språkfaglig\", som brukes når navneansvarlig ser behov for utdypende informasjon om et stedsnavns opphav.",
+            "cardinality": "1",
+            "valueDomain": {
+              "listedValues": [
+                {
+                  "value": "adresseinformasjonFraSSR",
+                  "label": "Denne er brukt under konverteringen fra gammelt SSR for å overføre gateident fra SSR for navneenheter med navne(objekttype)kode \"Adressenavn\"."
+                },
+                {
+                  "value": "adressekode",
+                  "label": "Felt for å registrere adressekoden fra matrikkelen."
+                },
+                {
+                  "value": "historisk",
+                  "label": "Informasjom om historien til stedsnavnet eller stedet."
+                },
+                {
+                  "value": "lokalitet",
+                  "label": "Tilleggsinformasjon om lokalitetenen som har betydning for stedsnavn."
+                },
+                {
+                  "value": "matrikkelnummerFraSSR",
+                  "label": "Denne er brukt under konverteringen fra gammelt SSR for å overføre gnr/bnr/fnr for et utvalg av navneenhetene, basert på navneobjekttyper"
+                },
+                {
+                  "value": "merknadFraSSR",
+                  "label": "Merknadstekst konvertert fra SSR. Det er ikke mulig å registrere denne typen tilleggsopplysning i ny SSR."
+                },
+                {
+                  "value": "navnesak",
+                  "label": "Navnesak"
+                },
+                {
+                  "value": "språkfaglig",
+                  "label": "Informasjon av språkfaglig karakter som tileggsopplysning til stedsnavnet."
+                }
+              ],
+              "definition": "Beskriver hva slags tilleggsopplysning dette er.",
+              "asDictionary": "false",
+              "codeList": "http://skjema.geonorge.no/SOSI/produktspesifikasjon/Stedsnavn/5.0Utkast/2016-03-30/TilleggsopplysningtypeKode"
+            }
+          }
+        ]
+      },
+      {
+        "name": "vedtaksmyndighet",
+        "type": "VedtaksmyndighetKode",
+        "description": "Vedtaksmyndigheten er bestemt av loven og avhengig av navneobjekttype og geografisk beliggenhet.",
+        "cardinality": "1",
+        "valueDomain": {
+          "listedValues": [
+            {
+              "value": "Avinor",
+              "label": "Avinor er vedtaksmyndighet for stedsnavnet."
+            },
+            {
+              "value": "Bispedømmerådet",
+              "label": "Bispedømmerådet er vedtaksmyndighet for stedsnavn på stedet."
+            },
+            {
+              "value": "departement",
+              "label": "Departementet er vedtaksmyndighet for stedsnavn på stedet."
+            },
+            {
+              "value": "Direktoratet_for_naturforvaltning",
+              "label": "Direktoratet for naturforvaltning var vedtaksmyndighet for stedsnavnet før lovens endring i 2006."
+            },
+            {
+              "value": "fylkeskommune",
+              "label": "Fylkeskommunen er vedtaksmyndighet for stedsnavn på stedet."
+            },
+            {
+              "value": "Jernbaneverket",
+              "label": "Jernbaneverket var vedtaksmyndighet når stedsnavnet ble vedtatt. Etter lovendring i 2006 har Kartverket vedtaksmyndighet på stedsnavn på stedet."
+            },
+            {
+              "value": "Klagenemnda_for_stedsnavnsaker",
+              "label": "Klagenemnda for stedsnavnsaker"
+            },
+            {
+              "value": "kommune",
+              "label": "Kommunen er vedtaksmyndighet for stedsnavnet på stedet."
+            },
+            {
+              "value": "Kongen_i_statsråd",
+              "label": "Kongen i statsråd har vedtatt stedsnavnet på stedet."
+            },
+            {
+              "value": "Kystverket",
+              "label": "Kystverket var vedtaksmyndighet når stedsnavnet ble vedtatt. Etter lovendring i 2006 har Kartverket vedtaksmyndighet på stedsnavn på stedet."
+            },
+            {
+              "value": "Norges_geologiske_undersøkelse",
+              "label": "Norges geologiske undersøkelse var vedtaksmyndighet når stedsnavnet ble vedtatt. Etter lovendring i 2006 har Kartverket vedtaksmyndighet på stedsnavn på stedet."
+            },
+            {
+              "value": "Polarinstituttet",
+              "label": "Polarinstituttet er vedtaksmyndighet for stedsnavn på stedet."
+            },
+            {
+              "value": "Posten_Norge_AS",
+              "label": "Posten var vedtaksmyndighet når stedsnavnet ble vedtatt. Etter lovendring i 2006 har Kartverket vedtaksmyndighet på stedsnavn på stedet."
+            },
+            {
+              "value": "privat_eier",
+              "label": "Privat eier kan selv bestemme stedsnavnet på stedet."
+            },
+            {
+              "value": "Reindriftsforvaltningen",
+              "label": "Reindriftsforvaltningen var vedtaksmyndighet når stedsnavnet ble vedtatt. Etter lovendring i 2006 har Kartverket vedtaksmyndighet på stedsnavn på stedet."
+            },
+            {
+              "value": "Statens_kartverk",
+              "label": "Kartverket er vedtaksmyndighet for stedsnavn på stedet."
+            },
+            {
+              "value": "Statens_vegvesen",
+              "label": "Statens vegvesen var vedtaksmyndighet når stedsnavnet ble vedtatt. Etter lovendring i 2006 har Kartverket vedtaksmyndighet på stedsnavn på stedet."
+            },
+            {
+              "value": "Statskog",
+              "label": "Statskog var vedtaksmyndighet når stedsnavnet ble vedtatt. Etter lovendring i 2006 har Kartverket vedtaksmyndighet på stedsnavn på stedet."
+            },
+            {
+              "value": "utenforLovensVirkeområde",
+              "label": "Utenfor lovens virkeområde"
+            }
+          ],
+          "definition": "Liste over vedtaksmyndigheter for skrivemåten.",
+          "asDictionary": "false",
+          "codeList": "http://skjema.geonorge.no/SOSI/produktspesifikasjon/Stedsnavn/5.0Utkast/2016-03-30/VedtaksmyndighetKode"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "Fellesegenskaper"
+      ],
+      "associations": [
+        {
+          "target": "Stedsnavn",
+          "role": "stedsnavn",
+          "cardinality": "1..*"
+        },
+        {
+          "target": "Matrikkelreferanse",
+          "role": "matrikkelreferanse",
+          "cardinality": "0..1"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Vedtaksområde",
+    "description": "Skal brukes for å vise utstrekningen av et samlevedtak. Et gitt vedtaksområde kan brukes av flere samlevedtak.",
+    "attributes": [
+      {
+        "name": "område",
+        "type": "CharacterString",
+        "description": "Område er et slags navn for å lettere kunne søke opp vedtaksområdet og gjenbruke det i andre samlevedtak. Vedtaksområdene vil som regel være et administrativt område, jf. stedsnavnloven § 5 tredje ledd, men det kan ha blitt registrert gjort samlevdtak utover disse. I fremtiden kan man også se for seg en endring som gjør at det må vær mulig å gjøre samlevedtak med helt andre vedtaksområder enn kun innenfor et administrativt område.",
+        "cardinality": "1"
+      },
+      {
+        "name": "oppdatertdato",
+        "type": "DateTime",
+        "description": "Dato for siste oppdatering.",
+        "cardinality": "1"
+      },
+      {
+        "name": "polygon",
+        "type": "GM_Surface",
+        "description": "Geometri for vedtaksområde.",
+        "cardinality": "1"
+      },
+      {
+        "name": "registrertdato",
+        "type": "DateTime",
+        "description": "Dato for første registrering.",
+        "cardinality": "1"
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "Fellesegenskaper"
+      ],
+      "associations": []
+    }
+  },
+  {
+    "name": "Fellesegenskaper",
+    "description": "abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.\n\nMerknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.",
+    "attributes": [
+      {
+        "name": "gyldigFra",
+        "type": "DateTime",
+        "description": "Tidspunktet når objektet oppstod i den virkelige verden",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "gyldigTil",
+        "type": "DateTime",
+        "description": "Tidspunktet når objektet opphørte å eksistere i den virkelige verden",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "description": "unik identifikasjon av et objekt",
+        "cardinality": "1",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1"
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+            "cardinality": "1"
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans)",
+            "cardinality": "0..1"
+          }
+        ]
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).",
+        "cardinality": "1"
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    }
+  }
+]
