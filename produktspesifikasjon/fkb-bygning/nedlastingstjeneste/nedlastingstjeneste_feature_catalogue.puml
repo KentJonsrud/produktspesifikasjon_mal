@@ -1,0 +1,71 @@
+@startuml
+title FKB-Bygning - nedlastingstjeneste - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  abstract class "KvalitetPåkrevd" as KvalitetP_krevd <<featureType>> {
+    + identifikasjon [1] : Identifikasjon
+    + oppdateringsdato [1] : Date
+    + sluttdato [0..1] : Date
+    + datafangstdato [1] : Date
+    + verifiseringsdato [0..1] : Date
+    + registreringsversjon [0..1] : Registreringsversjon
+    + informasjon [0..1] : CharacterString
+    + kvalitet [1] : Posisjonskvalitet
+  }
+
+  abstract class KvalitetOpsjonell <<featureType>> {
+    + identifikasjon [1] : Identifikasjon
+    + oppdateringsdato [1] : Date
+    + sluttdato [0..1] : Date
+    + datafangstdato [1] : Date
+    + verifiseringsdato [0..1] : Date
+    + registreringsversjon [0..1] : Registreringsversjon
+    + informasjon [0..1] : CharacterString
+    + kvalitet [0..1] : Posisjonskvalitet
+  }
+
+  abstract class Fellesegenskaper <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class Posisjonskvalitet {
+    + datafangstmetode [1] : Datafangstmetode
+    + nøyaktighet [0..1] : Integer
+    + synbarhet [0..1] : Synbarhet
+    + datafangstmetodeHøyde [0..1] : Datafangstmetode
+    + nøyaktighetHøyde [0..1] : Integer
+  }
+
+  class Identifikasjon {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+}
+
+  Fellesegenskaper <|-- KvalitetP_krevd
+  Fellesegenskaper <|-- KvalitetOpsjonell
+
+@enduml
