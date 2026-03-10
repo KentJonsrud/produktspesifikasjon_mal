@@ -1,0 +1,445 @@
+[
+  {
+    "name": "Sted",
+    "description": "Sted inneholder opplysninger som beskriver lokaliteten/objektet, blant annet navneobjekttype, beliggenhet og referanser.",
+    "attributes": [
+      {
+        "name": "kommune",
+        "type": "Kommune",
+        "description": "Stedets kommunetilknytning avhenger av stedets geografiske beligenhet og viser hvilke kommuner stedet ligger i.",
+        "cardinality": "0..*",
+        "attributes": [
+          {
+            "name": "fylkesnavn",
+            "type": "CharacterString",
+            "description": "Navnet på fylket, navnet vises på flere språk med riktig rekkefølge på språkene dersom fylket er flerspråklig.",
+            "cardinality": "1"
+          },
+          {
+            "name": "fylkesnummer",
+            "type": "Fylkesnummer",
+            "description": "Fylkesnummer er definerte identifikasjonskoder for norske fylker og to territorier (Svalbard og Jan Mayen).",
+            "cardinality": "1",
+            "valueDomain": {
+              "definition": "Tosifret fylkesnummer. Merk at denne kodelista er spesifikk for stedsnavndata siden den inneholder både gjeldende og utgåtte fylker.",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer"
+            }
+          },
+          {
+            "name": "kommunenavn",
+            "type": "CharacterString",
+            "description": "Navnet på kommunen, navnet vises på flere språk i riktig rekkefølge dersom kommunen er flerspråklig.",
+            "cardinality": "1"
+          },
+          {
+            "name": "kommunenummer",
+            "type": "Kommunenummer",
+            "description": "Kommunenummer er et firesifret nummer for å identifisere kommuner (eks.: 0101) som er unikt for hver kommune i Norge.",
+            "cardinality": "1",
+            "valueDomain": {
+              "definition": "Firesifret kommunenummer. Merk at denne kodelista er spesifikk for stedsnavndata siden den inneholder både gjeldende og utgåtte kommuner.",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer"
+            }
+          }
+        ]
+      },
+      {
+        "name": "land",
+        "type": "LandKode",
+        "description": "Landet som stedet er i.",
+        "cardinality": "1",
+        "valueDomain": {
+          "definition": "Navn på land + «Internasjonalt farvann» og «Uspesifisert».",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/landkode"
+        }
+      },
+      {
+        "name": "matrikkelenhetreferanse",
+        "type": "Matrikkelenhetreferanse",
+        "description": "Referanse til matrikkelenhet i matrikkelen (eiendomsregisteret).",
+        "cardinality": "0..1",
+        "attributes": [
+          {
+            "name": "bruksnummer",
+            "type": "Integer",
+            "description": "Bruksnummer fra matrikkelen.",
+            "cardinality": "1"
+          },
+          {
+            "name": "festenummer",
+            "type": "Integer",
+            "description": "Festenummer fra matrikkelen.",
+            "cardinality": "0..1"
+          },
+          {
+            "name": "gaardsnummer",
+            "type": "Integer",
+            "description": "Gårdsnummer fra matrikkelen.",
+            "cardinality": "1"
+          },
+          {
+            "name": "kommunenummer",
+            "type": "Kommunenummer",
+            "description": "Kommunenummer fra matrikkelen.",
+            "cardinality": "1",
+            "valueDomain": {
+              "definition": "Firesifret kommunenummer. Merk at denne kodelista er spesifikk for stedsnavndata siden den inneholder både gjeldende og utgåtte kommuner.",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer"
+            }
+          },
+          {
+            "name": "matrikkelId",
+            "type": "Integer",
+            "description": "Unik matrikkelenhetId for matrikkelenhetreferanser.",
+            "cardinality": "1"
+          },
+          {
+            "name": "oppdateringsdato",
+            "type": "DateTime",
+            "description": "Dato for siste oppdatering av matrikkelreferanse.",
+            "cardinality": "1"
+          },
+          {
+            "name": "registreringsdato",
+            "type": "DateTime",
+            "description": "Dato for registrering av matrikkelreferanse.",
+            "cardinality": "1"
+          },
+          {
+            "name": "seksjonsnummer",
+            "type": "Integer",
+            "description": "Seksjonsnummer fra matrikkelen.",
+            "cardinality": "0..1"
+          }
+        ]
+      },
+      {
+        "name": "multikurve",
+        "type": "GM_MultiCurve",
+        "description": "Stedets utstrekning representert som multikurve. Kun aktuell for steder som har navneobjekttypen Adressenavn.",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "multipunkt",
+        "type": "GM_MultiPoint",
+        "description": "Multipunktet består av posisjoner navnet til det aktuelle stedet har blitt presentert på offentlig-utgitte kart.\n\nSom regel representerer det første punkt i multipunktet stedets faktiske beliggenhet.",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "navneobjektgruppe",
+        "type": "Navneobjektgruppe",
+        "description": "Mellomnivå i navneobjekttype-hierarkiet.",
+        "cardinality": "1",
+        "valueDomain": {
+          "definition": "Mellomnivå i navneobjekttype-hierarkiet.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/navneobjektgruppe"
+        }
+      },
+      {
+        "name": "navneobjekthovedgruppe",
+        "type": "Navneobjekthovedgruppe",
+        "description": "Generelle navneobjekttypegrupper, øverste nivå i navneobjekttypehierarkiet.",
+        "cardinality": "1",
+        "valueDomain": {
+          "definition": "Øverste nivå i navneobjekttype-hierarkiet.\nHovedgruppene følger i hovedsak INSPIRE Geographical Names «Named Place Type», med følgende unntak:\n1. Hovedgruppen «Bebyggelse» omfatter både INSPIREs «populatedPlace» og «building».\n2. Hovedgruppene «sjø» og «ferskvann» kan betraktes som underkategorier av INSPIREs «hydrography».",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/navneobjekthovedgruppe"
+        }
+      },
+      {
+        "name": "navneobjekttype",
+        "type": "Navneobjekttype",
+        "description": "Stedets navneobjekttype. Det mest spesifikke nivået i navneobjekttypehierarkiet.",
+        "cardinality": "1",
+        "valueDomain": {
+          "definition": "Sted-/lokalitetstyper.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/navneobjekttype"
+        }
+      },
+      {
+        "name": "område",
+        "type": "GM_Surface",
+        "description": "Polygon som representerer stedets utstrekning.",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "posisjon",
+        "type": "GM_Point",
+        "description": "Punkt som representerer stedets beliggenhet.",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "senterlinje",
+        "type": "GM_Curve",
+        "description": "Kurve som representerer stedets utstrekning.",
+        "cardinality": "0..1"
+      },
+      {
+        "name": "sortering",
+        "type": "Sortering1Kode",
+        "description": "Sorteringskoden brukes til utvalg og presentasjon i SSR-klienten (internt saksbehandlingssystem). Skalaen går fra A til N, der steder med viktighetA er kun relevante innenfor et lite område og viktighetN er brukt på nasjonsnavn.",
+        "cardinality": "1",
+        "valueDomain": {
+          "definition": "Kode for sortering steder etter hvor viktig stedet/lokaliteten er. Koden brukes av saksbehandlingsklienten (SSR) til å vurdere om stedsnavnet skal vises i ulike målestokker og ved plasseringskonflikt under visning i kartbildet. Alle store bokstaver fra og med A til og med N, A er minst viktig og N er viktigst.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/sortering1kode"
+        }
+      },
+      {
+        "name": "språkprioritering",
+        "type": "SpråkprioriteringKode",
+        "description": "Rekkefølge for presentasjon av et steds stedsnavn når stedet har navn på flere språk.",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "definition": "Prioriteringsrekkefølge som benyttes for presentasjon når et sted har navn på flere av de offisielle norske språkene, jf. forskriften § 7 annet ledd.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/språkprioriteringkode"
+        }
+      },
+      {
+        "name": "stedsnavn",
+        "type": "Stedsnavn",
+        "description": "Stedets navn. Et sted kan ha ett eller flere navn på ett eller flere språk.",
+        "cardinality": "1..*",
+        "attributes": [
+          {
+            "name": "annenSkrivemåte",
+            "type": "Skrivemåte",
+            "description": "Skrivemåte(r) som er registrert på det aktuelle navnet, men som ikke er anbefalt å bruke i det offentlige.",
+            "cardinality": "0..*",
+            "attributes": [
+              {
+                "name": "komplettskrivemåte",
+                "type": "CharacterString",
+                "description": "Fullstendig skrivemåte.\nSkrivemåter av samiske og kvenske navn kan ha registrert flere kasusformer i SSR, og i de tilfellene vil det være kasusene Genitiv eller Genitiv/Akkusativ som presenteres i dette datasettet.",
+                "cardinality": "1"
+              },
+              {
+                "name": "skrivemåtenummer",
+                "type": "Integer",
+                "description": "Skrivemåtenummeret er unikt innenfor stedsnavnet skrivemåten er registrert på.\nSSR-oppslagsnummeret består av Stedsnummer, Stedsnavnnummer og Skrivemåtenummer (eksempel: 1234/1/1).",
+                "cardinality": "1"
+              },
+              {
+                "name": "skrivemåtestatus",
+                "type": "SkrivemåtestatusKode",
+                "description": "Gjeldende status for skrivemåten.",
+                "cardinality": "1",
+                "valueDomain": {
+                  "definition": "Statuskodene beskriver skrivemåters autorisasjonsgrad. Statusene Vedtatt, Godkjent og Vedtatt navneledd tilsier at skrivemåten er autorisert til offentlig bruk. Statusen Privat brukes på navneobjekt som ikke skal behandles etter Lov om stadnamn.",
+                  "asDictionary": "true",
+                  "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/skrivemåtestatuskode"
+                }
+              },
+              {
+                "name": "statusdato",
+                "type": "Date",
+                "description": "Datoen den gjeldende skrivemåtestatusen gjelder fra.",
+                "cardinality": "1"
+              }
+            ]
+          },
+          {
+            "name": "navnesaksstatusdato",
+            "type": "Date",
+            "description": "Datoen som gjeldende navnesaksstatus gjelder fra.",
+            "cardinality": "1"
+          },
+          {
+            "name": "navnesakstatus",
+            "type": "NavnesakstatusKode",
+            "description": "Gjeldende saksbehandlingsstatus for stedsnavnet og de tilhørende skrivemåtene.",
+            "cardinality": "1",
+            "valueDomain": {
+              "definition": "Saksbehandlingsstatuser for stedsnavn.",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/navnesakstatuskode"
+            }
+          },
+          {
+            "name": "navnestatus",
+            "type": "Navnestatuskode",
+            "description": "Gjeldende navnestatus for stedsnavnet.",
+            "cardinality": "1",
+            "valueDomain": {
+              "definition": "Alle navn i SSR har en navnestatus. Navnestatus har mest relevans for steder som har to eller flere stedsnavn på samme språk. Blant stedsnavn som tilhører samme sted fungerer navnestatusene til stedsnavn på ett språk er uavhengige av navnestatusene til stedsnavn på andre språk.\n\nNavnestatusene Hovednavn, Sidenavn og Undernavn er autoriserte for offentlig bruk dersom det aktuelle stedsnavnet har en skrivemåte som er autorisert for offentlig bruk. Navnestatusene gir føringer for presentasjon av et steds navn, men ellers er navna å regne som likestilte. Offentlige organ kan velge å bruke bare et hovednavn, ett sidenavn eller et undernavn ved presentasjon eller skilting, men i praksis vil det være mest praktisk for publikum å benytte hovednavn fremfor undernavn.\n\nNavnestatusene Historisk, Feilført og Avslått navnevalg er ikke autoriserte for offentlig bruk.",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/navnestatuskode"
+            }
+          },
+          {
+            "name": "offentligBruk",
+            "type": "Boolean",
+            "description": "True = Stedsnavnet kan brukes i offentlig kommunikasjon.\nFalse = Stedsnavnet skal ikke brukes i offentlig kommunikasjon.",
+            "cardinality": "1"
+          },
+          {
+            "name": "skrivemåte",
+            "type": "Skrivemåte",
+            "description": "Skrivemåten(e) som er anbefalt til offentlig bruk. Som regel er det bare én anbefalt skrivemåte, men det kan forekomme stedsnavn med to eller flere vedtatte skrivemåter.",
+            "cardinality": "1..*",
+            "attributes": [
+              {
+                "name": "komplettskrivemåte",
+                "type": "CharacterString",
+                "description": "Fullstendig skrivemåte.\nSkrivemåter av samiske og kvenske navn kan ha registrert flere kasusformer i SSR, og i de tilfellene vil det være kasusene Genitiv eller Genitiv/Akkusativ som presenteres i dette datasettet.",
+                "cardinality": "1"
+              },
+              {
+                "name": "skrivemåtenummer",
+                "type": "Integer",
+                "description": "Skrivemåtenummeret er unikt innenfor stedsnavnet skrivemåten er registrert på.\nSSR-oppslagsnummeret består av Stedsnummer, Stedsnavnnummer og Skrivemåtenummer (eksempel: 1234/1/1).",
+                "cardinality": "1"
+              },
+              {
+                "name": "skrivemåtestatus",
+                "type": "SkrivemåtestatusKode",
+                "description": "Gjeldende status for skrivemåten.",
+                "cardinality": "1",
+                "valueDomain": {
+                  "definition": "Statuskodene beskriver skrivemåters autorisasjonsgrad. Statusene Vedtatt, Godkjent og Vedtatt navneledd tilsier at skrivemåten er autorisert til offentlig bruk. Statusen Privat brukes på navneobjekt som ikke skal behandles etter Lov om stadnamn.",
+                  "asDictionary": "true",
+                  "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/skrivemåtestatuskode"
+                }
+              },
+              {
+                "name": "statusdato",
+                "type": "Date",
+                "description": "Datoen den gjeldende skrivemåtestatusen gjelder fra.",
+                "cardinality": "1"
+              }
+            ]
+          },
+          {
+            "name": "språk",
+            "type": "SpråkKode",
+            "description": "Språk for det aktuelle stedsnavnet.",
+            "cardinality": "1",
+            "valueDomain": {
+              "definition": "Språk for stedsnavn.",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/stedsnavn/SpråkKode"
+            }
+          },
+          {
+            "name": "stedsnavnnummer",
+            "type": "Integer",
+            "description": "Stedsnavnsnummeret er unikt innenfor stedet skrivemåten er registrert på.\nSSR-oppslagsnummeret består av Stedsnummer, Stedsnavnnummer og Skrivemåtenummer (eksempel: 1234/1/1).",
+            "cardinality": "1"
+          }
+        ]
+      },
+      {
+        "name": "stedsnummer",
+        "type": "Integer",
+        "description": "Stedsnummeret er unikt i SSR.\nSSR-oppslagsnummeret består av Stedsnummer, Stedsnavnnummer og Skrivemåtenummer (eks: 1234/1/1).",
+        "cardinality": "1"
+      },
+      {
+        "name": "vegreferanse",
+        "type": "Vegreferanse",
+        "description": "Referanse til Veg i matrikkelen. Det er kun steder med navneobjekttypen Adressenavn som har denne typen referanse.",
+        "cardinality": "0..1",
+        "attributes": [
+          {
+            "name": "adressekode",
+            "type": "Integer",
+            "description": "Unik kode for vegen i matrikkelen i gjeldende kommune.",
+            "cardinality": "1"
+          },
+          {
+            "name": "kommunenummer",
+            "type": "Kommunenummer",
+            "description": "4 sifret kommunenummer.",
+            "cardinality": "1",
+            "valueDomain": {
+              "definition": "Firesifret kommunenummer. Merk at denne kodelista er spesifikk for stedsnavndata siden den inneholder både gjeldende og utgåtte kommuner.",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer"
+            }
+          },
+          {
+            "name": "matrikkelId",
+            "type": "Integer",
+            "description": "Unik vegId for vegreferanser og unik matrikkelenhetId for matrikkelenhetreferanser.",
+            "cardinality": "1"
+          },
+          {
+            "name": "oppdateringsdato",
+            "type": "DateTime",
+            "description": "Dato for siste oppdatering av matrikkelreferanse.",
+            "cardinality": "1"
+          },
+          {
+            "name": "registreringsdato",
+            "type": "DateTime",
+            "description": "Dato for registrering av matrikkelreferanse.",
+            "cardinality": "1"
+          }
+        ]
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "Fellesegenskaper"
+      ],
+      "associations": []
+    }
+  },
+  {
+    "name": "Fellesegenskaper",
+    "description": "abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.\n\nMerknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.",
+    "attributes": [
+      {
+        "name": "datauttaksdato",
+        "type": "DateTime",
+        "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+        "cardinality": "1"
+      },
+      {
+        "name": "identifikasjon",
+        "type": "Identifikasjon",
+        "description": "unik identifikasjon av et objekt",
+        "cardinality": "1",
+        "attributes": [
+          {
+            "name": "lokalId",
+            "type": "CharacterString",
+            "description": "lokal identifikator av et objekt\n\nMerknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1"
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI\n\nEksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0\n\nMerknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no",
+            "cardinality": "1"
+          },
+          {
+            "name": "versjonId",
+            "type": "CharacterString",
+            "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans)",
+            "cardinality": "1"
+          }
+        ]
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).",
+        "cardinality": "1"
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    }
+  }
+]
