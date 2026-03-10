@@ -1,0 +1,106 @@
+@startuml
+title Stedsnavn - nedlastingstjeneste - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class Sted <<featureType>> {
+    + datauttaksdato [1] : Date
+    + identifikasjon [1] : Identifikasjon
+    + oppdateringsdato [1] : Date
+    + kommune [0..*] : Kommune
+    + land [1] : LandKode
+    + matrikkelenhetreferanse [0..1] : Matrikkelenhetreferanse
+    + multikurve [0..1] : GM_MultiCurve
+    + multipunkt [0..1] : GM_MultiPoint
+    + navneobjektgruppe [1] : Navneobjektgruppe
+    + navneobjekthovedgruppe [1] : Navneobjekthovedgruppe
+    + navneobjekttype [1] : Navneobjekttype
+    + område [0..1] : GM_Surface
+    + posisjon [0..1] : GM_Point
+    + senterlinje [0..1] : GM_Curve
+    + sortering [1] : Sortering1Kode
+    + språkprioritering [0..1] : SpråkprioriteringKode
+    + stedsnavn [1..*] : Stedsnavn
+    + stedsnummer [1] : Integer
+    + vegreferanse [0..1] : Vegreferanse
+  }
+
+  abstract class Fellesegenskaper <<featureType>> {
+    ' Ingen attributter
+  }
+
+  class Kommune {
+    + fylkesnavn [1] : CharacterString
+    + fylkesnummer [1] : Fylkesnummer
+    + kommunenavn [1] : CharacterString
+    + kommunenummer [1] : Kommunenummer
+  }
+
+  class Matrikkelenhetreferanse {
+    + bruksnummer [1] : Integer
+    + festenummer [0..1] : Integer
+    + gaardsnummer [1] : Integer
+    + kommunenummer [1] : Kommunenummer
+    + matrikkelId [1] : Integer
+    + oppdateringsdato [1] : Date
+    + registreringsdato [1] : Date
+    + seksjonsnummer [0..1] : Integer
+  }
+
+  class Stedsnavn {
+    + annenSkrivemåte [0..*] : Skrivemåte
+    + navnesaksstatusdato [1] : Date
+    + navnesakstatus [1] : NavnesakstatusKode
+    + navnestatus [1] : Navnestatuskode
+    + offentligBruk [1] : Boolean
+    + skrivemåte [1..*] : Skrivemåte
+    + språk [1] : SpråkKode
+    + stedsnavnnummer [1] : Integer
+  }
+
+  class "Skrivemåte" as Skrivem_te {
+    + komplettskrivemåte [1] : CharacterString
+    + skrivemåtenummer [1] : Integer
+    + skrivemåtestatus [1] : SkrivemåtestatusKode
+    + statusdato [1] : Date
+  }
+
+  class Vegreferanse {
+    + adressekode [1] : Integer
+    + kommunenummer [1] : Kommunenummer
+    + matrikkelId [1] : Integer
+    + oppdateringsdato [1] : Date
+    + registreringsdato [1] : Date
+  }
+
+  class Identifikasjon {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [1] : CharacterString
+  }
+}
+
+  Fellesegenskaper <|-- Sted
+
+@enduml
