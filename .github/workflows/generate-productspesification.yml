@@ -210,6 +210,8 @@ jobs:
               sc_targets.append("xsd")
           if "jsonschema" in selected_outputs:
               sc_targets.append("json")
+          if "ldproxy" in selected_outputs:
+              sc_targets.append("ldproxy")
           shapechange_targets = ",".join(sc_targets)
           run_shapechange = "true" if shapechange_targets and scopes else "false"
 
