@@ -4,7 +4,7 @@
   "format": "text/html",
   "date": {
     "creation": "2019-01-29",
-    "revision": "2026-08-22"
+    "revision": "2026-08-24"
   },
   "language": "nor",
   "contact": {
@@ -175,14 +175,14 @@
       "temporalElement": {
         "timePeriod": {
           "beginPosition": "2019-01-29",
-          "endPosition": "2026-08-22"
+          "endPosition": "2026-08-24"
         }
       }
     },
     "date": {
       "creation": "2019-01-29",
       "publication": "2019-01-29",
-      "revision": "2026-08-22"
+      "revision": "2026-08-24"
     },
     "language": "nor"
   },
@@ -192,6 +192,13 @@
         "scopeIdentification": "Hele datasettet",
         "level": "dataset",
         "levelDescription": "Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser"
+      }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "Ny datakilde",
+        "level": "dataset",
+        "levelDescription": "sssss"
       }
     }
   ],
@@ -303,7 +310,7 @@
   "metadataSection": {
     "metadataStandard": "ISO19115",
     "metadataStandardVersion": "2003",
-    "metadataDate": "2026-08-23",
+    "metadataDate": "2026-08-26",
     "language": "nor",
     "contact": {
       "organizationName": "Kartverket",

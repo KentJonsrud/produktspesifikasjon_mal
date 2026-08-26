@@ -24,14 +24,14 @@ logo: "https://register.geonorge.no/data/organizations/971040238_Kartverket_lite
 
 - **Tidsperiode**:
   - **Fra**: 2019-01-29
-  - **Til**: 2026-08-22
+  - **Til**: 2026-08-24
 
 ## Om spesifikasjonen
 
 
 > **Denne versjonen av produktspesifikasjonen:** <br>
 > **Opprettet dato:** 2019-01-29<br>
-> **Endret dato:** 2026-08-22<br>
+> **Endret dato:** 2026-08-24<br>
 > **Språk:** nor<br>
 > **Kontaktinformasjon:** Kartverket, [kundesenter@kartverket.no](mailto:kundesenter@kartverket.no)
 
@@ -75,6 +75,26 @@ Analyse og presentasjon i GIS-system. Presentasjon av statistikk og analyser. Pr
 **Nivå**: dataset
 
 **Nivåbeskrivelse**: Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser
+
+### Ny datakilde
+
+**Nivå**: dataset
+
+**Nivåbeskrivelse**: sssss
+
+## Datainnhold og struktur
+
+
+
+### Datamodell - Ny datakilde
+
+
+
+<a href="ny-datakilde/ny-datakilde_feature_catalogue.png" title="Klikk for stor visning"><img src="ny-datakilde/ny-datakilde_feature_catalogue.png" alt="Datamodell Ny datakilde" style="max-width: 100%; height: auto;" /></a>
+
+
+
+➡️ [Se full datamodell for omfang "Ny datakilde" (diagram per pakke og objektkatalog)](ny-datakilde/objektkatalog.html)
 
 ## Referansesystem
 
@@ -121,7 +141,7 @@ Analyse og presentasjon i GIS-system. Presentasjon av statistikk og analyser. Pr
 
 **Metadatastandardversjon**: 2003
 
-**Metadatadato**: 2026-08-23
+**Metadatadato**: 2026-08-26
 
 **språk**: nor
 

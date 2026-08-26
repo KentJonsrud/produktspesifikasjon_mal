@@ -1,0 +1,100 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Stedsnavn (komplett SSR) - Ny datakilde - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class Sted <<featureType>> {
+    + kommune [0..*] : Kommune
+    + land [1] : LandKode
+    + navneobjektgruppe [1] : Navneobjektgruppe
+    + navneobjekthovedgruppe [1] : Navneobjekthovedgruppe
+    + navneobjekttype [1] : Navneobjekttype
+    + posisjon [1] : GM_Object
+    + sortering [1] : Sortering
+    + språkprioritering [0..1] : SpråkprioriteringKode
+    + stedsnummer [1] : Integer
+    + stedstatus [1] : StedstatusKode
+    + tilleggsopplysninger [0..*] : Tilleggsopplysning
+    + vedtaksmyndighet [1] : VedtaksmyndighetKode
+  }
+
+  class "Vedtaksområde" as Vedtaksomr_de <<featureType>> {
+    + område [1] : CharacterString
+    + oppdatertdato [1] : Date
+    + polygon [1] : GM_Surface
+    + registrertdato [1] : Date
+  }
+
+  abstract class Fellesegenskaper <<featureType>> {
+    + gyldigFra [0..1] : Date
+    + gyldigTil [0..1] : Date
+    + identifikasjon [1] : Identifikasjon
+    + oppdateringsdato [1] : Date
+  }
+
+  class Kommune <<dataType>> {
+    + fylkesnavn [1] : CharacterString
+    + fylkesnummer [1] : Fylkesnummer
+    + kommunenavn [1] : CharacterString
+    + kommunenummer [1] : Kommunenummer
+  }
+
+  class Sortering <<dataType>> {
+    + sortering1Kode [1] : Sortering1Kode
+    + sortering2Kode [1] : Sortering2Kode
+  }
+
+  class Tilleggsopplysning <<dataType>> {
+    + eksterneOpplysninger [0..1] : URI
+    + oppdateringsdato [1] : Date
+    + registreringsdato [1] : Date
+    + tekst [0..*] : CharacterString
+    + tilleggsopplysningstype [1] : TilleggsopplysningtypeKode
+  }
+
+  class Identifikasjon <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+
+  class Stedsnavn {
+  }
+
+  class Matrikkelreferanse {
+  }
+}
+
+  Fellesegenskaper <|-- Sted
+  Sted --> Stedsnavn : stedsnavn [1..*]
+  Sted --> Matrikkelreferanse : matrikkelreferanse [0..1]
+  Fellesegenskaper <|-- Vedtaksomr_de
+
+@enduml
