@@ -1,0 +1,10 @@
+metadataId: 24d7e9d1-87f6-45a0-b38e-3447f8d7f9a1
+output_directory: produktspesifikasjon
+product_slug: matrikkelen_bygningspunkt
+updated: '2026-09-02'
+outputs: xsd
+scopes:
+- name: Ny datakilde
+  url: https://sosi.geonorge.no/svn/SOSI/SOSI%20Del%203/Statens%20kartverk/Matrikkelen-Bygningspunkt_20210901.xml
+  generator: xmi
+  description: ''
