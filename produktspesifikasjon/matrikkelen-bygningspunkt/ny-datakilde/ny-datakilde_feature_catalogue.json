@@ -1,0 +1,969 @@
+[
+  {
+    "name": "Bygning",
+    "description": "Bygning er matrikkelens representasjon av en planlagt, under oppføring, fullført eller av en eller annen grunn utgått bygning. Alle bygninger oppført etter 1983 er registrert. I enkelte kommuner har man registrert samtlige bygninger.\n\nEn bygning er identifisert med sitt bygningsnummer som er unikt på tvers av kommuner. Enhver bygning har en bygningsstatus som angir tilstand ved siste registrering. Det lagres også historikk for dette.\n\nEn bygning har en eller flere bruksenheter som beskriver logiske enheter ved bygningen (leiligheter, lokaler). Hver av disse kan ha en egen knytning til adresse og matrikkelenhet.\nFor bygninger registreres enkelte endringer slik at det er mulig å se hva de enkelte endringer medførte for bygningen. Dette er aktuelt for ombygginger og tilbygging som medfører byggesaksbehandlinger. Dette blir gjort ved at det registreres en \"bygningsendring\" når endringen påbegynnes. Ved bygningsendringens ferdigstilling vil bygningen endres med verdier fra bygningsendringen.\n\nMerknad: Bygninger over 15 kvadratmeter skal registreres i matrikkelen",
+    "attributes": [
+      {
+        "name": "bygningstype",
+        "type": "BygningstypeKode",
+        "description": "Bygningstype sier hva bygningen er brukt til",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Andre småhus med 3 boliger eller flere",
+              "label": "Andre småhus med 3 boliger eller flere"
+            },
+            {
+              "value": "Annen boligbygning (sekundærbolig reindrift)",
+              "label": "Annen boligbygning/sekundærbolig (f.eks. sekundærbolig reindrift)"
+            },
+            {
+              "value": "Annen bygning for bofellesskap",
+              "label": "Annen bygning for bofellesskap, eller bygning som har nær tilknytning til / tjener slik(e) bygning(er)"
+            },
+            {
+              "value": "Annen bygning for overnatting",
+              "label": "Annen bygning for overnatting; andre bygninger som ikke kan plasseres i de underpunktene nevnt over, men som er bygning for overnatting, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)"
+            },
+            {
+              "value": "Annen bygninger for religiøse aktiviteter",
+              "label": "bygninger som ikke passer inn under ovennevnte kategorier, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)."
+            },
+            {
+              "value": "Annen ekspedisjons- og terminalbygning",
+              "label": "Annen ekspedisjons- og terminalbygning;"
+            },
+            {
+              "value": "Annen fiskeri- og fangstbygning",
+              "label": "Annen fiskeri- og fangstbygning"
+            },
+            {
+              "value": "Annen forretningsbygning",
+              "label": "Annen forretningsbygning, eller bygning som har nær tilknytning til/tjener slik(e)\nbygning(er)"
+            },
+            {
+              "value": "Annen garasje-/hangarbygning",
+              "label": "Annen garasje- og hangarbygning, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)"
+            },
+            {
+              "value": "Annen hotellbygning",
+              "label": "annen bygning for overnatting - godkjent etter hotelloven, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)."
+            },
+            {
+              "value": "Annen idrettsbygning",
+              "label": "andre idrettsbygninger som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)."
+            },
+            {
+              "value": "Annen industribygning",
+              "label": "Annen industribygning; annen industribygning, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)"
+            },
+            {
+              "value": "Annen kontorbygning",
+              "label": "Annen kontorbygning;"
+            },
+            {
+              "value": "Annen lagerbygning",
+              "label": "Annen lagerbygning;"
+            },
+            {
+              "value": "Annen landbruksbygning",
+              "label": "Annen landbruksbygning;"
+            },
+            {
+              "value": "Annen museums- og biblioteksbygning",
+              "label": "Annen museum/biblioteksbygning; bygninger som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)."
+            },
+            {
+              "value": "Annen primærhelsebygning",
+              "label": "annen primærhelsebygning, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)"
+            },
+            {
+              "value": "Annen restaurantbygning",
+              "label": "Andre spisesteder som ikke passer inn i kodene over, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)."
+            },
+            {
+              "value": "Annen skolebygning",
+              "label": "Annen skolebygning; andre skoler som ikke passer inn under ovennevnte kategorier, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)."
+            },
+            {
+              "value": "Annen universitet, høgskole og forskningsbygning",
+              "label": "Andre universitets- og høgskolebygninger som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)."
+            },
+            {
+              "value": "Annen veg- og trafikktilsynsbygning",
+              "label": "Annen veg- og trafikktilsynsbygning"
+            },
+            {
+              "value": "Annet kulturhus",
+              "label": "Annet kulturhus; andre multifunksjonshus for kultur og idrett, herunder ungdomsklubb, som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)."
+            },
+            {
+              "value": "Annet sykehjem",
+              "label": "Annet sykehjem; annet sykehjem, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)."
+            },
+            {
+              "value": "Appartement",
+              "label": "Appartement; bygning med fritidsboliger/ boliger til utleie, boligene har bad og kokemuligheter, og leies oftest for døgn- eller ukebasis."
+            },
+            {
+              "value": "Bankbygning; posthus",
+              "label": "Bankbygning; posthus;"
+            },
+            {
+              "value": "Barnehage",
+              "label": "Barnehage; sted for opphold for barn 1 - 5 år. Kan være heldag og halvdag, og det er knyttet et visst pedagogisk innhold til oppholdet. Selve barnehagebygningen er ofte velutstyrt, med flere avdelinger, spiserom/hvilerom for de ansatte og kjøkken. Styrt av Barnehageloven"
+            },
+            {
+              "value": "Barneskole",
+              "label": "Barneskole; skolebygning for skoleklassene 1-7, for barn i alderen 6-12 år."
+            },
+            {
+              "value": "Bedehus, menighetshus",
+              "label": "Bedehus; menighetshus; kristent forsamlingshus"
+            },
+            {
+              "value": "Bensinstasjon",
+              "label": "Bensinstasjon;"
+            },
+            {
+              "value": "Bibliotek, mediatek",
+              "label": "Bibliotek; mediatek; bygning for utlån av bøker, lydbøker, filmer, aviser o.l. Moderne bibliotek/mediatek har ofte tilgjengelig PC gjerne med Internett-tilknytning."
+            },
+            {
+              "value": "Bo- og behandlingssenter",
+              "label": "Bo- og behandlingssenter; institusjoner der man bor permanent og samtidig har tilgang til et behandlingstilbud."
+            },
+            {
+              "value": "Bo- og servicesenter",
+              "label": "Bo- og servicesenter; bo- og servicesenter. For eldre, utviklingshemmede, funksjonshemmede mv"
+            },
+            {
+              "value": "Boligbrakker",
+              "label": "Boligbrakker;"
+            },
+            {
+              "value": "Brannstasjon, ambulansestasjon",
+              "label": "Brannstasjon; ambulansestasjon;"
+            },
+            {
+              "value": "Butikkbygning",
+              "label": "Butikk/forretningsbygning;"
+            },
+            {
+              "value": "Bygning for renseanlegg",
+              "label": "Bygning for renseanlegg; bygning for renseanlegg, bl.a. kloakkpumpestasjon"
+            },
+            {
+              "value": "Bygning for vannforsyning",
+              "label": "Bygning for vannforsyning, bl.a. pumpestasjon."
+            },
+            {
+              "value": "Camping- /utleiehytte",
+              "label": "Camping- /utleiehytte; enklere overnattingshytte fortrinnsvis beregnet for bilturister. Som regel er de knyttet til en campingplass. Gjestene holder vanligvis sengetøy selv\n\nUtleiehytte : Et lite hus med høy, middels eller lav standard, til midlertidig opphold. Oftest større og bedre standard enn en campinghytte, ofte ikke beliggende på en campingplass, men mer spredt i terrenget. Moderne utleiehytter har ofte høy standard og flere er ofte knyttet til et senter med vakt, kiosk/forretning og andre fasiliteter."
+            },
+            {
+              "value": "Diskotek",
+              "label": "Diskotek; bygning for ungdomsaktiviteter, særlig knyttet til musikk og dans - drevet på forretningsmessig basis."
+            },
+            {
+              "value": "Driftsbygning fiske/fangst/oppdr",
+              "label": "Driftsbygning for fiske og fangst inkludert oppdrettsanlegg"
+            },
+            {
+              "value": "Ekspedisjonsbygning, flyterminal, kontrolltårn",
+              "label": "ekspedisjonsbygning, flyterminal, kontrolltårn"
+            },
+            {
+              "value": "Enebolig",
+              "label": "Enebolig; frittliggende bygning med kun en boligenhet"
+            },
+            {
+              "value": "Enebolig m/hybel/sokkelleil.",
+              "label": "Enebolig m/hybel/sokkelleil.; enebolig som i tillegg inneholder en eller flere hybler el.l., som minimum dekkes av SSBs krav til\nhybel"
+            },
+            {
+              "value": "Fabrikkbygning",
+              "label": "Fabrikkbygning; bygning for industriell serieproduksjon"
+            },
+            {
+              "value": "Fyrstasjon, losstasjon",
+              "label": "Fyrstasjon; losstasjon;"
+            },
+            {
+              "value": "Garasje, uthus, anneks til bolig",
+              "label": "Garasje, uthus , anneks knyttet til bolig.\n\nGarasje: F rittliggende bygning som primært benyttes for parkering av bil. Kan i tillegg inneholde boder o.l.\n\nUthus: F rittliggende bygning som benyttes til oppbevaring av redskap, ved, materialer o.l.\n\nAnneks : Frittliggende bygg beregnet for overnatting og er ingen selvstendig boenhet for varig opphold. Det skal ikke registreres bruksareal til bolig på slike bygg."
+            },
+            {
+              "value": "Garasje, uthus, anneks til fritidbolig",
+              "label": "Garasje, uthus , anneks knyttet til fritidsbolig.\n\nGarasje: F rittliggende bygning som primært benyttes for parkering av bil. Kan i tillegg inneholde boder o.l.\n\nUthus: F rittliggende bygning som benyttes til oppbevaring av redskap, ved, materialer o.l.\n\nAnneks : Frittliggende bygg beregnet for overnatting og er ingen selvstendig boenhet for varig opphold. Det skal ikke registreres bruksareal til bolig på slike bygg."
+            },
+            {
+              "value": "Gatekjøkken; kioskbygning",
+              "label": "Gatekjøkken; kioskbygning; gatekjøkken, kioskbygning"
+            },
+            {
+              "value": "Godsterminal",
+              "label": "Godsterminal;"
+            },
+            {
+              "value": "Helse- og sosialsenter, helsestasjon",
+              "label": "Helse-/sosialsent. helsestasj.; senter som inneholder tilbud som f.eks. fysioterapi, kiroprakti, akupunktur, alternative behandlingsformer etc."
+            },
+            {
+              "value": "Helsestudio",
+              "label": "Helsestudio; kompakt treningsanlegg, drevet på forretningsmessig basis - ikke offentlig."
+            },
+            {
+              "value": "Helårsbolig benyttes som fritidsbolig",
+              "label": "Helårsbolig utenom våningshus som benyttes som fritidsbolig."
+            },
+            {
+              "value": "Hospits; pensjonat",
+              "label": "Hospits; pensjonat; rimelig, enkelt utstyrt overnattingssted, vanligvis serveres også mat. I byene ofte leid ut på mer fast basis; over uker, måneder eller år."
+            },
+            {
+              "value": "Hotellbygning",
+              "label": "Hotellbygning; større bygning for overnatting, godkjent etter hotelloven."
+            },
+            {
+              "value": "Hus for dyr/landbruk, lager/silo",
+              "label": "Hus for dyr/landbr.lager/silo; hus for dyr, fôrlager, strølager, landbrukssilo, høy-/korntørke"
+            },
+            {
+              "value": "Hytter, sommerhus ol fritidsbygning",
+              "label": "Hytter, sommerhus og lignende. Fritidsbygg\nHer registreres også bygning med fritidsboliger hvor boligene enten\ner seksjonert eller på annen måte disponeres eksklusivt av fast\nbruker."
+            },
+            {
+              "value": "Idrettshall",
+              "label": "Idrettshall; bygning primært til bruk for idrettsformål, innehar som regel også garderobeanlegg og kiosk."
+            },
+            {
+              "value": "Ishall",
+              "label": "Ishall; bygning primært brukt som skøytehall for lengdeløp og ishockey, innehar som regel også garderobeanlegg og kiosk."
+            },
+            {
+              "value": "Jernbane- og T-banestasjon",
+              "label": "Jernbane- og T-banestasjon;"
+            },
+            {
+              "value": "Kinobygning. teaterbygning, opera/konserthus",
+              "label": "Kino/teater/opera/konsertbygn; bygning for framføring av kino, teater, opera og konserter."
+            },
+            {
+              "value": "Kirke; kapell",
+              "label": "Kirke; kapell; kristent gudshus"
+            },
+            {
+              "value": "Kjede/atriumhus",
+              "label": "Kjedehus: Kjedehus har vertikale boligskiller der de enkelte boligenhetene er kjedetsammen med mellombygninger, ofte garasjer eller boder. Et kjedehus må bestå avminimum 2 boliger, den enkelte bolig har ofte 1 - 3 etasjer og separat inngang. Hver enkelt del skal ha eget bygningspunkt i GAB. Kjedehus benevnes også oftesom eneboliger i kjede.\n\nAtriumhus: Betegnelsenatriumhusbenyttes om sammenbygde hus ivinkelform. Ved hjelp av de tilstøtende ytterveggene på nabohusene og/ellerlevegger får hvert enkelt hus et skjermet og innelukket uteareal/hage."
+            },
+            {
+              "value": "Kjøle- og fryselager",
+              "label": "Kjøle- og fryselager;"
+            },
+            {
+              "value": "Kjøpesenter; varehus",
+              "label": "Kjøpesenter; varehus; bygning som inneholder flere forskjellige butikker"
+            },
+            {
+              "value": "Klinikk, legekontor/-senter/-vakt/dyresykehus",
+              "label": "Klinikk; legekontor/legesenter; klinikk, legekontor/-senter/-vakt."
+            },
+            {
+              "value": "Kloster",
+              "label": "Kloster; bygning der menn eller kvinner har trukket seg tilbake for å virkeliggjøre det religiøse ideal, i et lukket samfunn, og etter en bestemt regel."
+            },
+            {
+              "value": "Kombinert barne- og ungdomsskole",
+              "label": "Kombinert barne- og ungdomsskole; skolebygning for skoleklassene 1-10, for barn i alderen 6-15 år."
+            },
+            {
+              "value": "Kontor- og administrasjonsbygning, rådhus",
+              "label": "Kontor- og adm.bygning; rådhus; kontor- og administrasjonsbygning , rådhus."
+            },
+            {
+              "value": "Krematorium, gravkapell, bårehus",
+              "label": "Kremat.; gravkapell; bårehus; bygning for likbrenning (krematorium) eller bygning for oppbevaring av døde mennesker inntil begravelse og kremasjon (gravkapell og bårehus)."
+            },
+            {
+              "value": "Labratoriebygning",
+              "label": "Bygninger for laboratorievirksomhet (f.eks. i industri, sykehus og ved universiteter)."
+            },
+            {
+              "value": "Lagerhall",
+              "label": "Lagerhall;"
+            },
+            {
+              "value": "Lekepark",
+              "label": "Lekepark; sted for opphold for barn 1-5 år. Oftest 4-5 timers tilbud, men kan også være heldag. Ingen krav til pedagogisk innhold, og selve huset i lekeparken er ofte lite og dårlig utstyrt, nærmest som\nspiserom å betrakte. En lekepark er i stor grad basert på at barna skal være ute og leke."
+            },
+            {
+              "value": "Mediabygning",
+              "label": "Radio og TV-hus;"
+            },
+            {
+              "value": "Messe- og kongressbygning",
+              "label": "Messe- og kongressbygning; messe- og kongressbygning. Dette gjelder bygninger for messer, utstillinger, kongresser og konferanser"
+            },
+            {
+              "value": "Monument",
+              "label": "Monument; konstruksjoner som er minnesmerker eller kunstverker. Må tilfredsstille krav til bygning"
+            },
+            {
+              "value": "Motellbygning",
+              "label": "Motellbygning; egentlig motorhotell, oftest beliggende langs en hovedferdselsåre."
+            },
+            {
+              "value": "Museum, kunstgalleri",
+              "label": "Museum; kunstgalleri; bygning for utstilling av spesielle gjenstander, og omtale av disse (museum) eller bygning for utstilling og salg av kunst (kunstgalleri)"
+            },
+            {
+              "value": "Naust, redskapshus for fiske",
+              "label": "Naust/redskapshus for fiske; naust / redskapshus for fiske"
+            },
+            {
+              "value": "Naust; båthus; sjøbu",
+              "label": "Naust; båthus; sjøbu; frittliggende bygning som primært benyttes til plassering av båt(er). Kan i tillegg benyttes til oppbevaring av forskjellig redskap o.l"
+            },
+            {
+              "value": "Offentlig toalett",
+              "label": "Offentlig toalett;"
+            },
+            {
+              "value": "Parkeringshus",
+              "label": "Parkeringshus;"
+            },
+            {
+              "value": "Politistasjon",
+              "label": "Politistasjon;"
+            },
+            {
+              "value": "Postterminal",
+              "label": "Postterminal;"
+            },
+            {
+              "value": "Rehabiliteringsinstitusjon, kurbad",
+              "label": "Rehabiliter.institusjon.kurbad; institusjon der man bor for en kortere eller lengre periode, samtidig som man får behandling"
+            },
+            {
+              "value": "Rekkehus",
+              "label": "Rekkehus har vertikale gjennomgående felles boligskiller og hver boligenhet skal ligge på grunnen. Rekkehus skal ikke inneholde fellesareal for eksempel tilboder eller garasje. Et rekkehus må bestå av minimum 3 boliger, den enkeltebolig har ofte 1 - 3 etasjer og separat inngang. Hver enkelt del skal ha egetbygningspunkt i GAB."
+            },
+            {
+              "value": "Restaurantbygning; kafébygning",
+              "label": "Restaurantbygning; kafébygning; Restaurantbygning eller  kafébygning."
+            },
+            {
+              "value": "Samfunnshus; grendehus",
+              "label": "Samfunnshus; grendehus; sentralt aktivitetshus for bygda/grenda, multifunksjonsbygg som benyttes til alt fra idrettsarrangementer til fest og andre sosiale sammenkomster."
+            },
+            {
+              "value": "Sentralkjøkken; kantinebygning",
+              "label": "Sentralkjøkken; kantinebygning; bygning for kjøkken eller kantine tilknyttet større enhet, men der bygningen ligger for seg selv."
+            },
+            {
+              "value": "Seterhus, sel, rorbu ol",
+              "label": "Seterhus, sel, rorbu o.l.\nRorbu, hus for fiskere til bruk under de store\nsesongfiskerier."
+            },
+            {
+              "value": "Skogs- og utmarkskoie; gamme",
+              "label": "Skogs- og utmarkskoie , gamme\nSkogs- og utmarkskoie, primitiv hytte brukt av jegere og\ntømmerhuggere.\nGamme, jordhytte, særlig brukt av samer."
+            },
+            {
+              "value": "Store sammenbygde boligbygg på 2 etg",
+              "label": "Stort sammenbygde boligbygg på 2 etasjer (5 boliger eller mer)"
+            },
+            {
+              "value": "Store sammenbygde boligbygg på 3 og 4 etg",
+              "label": "Store sammenbygde boligbygg på 3 og 4 etasjer (5 boliger eller mer)"
+            },
+            {
+              "value": "Store sammenbygde boligbygg på 5 el mer",
+              "label": "Stort sammenh.boligbygg på 5 -> etasjer eller over (5 boliger eller mer); store sammenbygde boligbygg på 5 etasjer eller over (5 boliger eller mer)"
+            },
+            {
+              "value": "Stort frittliggende boligbygg på 2 etg",
+              "label": "Stort frittl. boligbygg på 2 etasjer.; stort frittliggende boligbygg på 2 etasjer (5 boliger eller mer)"
+            },
+            {
+              "value": "Stort frittliggende boligbygg på 3 og 4 etg",
+              "label": "Stort frittl. boligbygg på 3 og 4 etasj.; stort frittliggende boligbygg på 3 og 4 etasjer (5 boliger eller mer)"
+            },
+            {
+              "value": "Stort frittliggende boligbygg på 5 etg el mer",
+              "label": "Stort frittl. boligbygg på 5 -> etasjer; boligblokk på 5 etasjer eller mer (5 boliger eller mer)"
+            },
+            {
+              "value": "Studenthjem/studentboliger",
+              "label": "Studenthjem/studentboliger"
+            },
+            {
+              "value": "Svømmehall",
+              "label": "Svømmehall; bygning for innendørs badeanlegg som brukes til undervisning, mosjon, trening og konkurranser."
+            },
+            {
+              "value": "Sykehjem",
+              "label": "Sykehjem;"
+            },
+            {
+              "value": "Sykehus",
+              "label": "Annet sykehus; private sykehus eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).\n\nMerknad:\nDette gjelder bygninger for lokalsykehus, sentralsykehus, regionsykehus og universitetssykehus.\nTypen omfatter også spesialsykehus, f.eks. psykiatriske sykehus, rehabiliteringssykehus,\nreumatiske sykehus, kreftsykehus o.a."
+            },
+            {
+              "value": "Synagoge; moske",
+              "label": "Synagoge; moske; jødisk gudshus (synagoge) eller muslimsk gudshus (moské)"
+            },
+            {
+              "value": "Terrassehus",
+              "label": "Terrassehus; større bolighus i bratt terreng hvor bygningen følger hellingen i terrenget"
+            },
+            {
+              "value": "Tomannsbolig, vertikal",
+              "label": "Del av tomannsbolig-vertikal; bolighus med to boliger, inkl. våningshus på gårdsbruk"
+            },
+            {
+              "value": "Tomannsbolig; horisontaldelt",
+              "label": "Tomannsbolig; horisontaldelt; bolighus med to boliger, inkl. våningshus på gårdsbruk"
+            },
+            {
+              "value": "Trafikktilsynsbygning",
+              "label": "Biltilsynsbygning;"
+            },
+            {
+              "value": "Tribune og idrettsgarderobe",
+              "label": "Tribune og idrettsgarderobe; innebygd tribuneanlegg til utendørs idrettsanlegg (tribune) eller bygning for garderobe i tilknytning til idrettsanlegg (idrettsgarderobe)"
+            },
+            {
+              "value": "Ukjent bygningstype",
+              "label": "Bygningen er registrert i matrikkelen, men bygningstypen er ukjent."
+            },
+            {
+              "value": "Ungdomsskole",
+              "label": "Ungdomsskole; skolebygning for skoleklassene 8-10, for barn i alderen 13-15 år."
+            },
+            {
+              "value": "Universitet, høgskole m/auditorie,lesesal mv.",
+              "label": "Univ./høgskole m/auditor.leses; universitets- og høgskolebygning med integrerte funksjoner, auditorium, lesesal mv."
+            },
+            {
+              "value": "Vandrer-, feriehjem",
+              "label": "Vandrerhjem, feriehjem/-koloni , turisthytte\n\nVandrerhjem - rimelig nattelosji, ofte knyttet til medlemskap i en forening.\n\nFeriehjem/-koloni : Sted med formål å skaffe barn et sunt og styrkende ferieopphold og anledning til friluftsliv i samvær med andre barn.\n\nTuristhytte : Opprinnelig turiststasjon, fjellstue, skysstasjon, ofte kombinert med annen næring som gårdsbruk eller vertshus. Brukes også om hytter knyttet til turistforeningens løypenett, der de fleste er betjente, men også noen ubetjente hytter."
+            },
+            {
+              "value": "Veksthus",
+              "label": "Veksthus;"
+            },
+            {
+              "value": "Verkstedbygning",
+              "label": "Verkstedbygning; bygning for spesialproduksjon eller reparasjon"
+            },
+            {
+              "value": "Videregående skole",
+              "label": "Videregående skole; skolebygning for skole etter grunnskolen. Allmennfaglig eller yrkesrettet.Ikke høgskole"
+            },
+            {
+              "value": "Våninghus som benyttes som fritidsbolig",
+              "label": "Våningh. benyttes som fritidsb; våningshus som benyttes som fritidsbolig"
+            },
+            {
+              "value": "Våninghus tomannsbolig, vertikaldelt",
+              "label": "Del av våningh.tomannsb/vert.; bolighus med to boliger, inkl. våningshus på gårdsbruk"
+            },
+            {
+              "value": "Våningshus",
+              "label": "Våningshus; enebolig på gårdsbruk, kan også omfatte enebolig med hybelleilighet, sokkelleilighet ol"
+            },
+            {
+              "value": "Våningshus tomannsbolig, horisontaldelt",
+              "label": "Våningsh. tomannsb./horisont.; bolighus med to boliger, inkl. våningshus på gårdsbruk"
+            },
+            {
+              "value": "Zoologisk og botanisk hage",
+              "label": "Zoologisk/botanisk hage (byg.); bygninger i tilknytning til zoologisk og botanisk hage, gjelder også utstillingsbygninger i dyrepark."
+            }
+          ],
+          "definition": "beskrivelse av hva bygningen faktisk er brukt til, eventuelt hva bygningen er godkjent til."
+        },
+        "taggedValues": {
+          "SOSI_navn": "BYGGTYP_NBR"
+        }
+      },
+      {
+        "name": "identBygning",
+        "type": "IdentBygning",
+        "description": "unik identifikasjon av et objekt",
+        "cardinality": "1",
+        "attributes": [
+          {
+            "name": "bygningId",
+            "type": "Integer",
+            "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nNOTE: Det er dataleverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "BYGNINGID"
+            }
+          },
+          {
+            "name": "navnerom",
+            "type": "CharacterString",
+            "description": "navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  (\"_\") dersom data produsenten ikke er assosiert med bare et land.\n\nNOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i \"INSPIRE external  Object Identifier Namespaces Register\"\n\nEksempel: NO for Norge.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "NAVNEROM"
+            }
+          },
+          {
+            "name": "versjonId",
+            "type": "Integer",
+            "description": "identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.\n\nNOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  \"2007-02-12T12:12:12+05:30\" som versjonId.",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "VERSJONID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "representasjonspunkt",
+        "type": "Punkt",
+        "description": "Representasjonspunkt for bygningen. Punktet angis med geometritypen Punkt definert i SOSI\n\nSkal plasseres innenfor bygningens omriss.\n\nPunkt registreres også uten at en har omrisset, men da settes ikke kvalitetsmerket for at den er verifisert mot bygningens omriss.",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "Punkt"
+        }
+      },
+      {
+        "name": "uuidBygning",
+        "type": "CharacterString",
+        "description": "Objektidentifikator realisert som UUID, forvaltet av matrikkelsystemet",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "UUIDBYGNING"
+        }
+      }
+    ],
+    "abstract": false,
+    "relationships": {
+      "inheritance": [
+        "Bygg"
+      ],
+      "associations": []
+    },
+    "package": "MatrikkelenBygningspunkt-20211101"
+  },
+  {
+    "name": "Bygg",
+    "description": "Omfatter bygning og bygningsendring. Se definisjon på disse.",
+    "attributes": [
+      {
+        "name": "bruksenhet",
+        "type": "Bruksenhet",
+        "description": "Utdrag fra bruksenhet-objektet i Matrikkelen.\nInneholder koblinger (id) mellom adresse, matrikkelenhet og bruksenhet/bygning.\nBruksenhet er bygning eller del av bygning (lokale), f.eks. bolig, kontor, verksted el.l.",
+        "cardinality": "1..*",
+        "taggedValues": {
+          "SOSI_navn": "BRUKSENHET"
+        },
+        "attributes": [
+          {
+            "name": "adresseId",
+            "type": "Integer",
+            "description": "Kobling til adresse i Matrikkelen (Adressens lokalId i matrikkelsystemet)\nMerknad: Adresse her som Vegadresse eller matrikkeladresse, - ikke inkludert bruksenhetsnummer (som del av offisiell adresse)",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "ADRESSEID"
+            }
+          },
+          {
+            "name": "bruksenhetId",
+            "type": "Integer",
+            "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nNOTE: Det er dataleverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "BRUKSENHETID"
+            }
+          },
+          {
+            "name": "matrikkelenhetId",
+            "type": "Integer",
+            "description": "Kobling til matrikkelenhet i Matrikkelen (Matrikkelenhetens lokalId i matrikkelsystemet)",
+            "cardinality": "0..1",
+            "taggedValues": {
+              "SOSI_navn": "MATRIKKELENHETID"
+            }
+          },
+          {
+            "name": "uuidBruksenhet",
+            "type": "CharacterString",
+            "description": "Objektidentifikator realisert som UUID, forvaltet av matrikkelsystemet",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "UUIDBRUKSENHET"
+            }
+          }
+        ]
+      },
+      {
+        "name": "bygningsnummer",
+        "type": "Integer",
+        "description": "En entydig identifikasjon av bygningen. Bygningsnumrene er unike på landsbasis, og tildeles automatisk.",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "BYGGNR"
+        }
+      },
+      {
+        "name": "bygningsstatus",
+        "type": "BygningsstatusKode",
+        "description": "Viser bygningens nåværende status.\n\nMerknad:\nI spesielle tilfeller kan et bygg få igangsettingstillatelse og ferdigattest for en del av bygget, og så igangsettingstillatelse for en annen del.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "BygningErTattIBruk",
+              "label": "Dette gjelder bygninger som er konvertert fra GAB.  Etter gammel bygningslov var dette det begrepet som ble brukt.  Etter ny PBL er statusen enten midlertidig brukstillatelse eller ferdigattest, men i GAB skilles det ikke på dette.  Derfor konverteres alt til tatt i bruk.  Koden bruker også for etterregistrering av gamle bygg, og bygninger som oppdages i marka uten at de har vært gjennom en byggesaksbehandling."
+            },
+            {
+              "value": "BygningGodkjentRevetBrent",
+              "label": "Kode for at bygningen er godkjent revet eller brent."
+            },
+            {
+              "value": "Ferdigattest",
+              "label": "Kode for at det er utferdiget ferdigattest.\nFor bygg som er behandlet etter søknad  i samsvar med Plan- og BygningsLoven §93, kan som hovedregel benyttes dato for ferdigattest (evt. midlertidig brukstillatelse) som kommunen utsteder. Forøvrig regnes at et bygg er tatt i bruk når minst halve bygget er ferdig/tatt i bruk."
+            },
+            {
+              "value": "FritattForSoknadsplikt",
+              "label": "Brukes for bygninger under 50m2 som er fritatt for søknadsplikt"
+            },
+            {
+              "value": "Igangsettingstillatelse",
+              "label": "Angir at det er gitt igangsettingstillatelse.\n\nFor bygg som er behandlet etter søknad i samsvar med Plan- og BygningsLoven § 93, vil som hovedregel dato for gitt igangsettingstillatelse kunne benyttes. For andre bygg gjelder som hovedregel at byggearbeidet ansees igangsatt når pelingsarbeider, forskaling av grunnmur eller støping av såle er påbegynt."
+            },
+            {
+              "value": "IkkePliktigRegistrert",
+              "label": "kode for bygninger som ikke er pliktig registrert i henhold til Plan- og bygningsloven."
+            },
+            {
+              "value": "MeldingsakRegistrerTiltak",
+              "label": "Kode for at det er registrert tiltak for meldingssak."
+            },
+            {
+              "value": "MeldingsakTiltakFullfort",
+              "label": "Kode for at det er fullført tiltak for meldingssak."
+            },
+            {
+              "value": "MidlertidigBrukstillatelse",
+              "label": "Kode for at det er gitt midlertidig brukstillatelse"
+            },
+            {
+              "value": "Rammetillatelse",
+              "label": "Kode som angir at det er gitt rammetillatelse."
+            }
+          ],
+          "definition": "Lovlige statuser for bygningstiltak.",
+          "asDictionary": "true",
+          "codeList": "http://skjema.geonorge.no/legg_inn_riktig_url"
+        },
+        "taggedValues": {
+          "SOSI_navn": "BYGGSTAT"
+        }
+      },
+      {
+        "name": "harKulturminne",
+        "type": "Boolean",
+        "description": "angir om bygget har registrert kulturminner fra Askeladden eller ikke.",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "HARKULTURMINNE"
+        }
+      },
+      {
+        "name": "harSefrakminne",
+        "type": "Boolean",
+        "description": "angir om bygget er registrert i SEFRAK registeret.\nSEFRAK inneholder bygninger bygd før 1900 eventuelt 1945 i deler av Nord-Norge.",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "HARSEFRAKMINNE"
+        }
+      },
+      {
+        "name": "kommunenavn",
+        "type": "CharacterString",
+        "description": "Navn (norsk) på en kommune",
+        "cardinality": "1",
+        "taggedValues": {
+          "SOSI_navn": "KOMMUNENAVN"
+        }
+      },
+      {
+        "name": "kommunenummer",
+        "type": "Kommunenummer",
+        "description": "nummerering av kommuner i henhold til SSB sin offisielle liste\n\nMerknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 siffer.",
+        "cardinality": "1",
+        "valueDomain": {
+          "kind": "codelist",
+          "definition": "nummerering av kommuner i henhold til Statistisk sentralbyrå sin offisielle liste samt et utvalg av utgåtte numre\n\nMerknad: Det presiseres at kommune alltid skal ha 4 sifre, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 sifre.",
+          "asDictionary": "true",
+          "codeList": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer"
+        }
+      },
+      {
+        "name": "naringsgruppe",
+        "type": "NaringsgruppeKode",
+        "description": "Hvilken næringsgruppe som opptar størst andel av samlet areal i bygget.\nUnntak: Dersom bolig er kombinert med annen næring skal bygget ikke gis næringsgruppe bolig.",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "Annen tjenesteyting",
+              "label": "Næringsgruppe for annen tjenesteyting"
+            },
+            {
+              "value": "Annet som ikke er næring",
+              "label": "Næringsgruppe for annet som ikke er næring"
+            },
+            {
+              "value": "Bergverksdrift og utvinning",
+              "label": "Næringsgruppe for bergverksdrift og utvinning"
+            },
+            {
+              "value": "Bolig",
+              "label": "Næringsgruppe for bolig"
+            },
+            {
+              "value": "Bygge- og anleggsvirksomhet",
+              "label": "Næringsgruppe for bygge- og anleggsvirksomhet"
+            },
+            {
+              "value": "Elektrisitets-, gass-, damp- og varmtvannsforsyning",
+              "label": "Næringsgruppe for elektrisitets-, gass-, damp- og varmtvannsforsyningkraft- og vannforsyning"
+            },
+            {
+              "value": "Faglig, vitenskaplig og teknisk tjenesteyting",
+              "label": "Næringsgruppe for faglig, vitenskaplig og teknisk tjenesteyting"
+            },
+            {
+              "value": "Finansierings- og forsikringsvirksomhet",
+              "label": "Næringsgruppe for finansierings- og forsikringsvirksomhet"
+            },
+            {
+              "value": "Forretningsmessig tjenesteyting",
+              "label": "Næringsgruppe for forretningsmessig tjenesteyting"
+            },
+            {
+              "value": "Helse- og sosialtjenester",
+              "label": "Næringsgruppe for helse- og sosialtjenester"
+            },
+            {
+              "value": "IkkeOppgitt",
+              "label": "Kode for ikke oppgitt næringsgruppe"
+            },
+            {
+              "value": "Industri",
+              "label": "Næringsgruppe for industri"
+            },
+            {
+              "value": "Informasjon og kommunikasjon",
+              "label": "Næringsgruppe for informasjon og kommunikasjon"
+            },
+            {
+              "value": "Internasjonale organisasjoner og organer",
+              "label": "Næringsgruppe for internasjonale organisasjoner og organer"
+            },
+            {
+              "value": "Jordbruk, skogbruk og fiske",
+              "label": "Næringsgruppe for jordbruk, skogbruk og fiske"
+            },
+            {
+              "value": "Kulturell virksomhet, underholdning og fritidsaktiviteter",
+              "label": "Næringsgruppe for kulturell virksomhet, underholdning og fritidsaktiviteter"
+            },
+            {
+              "value": "Lønnet arbeid i private husholdninger",
+              "label": "Næringsgruppe for lønnet arbeid i private husholdninger"
+            },
+            {
+              "value": "Offentlig administrasjon og forsvar, og trygdeordninger underlagt offentlig forvaltning",
+              "label": "Næringsgruppe for offentlig administrasjon og forsvar, og trygdeordninger underlagt offentlig forvaltning"
+            },
+            {
+              "value": "Omsetning og drift av fast eiendom",
+              "label": "Næringsgruppe for omsetning og drift av fast eiendom"
+            },
+            {
+              "value": "Overnattings- og serveringsvirksomhet",
+              "label": "Næringsgruppe for overnattings- og serveringsvirksomhet"
+            },
+            {
+              "value": "Transport og lagring",
+              "label": "Næringsgruppe for transport og lagring"
+            },
+            {
+              "value": "Undervisning",
+              "label": "Næringsgruppe for undervisning"
+            },
+            {
+              "value": "Vannforsyning, avløps- og renovasjonsvirksomhet",
+              "label": "Næringsgruppe for industri"
+            },
+            {
+              "value": "Varehandel, reparasjon av motorvogner",
+              "label": "Næringsgruppe for varehandel, reparasjon av motorvogner"
+            }
+          ],
+          "definition": "Lovlige koder for næringsgruppe som bygning kan tilhøre\n\nDenne tilsvarer Statistisk sentralbyrås Standard for næringsgruppering. I tillegg har den kode for Bolig og Annet",
+          "asDictionary": "false",
+          "codeList": "http://skjema.geonorge.no/legg_inn_riktig_url"
+        },
+        "taggedValues": {
+          "SOSI_navn": "NARINGSGRUPPE"
+        }
+      },
+      {
+        "name": "opprinnelse",
+        "type": "OpprinnelsesKode",
+        "description": "angir hvordan bygget opprinnelig ble registrert.",
+        "cardinality": "0..1",
+        "valueDomain": {
+          "kind": "codelist",
+          "listedValues": [
+            {
+              "value": "FritattForSøknadsplikt",
+              "label": "Bygg som er fritatt for søknadsplikt etter §§ 4-1, 4-2 og 4-3 i byggesaksforskriften."
+            },
+            {
+              "value": "Fylkesforsyningsnemnda",
+              "label": "Bygg registrert av fylkeskommune eller fylkesforsyningsnemda"
+            },
+            {
+              "value": "GenerertPgaTilbygg",
+              "label": "Bygninger som er generert i GAB på grunnlag av registering av data for tilbygg."
+            },
+            {
+              "value": "Massivregistreringer",
+              "label": "Massivetablering av bygningsregisteret\n\nMassivregistering av bygninger. Landsdekkende prosjekt der alle bygninger over 15 m2 skulle legges inn i GAB med koordinat, bygningstype og eiendomspeker (gnr/bnr/fnr).\nProsjektoppstart: 1993 og avsluttet 1995.\n\nOgså andre bygninger som er massivregistert i ettertid kommer i denne kategorien.  Det gjelder blant annet bygningspunkter etablert i forbindelse med kartleggingsprosjekter i regi av Geovekst."
+            },
+            {
+              "value": "RuinVedRegistreringspunktSEFRAK",
+              "label": "Bygninger som var registert som ruin i forbindelse med SEFRAK-registreringene.  (SEkretariatet For Registrering Av faste Kulturminner i Norge)."
+            },
+            {
+              "value": "SEFRAK",
+              "label": "Registrert via de opprinnelige SEFRAK-registreringene (SEkretariatet For Registrering Av faste Kulturminner i Norge)."
+            },
+            {
+              "value": "VanligRegistrering",
+              "label": "Vanlig registrering i GAB eller Matrikkel."
+            }
+          ],
+          "definition": "angir hvordan bygget opprinnelig ble registrert.",
+          "asDictionary": "true",
+          "codeList": "http://skjema.geonorge.no/legg_inn_riktig_url"
+        },
+        "taggedValues": {
+          "SOSI_navn": "OPPRINNELSE"
+        }
+      },
+      {
+        "name": "sefrakIdent",
+        "type": "SefrakIdent",
+        "description": "<font color=\"#333333\">sefrakminnets objektnummer, bestående av henvisning til (evt utgått) kommune, registreringskretsnummer og husløpenummer </font>",
+        "cardinality": "0..*",
+        "attributes": [
+          {
+            "name": "huslopenummer",
+            "type": "Integer",
+            "description": "Løpenummer innen kretsnummer.\nEr entydig nøkkel for kulturminne sammen med kommune og kretsnummer.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "HUSLØPENUMMER"
+            }
+          },
+          {
+            "name": "registreringskretsnummer",
+            "type": "Integer",
+            "description": "Registreringskretsnummer er Riksantikvarens oppdeling av kommunen. Tilsvarer gamle kirkekretser. Må være større enn 0.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "REGISTRERINGSKRETSNUMMER"
+            }
+          },
+          {
+            "name": "sefrakKommune",
+            "type": "Kommunenummer",
+            "description": "nummerering av kommuner i henhold til Statistisk sentralbyrå sin offisielle liste",
+            "cardinality": "1",
+            "valueDomain": {
+              "kind": "codelist",
+              "definition": "nummerering av kommuner i henhold til Statistisk sentralbyrå sin offisielle liste samt et utvalg av utgåtte numre\n\nMerknad: Det presiseres at kommune alltid skal ha 4 sifre, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 sifre.",
+              "asDictionary": "true",
+              "codeList": "https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer"
+            },
+            "taggedValues": {
+              "SOSI_navn": "SEFRAKKOMMUNE"
+            }
+          },
+          {
+            "name": "sefrakMinneId",
+            "type": "Integer",
+            "description": "lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.\n\nNOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.",
+            "cardinality": "1",
+            "taggedValues": {
+              "SOSI_navn": "SEFRAKMINNEID"
+            }
+          }
+        ]
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [
+        "SOSI_ObjektBygg"
+      ],
+      "associations": []
+    },
+    "package": "MatrikkelenBygningspunkt-20211101"
+  },
+  {
+    "name": "SOSI_ObjektBygg",
+    "description": "abstrakt objekt som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper\n\nMerknad:\nSpesielt i produktspesifikasjonsarbeid vil en velge egenskaper og av grensningslinjer fra denne klassen.",
+    "attributes": [
+      {
+        "name": "datauttaksdato",
+        "type": "DateTime",
+        "description": "dato for uttak fra en database\n\nMerknad:\nSkiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "DATAUTTAKSDATO"
+        }
+      },
+      {
+        "name": "oppdateringsdato",
+        "type": "DateTime",
+        "description": "dato for siste endring på objektetdataene\n\nMerknad:\nOppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).\n\n-Definition-\nDate and time at which this version of the spatial object was inserted or changed in the spatial data set.",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "OPPDATERINGSDATO"
+        }
+      },
+      {
+        "name": "stedfestingVerifisert",
+        "type": "Boolean",
+        "description": "angivelse om stedfestingen (koordinatene) er  kontrollert  og funnet i orden (verifisert)",
+        "cardinality": "0..1",
+        "taggedValues": {
+          "SOSI_navn": "STED_VERIF"
+        }
+      }
+    ],
+    "abstract": true,
+    "relationships": {
+      "inheritance": [],
+      "associations": []
+    },
+    "package": "MatrikkelenBygningspunkt-20211101"
+  }
+]

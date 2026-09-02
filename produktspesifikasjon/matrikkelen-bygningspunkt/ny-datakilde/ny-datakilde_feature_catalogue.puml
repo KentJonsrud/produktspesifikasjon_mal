@@ -1,0 +1,83 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Matrikkelen - Bygningspunkt - Ny datakilde - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class Bygning <<featureType>> {
+    + bygningstype [1] : BygningstypeKode
+    + identBygning [1] : IdentBygning
+    + representasjonspunkt [1] : Punkt
+    + uuidBygning [1] : CharacterString
+  }
+
+  abstract class Bygg <<featureType>> {
+    + bruksenhet [1..*] : Bruksenhet
+    + bygningsnummer [1] : Integer
+    + bygningsstatus [1] : BygningsstatusKode
+    + harKulturminne [1] : Boolean
+    + harSefrakminne [1] : Boolean
+    + kommunenavn [1] : CharacterString
+    + kommunenummer [1] : Kommunenummer
+    + naringsgruppe [0..1] : NaringsgruppeKode
+    + opprinnelse [0..1] : OpprinnelsesKode
+    + sefrakIdent [0..*] : SefrakIdent
+  }
+
+  abstract class SOSI_ObjektBygg <<featureType>> {
+    + datauttaksdato [0..1] : Date
+    + oppdateringsdato [0..1] : Date
+    + stedfestingVerifisert [0..1] : Boolean
+  }
+
+  class IdentBygning <<dataType>> {
+    + bygningId [1] : Integer
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : Integer
+  }
+
+  class Bruksenhet <<dataType>> {
+    + adresseId [0..1] : Integer
+    + bruksenhetId [1] : Integer
+    + matrikkelenhetId [0..1] : Integer
+    + uuidBruksenhet [1] : CharacterString
+  }
+
+  class SefrakIdent <<dataType>> {
+    + huslopenummer [1] : Integer
+    + registreringskretsnummer [1] : Integer
+    + sefrakKommune [1] : Kommunenummer
+    + sefrakMinneId [1] : Integer
+  }
+}
+
+  Bygg <|-- Bygning
+  SOSI_ObjektBygg <|-- Bygg
+
+@enduml
