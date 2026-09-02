@@ -24,14 +24,14 @@ logo: "https://register.geonorge.no/data/organizations/971040238_Kartverket_lite
 
 - **Tidsperiode**:
   - **Fra**: 2019-01-29
-  - **Til**: 2026-08-24
+  - **Til**: 2026-08-31
 
 ## Om spesifikasjonen
 
 
 > **Denne versjonen av produktspesifikasjonen:** <br>
 > **Opprettet dato:** 2019-01-29<br>
-> **Endret dato:** 2026-08-24<br>
+> **Endret dato:** 2026-08-31<br>
 > **Språk:** nor<br>
 > **Kontaktinformasjon:** Kartverket, [kundesenter@kartverket.no](mailto:kundesenter@kartverket.no)
 
@@ -141,7 +141,7 @@ Analyse og presentasjon i GIS-system. Presentasjon av statistikk og analyser. Pr
 
 **Metadatastandardversjon**: 2003
 
-**Metadatadato**: 2026-08-26
+**Metadatadato**: 2026-09-01
 
 **språk**: nor
 
@@ -163,3 +163,5 @@ Analyse og presentasjon i GIS-system. Presentasjon av statistikk og analyser. Pr
 ## Tilleggsinformasjon
 
 Trenger du hjelp til å laste ned og ta i bruk Kartverkets data og tjenester? På kartverket.no finner du tips og veiledning.
+
+
