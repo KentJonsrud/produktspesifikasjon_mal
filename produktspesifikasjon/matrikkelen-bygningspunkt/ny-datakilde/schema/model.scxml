@@ -1,0 +1,2848 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sc:Model xmlns:sc="http://shapechange.net/model" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" encoding="UTF-8" scxmlProducer="ps.editor.actions" scxmlProducerVersion="1.0" xsi:schemaLocation="http://shapechange.net/model http://shapechange.net/resources/schema/ShapeChangeExportedModel.xsd">
+ <sc:packages>
+  <sc:Package>
+   <sc:name>ny-datakilde</sc:name>
+   <sc:id>P1</sc:id>
+   <sc:stereotypes>
+    <sc:Stereotype>application schema</sc:Stereotype>
+   </sc:stereotypes>
+   <sc:taggedValues>
+    <sc:TaggedValue>
+     <sc:name>targetNamespace</sc:name>
+     <sc:values>
+      <sc:Value>https://skjema.geonorge.no/SOSI/produktspesifikasjon/matrikkelen-bygningspunkt/ny-datakilde/1.0</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>xmlns</sc:name>
+     <sc:values>
+      <sc:Value>nydatakilde</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>version</sc:name>
+     <sc:values>
+      <sc:Value>1.0</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>xsdDocument</sc:name>
+     <sc:values>
+      <sc:Value>ny-datakilde.xsd</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+    <sc:TaggedValue>
+     <sc:name>jsonDocument</sc:name>
+     <sc:values>
+      <sc:Value>ny-datakilde.json</sc:Value>
+     </sc:values>
+    </sc:TaggedValue>
+   </sc:taggedValues>
+   <sc:classes>
+    <sc:Class>
+     <sc:name>IdentBygning</sc:name>
+     <sc:id>C4</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>datatype</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>bygningId</sc:name>
+       <sc:id>C4_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.
+
+NOTE: Det er dataleverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>BYGNINGID</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+       <sc:typeName>Integer</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>navnerom</sc:name>
+       <sc:id>C4_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>navnerom som unikt identifiserer datakilden til objektet, starter med to bokstavs kode jfr ISO 3166. Benytter understreking  ("_") dersom data produsenten ikke er assosiert med bare et land.
+
+NOTE 1 : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og vil registreres i "INSPIRE external  Object Identifier Namespaces Register"
+
+Eksempel: NO for Norge.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>NAVNEROM</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+       <sc:typeName>CharacterString</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>versjonId</sc:name>
+       <sc:id>C4_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>identifikasjon av en spesiell versjon av et geografisk objekt (instans), maksimum lengde på 25 karakterers. Dersom spesifikasjonen av et geografisk objekt med en identifikasjon inkludererer livsløpssyklusinformasjon, benyttes denne versjonId for å skille mellom ulike versjoner av samme objekt. versjonId er en unik  identifikasjon av versjonen.
+
+NOTE Maksimum lengde er valgt for å tillate tidsregistrering i henhold til  ISO 8601, slik som  "2007-02-12T12:12:12+05:30" som versjonId.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>VERSJONID</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>0..1</sc:cardinality>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+       <sc:typeName>Integer</sc:typeName>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>Bruksenhet</sc:name>
+     <sc:id>C5</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>datatype</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>adresseId</sc:name>
+       <sc:id>C5_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kobling til adresse i Matrikkelen (Adressens lokalId i matrikkelsystemet)
+Merknad: Adresse her som Vegadresse eller matrikkeladresse, - ikke inkludert bruksenhetsnummer (som del av offisiell adresse)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>ADRESSEID</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>0..1</sc:cardinality>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+       <sc:typeName>Integer</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>bruksenhetId</sc:name>
+       <sc:id>C5_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.
+
+NOTE: Det er dataleverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>BRUKSENHETID</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+       <sc:typeName>Integer</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>matrikkelenhetId</sc:name>
+       <sc:id>C5_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kobling til matrikkelenhet i Matrikkelen (Matrikkelenhetens lokalId i matrikkelsystemet)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>MATRIKKELENHETID</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>0..1</sc:cardinality>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+       <sc:typeName>Integer</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>uuidBruksenhet</sc:name>
+       <sc:id>C5_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Objektidentifikator realisert som UUID, forvaltet av matrikkelsystemet</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>UUIDBRUKSENHET</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+       <sc:typeName>CharacterString</sc:typeName>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>SefrakIdent</sc:name>
+     <sc:id>C6</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>datatype</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>huslopenummer</sc:name>
+       <sc:id>C6_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Løpenummer innen kretsnummer.
+Er entydig nøkkel for kulturminne sammen med kommune og kretsnummer.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>HUSLØPENUMMER</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+       <sc:typeName>Integer</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>registreringskretsnummer</sc:name>
+       <sc:id>C6_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Registreringskretsnummer er Riksantikvarens oppdeling av kommunen. Tilsvarer gamle kirkekretser. Må være større enn 0.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>REGISTRERINGSKRETSNUMMER</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+       <sc:typeName>Integer</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>sefrakKommune</sc:name>
+       <sc:id>C6_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>nummerering av kommuner i henhold til Statistisk sentralbyrå sin offisielle liste</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>SEFRAKKOMMUNE</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+       <sc:typeId>C9</sc:typeId>
+       <sc:typeName>Kommunenummer</sc:typeName>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>sefrakMinneId</sc:name>
+       <sc:id>C6_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>lokal identifikator, tildelt av dataleverendør/dataforvalter. Den lokale identifikatoren er unik innenfor navnerommet, ingen andre objekter har samme identifikator.
+
+NOTE: Det er data leverendørens ansvar å sørge for at denne lokale identifikatoren er unik innenfor navnerommet.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:taggedValues>
+        <sc:TaggedValue>
+         <sc:name>SOSI_navn</sc:name>
+         <sc:values>
+          <sc:Value>SEFRAKMINNEID</sc:Value>
+         </sc:values>
+        </sc:TaggedValue>
+       </sc:taggedValues>
+       <sc:cardinality>1</sc:cardinality>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+       <sc:typeName>Integer</sc:typeName>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>BygningstypeKode</sc:name>
+     <sc:id>C7</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>beskrivelse av hva bygningen faktisk er brukt til, eventuelt hva bygningen er godkjent til.</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>Andre småhus med 3 boliger eller flere</sc:name>
+       <sc:id>C7_1</sc:id>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen boligbygning (sekundærbolig reindrift)</sc:name>
+       <sc:id>C7_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen boligbygning/sekundærbolig (f.eks. sekundærbolig reindrift)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen bygning for bofellesskap</sc:name>
+       <sc:id>C7_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen bygning for bofellesskap, eller bygning som har nær tilknytning til / tjener slik(e) bygning(er)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen bygning for overnatting</sc:name>
+       <sc:id>C7_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen bygning for overnatting; andre bygninger som ikke kan plasseres i de underpunktene nevnt over, men som er bygning for overnatting, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen bygninger for religiøse aktiviteter</sc:name>
+       <sc:id>C7_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>bygninger som ikke passer inn under ovennevnte kategorier, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen ekspedisjons- og terminalbygning</sc:name>
+       <sc:id>C7_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen ekspedisjons- og terminalbygning;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen fiskeri- og fangstbygning</sc:name>
+       <sc:id>C7_7</sc:id>
+       <sc:sequenceNumber>7</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen forretningsbygning</sc:name>
+       <sc:id>C7_8</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen forretningsbygning, eller bygning som har nær tilknytning til/tjener slik(e)
+bygning(er)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>8</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen garasje-/hangarbygning</sc:name>
+       <sc:id>C7_9</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen garasje- og hangarbygning, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>9</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen hotellbygning</sc:name>
+       <sc:id>C7_10</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>annen bygning for overnatting - godkjent etter hotelloven, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>10</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen idrettsbygning</sc:name>
+       <sc:id>C7_11</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>andre idrettsbygninger som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>11</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen industribygning</sc:name>
+       <sc:id>C7_12</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen industribygning; annen industribygning, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>12</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen kontorbygning</sc:name>
+       <sc:id>C7_13</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen kontorbygning;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>13</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen lagerbygning</sc:name>
+       <sc:id>C7_14</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen lagerbygning;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>14</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen landbruksbygning</sc:name>
+       <sc:id>C7_15</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen landbruksbygning;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>15</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen museums- og biblioteksbygning</sc:name>
+       <sc:id>C7_16</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen museum/biblioteksbygning; bygninger som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>16</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen primærhelsebygning</sc:name>
+       <sc:id>C7_17</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>annen primærhelsebygning, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>17</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen restaurantbygning</sc:name>
+       <sc:id>C7_18</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Andre spisesteder som ikke passer inn i kodene over, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>18</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen skolebygning</sc:name>
+       <sc:id>C7_19</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annen skolebygning; andre skoler som ikke passer inn under ovennevnte kategorier, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>19</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen universitet, høgskole og forskningsbygning</sc:name>
+       <sc:id>C7_20</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Andre universitets- og høgskolebygninger som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>20</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annen veg- og trafikktilsynsbygning</sc:name>
+       <sc:id>C7_21</sc:id>
+       <sc:sequenceNumber>21</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annet kulturhus</sc:name>
+       <sc:id>C7_22</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annet kulturhus; andre multifunksjonshus for kultur og idrett, herunder ungdomsklubb, som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>22</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annet sykehjem</sc:name>
+       <sc:id>C7_23</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annet sykehjem; annet sykehjem, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>23</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Appartement</sc:name>
+       <sc:id>C7_24</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Appartement; bygning med fritidsboliger/ boliger til utleie, boligene har bad og kokemuligheter, og leies oftest for døgn- eller ukebasis.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>24</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bankbygning; posthus</sc:name>
+       <sc:id>C7_25</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bankbygning; posthus;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>25</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Barnehage</sc:name>
+       <sc:id>C7_26</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Barnehage; sted for opphold for barn 1 - 5 år. Kan være heldag og halvdag, og det er knyttet et visst pedagogisk innhold til oppholdet. Selve barnehagebygningen er ofte velutstyrt, med flere avdelinger, spiserom/hvilerom for de ansatte og kjøkken. Styrt av Barnehageloven</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>26</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Barneskole</sc:name>
+       <sc:id>C7_27</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Barneskole; skolebygning for skoleklassene 1-7, for barn i alderen 6-12 år.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>27</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bedehus, menighetshus</sc:name>
+       <sc:id>C7_28</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bedehus; menighetshus; kristent forsamlingshus</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>28</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bensinstasjon</sc:name>
+       <sc:id>C7_29</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bensinstasjon;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>29</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bibliotek, mediatek</sc:name>
+       <sc:id>C7_30</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bibliotek; mediatek; bygning for utlån av bøker, lydbøker, filmer, aviser o.l. Moderne bibliotek/mediatek har ofte tilgjengelig PC gjerne med Internett-tilknytning.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>30</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bo- og behandlingssenter</sc:name>
+       <sc:id>C7_31</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bo- og behandlingssenter; institusjoner der man bor permanent og samtidig har tilgang til et behandlingstilbud.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>31</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bo- og servicesenter</sc:name>
+       <sc:id>C7_32</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bo- og servicesenter; bo- og servicesenter. For eldre, utviklingshemmede, funksjonshemmede mv</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>32</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Boligbrakker</sc:name>
+       <sc:id>C7_33</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Boligbrakker;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>33</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Brannstasjon, ambulansestasjon</sc:name>
+       <sc:id>C7_34</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Brannstasjon; ambulansestasjon;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>34</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Butikkbygning</sc:name>
+       <sc:id>C7_35</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Butikk/forretningsbygning;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>35</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bygning for renseanlegg</sc:name>
+       <sc:id>C7_36</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bygning for renseanlegg; bygning for renseanlegg, bl.a. kloakkpumpestasjon</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>36</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bygning for vannforsyning</sc:name>
+       <sc:id>C7_37</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bygning for vannforsyning, bl.a. pumpestasjon.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>37</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Camping- /utleiehytte</sc:name>
+       <sc:id>C7_38</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Camping- /utleiehytte; enklere overnattingshytte fortrinnsvis beregnet for bilturister. Som regel er de knyttet til en campingplass. Gjestene holder vanligvis sengetøy selv
+
+Utleiehytte : Et lite hus med høy, middels eller lav standard, til midlertidig opphold. Oftest større og bedre standard enn en campinghytte, ofte ikke beliggende på en campingplass, men mer spredt i terrenget. Moderne utleiehytter har ofte høy standard og flere er ofte knyttet til et senter med vakt, kiosk/forretning og andre fasiliteter.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>38</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Diskotek</sc:name>
+       <sc:id>C7_39</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Diskotek; bygning for ungdomsaktiviteter, særlig knyttet til musikk og dans - drevet på forretningsmessig basis.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>39</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Driftsbygning fiske/fangst/oppdr</sc:name>
+       <sc:id>C7_40</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Driftsbygning for fiske og fangst inkludert oppdrettsanlegg</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>40</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Ekspedisjonsbygning, flyterminal, kontrolltårn</sc:name>
+       <sc:id>C7_41</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>ekspedisjonsbygning, flyterminal, kontrolltårn</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>41</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Enebolig</sc:name>
+       <sc:id>C7_42</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Enebolig; frittliggende bygning med kun en boligenhet</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>42</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Enebolig m/hybel/sokkelleil.</sc:name>
+       <sc:id>C7_43</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Enebolig m/hybel/sokkelleil.; enebolig som i tillegg inneholder en eller flere hybler el.l., som minimum dekkes av SSBs krav til
+hybel</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>43</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Fabrikkbygning</sc:name>
+       <sc:id>C7_44</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Fabrikkbygning; bygning for industriell serieproduksjon</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>44</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Fyrstasjon, losstasjon</sc:name>
+       <sc:id>C7_45</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Fyrstasjon; losstasjon;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>45</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Garasje, uthus, anneks til bolig</sc:name>
+       <sc:id>C7_46</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Garasje, uthus , anneks knyttet til bolig.
+
+Garasje: F rittliggende bygning som primært benyttes for parkering av bil. Kan i tillegg inneholde boder o.l.
+
+Uthus: F rittliggende bygning som benyttes til oppbevaring av redskap, ved, materialer o.l.
+
+Anneks : Frittliggende bygg beregnet for overnatting og er ingen selvstendig boenhet for varig opphold. Det skal ikke registreres bruksareal til bolig på slike bygg.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>46</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Garasje, uthus, anneks til fritidbolig</sc:name>
+       <sc:id>C7_47</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Garasje, uthus , anneks knyttet til fritidsbolig.
+
+Garasje: F rittliggende bygning som primært benyttes for parkering av bil. Kan i tillegg inneholde boder o.l.
+
+Uthus: F rittliggende bygning som benyttes til oppbevaring av redskap, ved, materialer o.l.
+
+Anneks : Frittliggende bygg beregnet for overnatting og er ingen selvstendig boenhet for varig opphold. Det skal ikke registreres bruksareal til bolig på slike bygg.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>47</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Gatekjøkken; kioskbygning</sc:name>
+       <sc:id>C7_48</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Gatekjøkken; kioskbygning; gatekjøkken, kioskbygning</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>48</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Godsterminal</sc:name>
+       <sc:id>C7_49</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Godsterminal;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>49</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Helse- og sosialsenter, helsestasjon</sc:name>
+       <sc:id>C7_50</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Helse-/sosialsent. helsestasj.; senter som inneholder tilbud som f.eks. fysioterapi, kiroprakti, akupunktur, alternative behandlingsformer etc.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>50</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Helsestudio</sc:name>
+       <sc:id>C7_51</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Helsestudio; kompakt treningsanlegg, drevet på forretningsmessig basis - ikke offentlig.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>51</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Helårsbolig benyttes som fritidsbolig</sc:name>
+       <sc:id>C7_52</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Helårsbolig utenom våningshus som benyttes som fritidsbolig.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>52</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Hospits; pensjonat</sc:name>
+       <sc:id>C7_53</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Hospits; pensjonat; rimelig, enkelt utstyrt overnattingssted, vanligvis serveres også mat. I byene ofte leid ut på mer fast basis; over uker, måneder eller år.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>53</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Hotellbygning</sc:name>
+       <sc:id>C7_54</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Hotellbygning; større bygning for overnatting, godkjent etter hotelloven.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>54</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Hus for dyr/landbruk, lager/silo</sc:name>
+       <sc:id>C7_55</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Hus for dyr/landbr.lager/silo; hus for dyr, fôrlager, strølager, landbrukssilo, høy-/korntørke</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>55</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Hytter, sommerhus ol fritidsbygning</sc:name>
+       <sc:id>C7_56</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Hytter, sommerhus og lignende. Fritidsbygg
+Her registreres også bygning med fritidsboliger hvor boligene enten
+er seksjonert eller på annen måte disponeres eksklusivt av fast
+bruker.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>56</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Idrettshall</sc:name>
+       <sc:id>C7_57</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Idrettshall; bygning primært til bruk for idrettsformål, innehar som regel også garderobeanlegg og kiosk.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>57</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Ishall</sc:name>
+       <sc:id>C7_58</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Ishall; bygning primært brukt som skøytehall for lengdeløp og ishockey, innehar som regel også garderobeanlegg og kiosk.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>58</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Jernbane- og T-banestasjon</sc:name>
+       <sc:id>C7_59</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Jernbane- og T-banestasjon;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>59</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kinobygning. teaterbygning, opera/konserthus</sc:name>
+       <sc:id>C7_60</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kino/teater/opera/konsertbygn; bygning for framføring av kino, teater, opera og konserter.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>60</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kirke; kapell</sc:name>
+       <sc:id>C7_61</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kirke; kapell; kristent gudshus</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>61</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kjede/atriumhus</sc:name>
+       <sc:id>C7_62</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kjedehus: Kjedehus har vertikale boligskiller der de enkelte boligenhetene er kjedetsammen med mellombygninger, ofte garasjer eller boder. Et kjedehus må bestå avminimum 2 boliger, den enkelte bolig har ofte 1 - 3 etasjer og separat inngang. Hver enkelt del skal ha eget bygningspunkt i GAB. Kjedehus benevnes også oftesom eneboliger i kjede.
+
+Atriumhus: Betegnelsenatriumhusbenyttes om sammenbygde hus ivinkelform. Ved hjelp av de tilstøtende ytterveggene på nabohusene og/ellerlevegger får hvert enkelt hus et skjermet og innelukket uteareal/hage.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>62</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kjøle- og fryselager</sc:name>
+       <sc:id>C7_63</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kjøle- og fryselager;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>63</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kjøpesenter; varehus</sc:name>
+       <sc:id>C7_64</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kjøpesenter; varehus; bygning som inneholder flere forskjellige butikker</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>64</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Klinikk, legekontor/-senter/-vakt/dyresykehus</sc:name>
+       <sc:id>C7_65</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Klinikk; legekontor/legesenter; klinikk, legekontor/-senter/-vakt.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>65</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kloster</sc:name>
+       <sc:id>C7_66</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kloster; bygning der menn eller kvinner har trukket seg tilbake for å virkeliggjøre det religiøse ideal, i et lukket samfunn, og etter en bestemt regel.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>66</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kombinert barne- og ungdomsskole</sc:name>
+       <sc:id>C7_67</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kombinert barne- og ungdomsskole; skolebygning for skoleklassene 1-10, for barn i alderen 6-15 år.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>67</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kontor- og administrasjonsbygning, rådhus</sc:name>
+       <sc:id>C7_68</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kontor- og adm.bygning; rådhus; kontor- og administrasjonsbygning , rådhus.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>68</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Krematorium, gravkapell, bårehus</sc:name>
+       <sc:id>C7_69</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kremat.; gravkapell; bårehus; bygning for likbrenning (krematorium) eller bygning for oppbevaring av døde mennesker inntil begravelse og kremasjon (gravkapell og bårehus).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>69</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Labratoriebygning</sc:name>
+       <sc:id>C7_70</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bygninger for laboratorievirksomhet (f.eks. i industri, sykehus og ved universiteter).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>70</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Lagerhall</sc:name>
+       <sc:id>C7_71</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Lagerhall;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>71</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Lekepark</sc:name>
+       <sc:id>C7_72</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Lekepark; sted for opphold for barn 1-5 år. Oftest 4-5 timers tilbud, men kan også være heldag. Ingen krav til pedagogisk innhold, og selve huset i lekeparken er ofte lite og dårlig utstyrt, nærmest som
+spiserom å betrakte. En lekepark er i stor grad basert på at barna skal være ute og leke.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>72</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Mediabygning</sc:name>
+       <sc:id>C7_73</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Radio og TV-hus;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>73</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Messe- og kongressbygning</sc:name>
+       <sc:id>C7_74</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Messe- og kongressbygning; messe- og kongressbygning. Dette gjelder bygninger for messer, utstillinger, kongresser og konferanser</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>74</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Monument</sc:name>
+       <sc:id>C7_75</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Monument; konstruksjoner som er minnesmerker eller kunstverker. Må tilfredsstille krav til bygning</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>75</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Motellbygning</sc:name>
+       <sc:id>C7_76</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Motellbygning; egentlig motorhotell, oftest beliggende langs en hovedferdselsåre.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>76</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Museum, kunstgalleri</sc:name>
+       <sc:id>C7_77</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Museum; kunstgalleri; bygning for utstilling av spesielle gjenstander, og omtale av disse (museum) eller bygning for utstilling og salg av kunst (kunstgalleri)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>77</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Naust, redskapshus for fiske</sc:name>
+       <sc:id>C7_78</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Naust/redskapshus for fiske; naust / redskapshus for fiske</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>78</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Naust; båthus; sjøbu</sc:name>
+       <sc:id>C7_79</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Naust; båthus; sjøbu; frittliggende bygning som primært benyttes til plassering av båt(er). Kan i tillegg benyttes til oppbevaring av forskjellig redskap o.l</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>79</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Offentlig toalett</sc:name>
+       <sc:id>C7_80</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Offentlig toalett;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>80</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Parkeringshus</sc:name>
+       <sc:id>C7_81</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Parkeringshus;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>81</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Politistasjon</sc:name>
+       <sc:id>C7_82</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Politistasjon;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>82</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Postterminal</sc:name>
+       <sc:id>C7_83</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Postterminal;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>83</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Rehabiliteringsinstitusjon, kurbad</sc:name>
+       <sc:id>C7_84</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Rehabiliter.institusjon.kurbad; institusjon der man bor for en kortere eller lengre periode, samtidig som man får behandling</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>84</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Rekkehus</sc:name>
+       <sc:id>C7_85</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Rekkehus har vertikale gjennomgående felles boligskiller og hver boligenhet skal ligge på grunnen. Rekkehus skal ikke inneholde fellesareal for eksempel tilboder eller garasje. Et rekkehus må bestå av minimum 3 boliger, den enkeltebolig har ofte 1 - 3 etasjer og separat inngang. Hver enkelt del skal ha egetbygningspunkt i GAB.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>85</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Restaurantbygning; kafébygning</sc:name>
+       <sc:id>C7_86</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Restaurantbygning; kafébygning; Restaurantbygning eller  kafébygning.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>86</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Samfunnshus; grendehus</sc:name>
+       <sc:id>C7_87</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Samfunnshus; grendehus; sentralt aktivitetshus for bygda/grenda, multifunksjonsbygg som benyttes til alt fra idrettsarrangementer til fest og andre sosiale sammenkomster.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>87</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Sentralkjøkken; kantinebygning</sc:name>
+       <sc:id>C7_88</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sentralkjøkken; kantinebygning; bygning for kjøkken eller kantine tilknyttet større enhet, men der bygningen ligger for seg selv.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>88</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Seterhus, sel, rorbu ol</sc:name>
+       <sc:id>C7_89</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Seterhus, sel, rorbu o.l.
+Rorbu, hus for fiskere til bruk under de store
+sesongfiskerier.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>89</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Skogs- og utmarkskoie; gamme</sc:name>
+       <sc:id>C7_90</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Skogs- og utmarkskoie , gamme
+Skogs- og utmarkskoie, primitiv hytte brukt av jegere og
+tømmerhuggere.
+Gamme, jordhytte, særlig brukt av samer.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>90</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Store sammenbygde boligbygg på 2 etg</sc:name>
+       <sc:id>C7_91</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Stort sammenbygde boligbygg på 2 etasjer (5 boliger eller mer)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>91</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Store sammenbygde boligbygg på 3 og 4 etg</sc:name>
+       <sc:id>C7_92</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Store sammenbygde boligbygg på 3 og 4 etasjer (5 boliger eller mer)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>92</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Store sammenbygde boligbygg på 5 el mer</sc:name>
+       <sc:id>C7_93</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Stort sammenh.boligbygg på 5 -&gt; etasjer eller over (5 boliger eller mer); store sammenbygde boligbygg på 5 etasjer eller over (5 boliger eller mer)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>93</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Stort frittliggende boligbygg på 2 etg</sc:name>
+       <sc:id>C7_94</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Stort frittl. boligbygg på 2 etasjer.; stort frittliggende boligbygg på 2 etasjer (5 boliger eller mer)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>94</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Stort frittliggende boligbygg på 3 og 4 etg</sc:name>
+       <sc:id>C7_95</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Stort frittl. boligbygg på 3 og 4 etasj.; stort frittliggende boligbygg på 3 og 4 etasjer (5 boliger eller mer)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>95</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Stort frittliggende boligbygg på 5 etg el mer</sc:name>
+       <sc:id>C7_96</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Stort frittl. boligbygg på 5 -&gt; etasjer; boligblokk på 5 etasjer eller mer (5 boliger eller mer)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>96</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Studenthjem/studentboliger</sc:name>
+       <sc:id>C7_97</sc:id>
+       <sc:sequenceNumber>97</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Svømmehall</sc:name>
+       <sc:id>C7_98</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Svømmehall; bygning for innendørs badeanlegg som brukes til undervisning, mosjon, trening og konkurranser.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>98</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Sykehjem</sc:name>
+       <sc:id>C7_99</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Sykehjem;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>99</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Sykehus</sc:name>
+       <sc:id>C7_100</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Annet sykehus; private sykehus eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).
+
+Merknad:
+Dette gjelder bygninger for lokalsykehus, sentralsykehus, regionsykehus og universitetssykehus.
+Typen omfatter også spesialsykehus, f.eks. psykiatriske sykehus, rehabiliteringssykehus,
+reumatiske sykehus, kreftsykehus o.a.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>100</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Synagoge; moske</sc:name>
+       <sc:id>C7_101</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Synagoge; moske; jødisk gudshus (synagoge) eller muslimsk gudshus (moské)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>101</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Terrassehus</sc:name>
+       <sc:id>C7_102</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Terrassehus; større bolighus i bratt terreng hvor bygningen følger hellingen i terrenget</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>102</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Tomannsbolig, vertikal</sc:name>
+       <sc:id>C7_103</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Del av tomannsbolig-vertikal; bolighus med to boliger, inkl. våningshus på gårdsbruk</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>103</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Tomannsbolig; horisontaldelt</sc:name>
+       <sc:id>C7_104</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Tomannsbolig; horisontaldelt; bolighus med to boliger, inkl. våningshus på gårdsbruk</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>104</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Trafikktilsynsbygning</sc:name>
+       <sc:id>C7_105</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Biltilsynsbygning;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>105</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Tribune og idrettsgarderobe</sc:name>
+       <sc:id>C7_106</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Tribune og idrettsgarderobe; innebygd tribuneanlegg til utendørs idrettsanlegg (tribune) eller bygning for garderobe i tilknytning til idrettsanlegg (idrettsgarderobe)</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>106</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Ukjent bygningstype</sc:name>
+       <sc:id>C7_107</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bygningen er registrert i matrikkelen, men bygningstypen er ukjent.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>107</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Ungdomsskole</sc:name>
+       <sc:id>C7_108</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Ungdomsskole; skolebygning for skoleklassene 8-10, for barn i alderen 13-15 år.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>108</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Universitet, høgskole m/auditorie,lesesal mv.</sc:name>
+       <sc:id>C7_109</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Univ./høgskole m/auditor.leses; universitets- og høgskolebygning med integrerte funksjoner, auditorium, lesesal mv.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>109</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Vandrer-, feriehjem</sc:name>
+       <sc:id>C7_110</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Vandrerhjem, feriehjem/-koloni , turisthytte
+
+Vandrerhjem - rimelig nattelosji, ofte knyttet til medlemskap i en forening.
+
+Feriehjem/-koloni : Sted med formål å skaffe barn et sunt og styrkende ferieopphold og anledning til friluftsliv i samvær med andre barn.
+
+Turisthytte : Opprinnelig turiststasjon, fjellstue, skysstasjon, ofte kombinert med annen næring som gårdsbruk eller vertshus. Brukes også om hytter knyttet til turistforeningens løypenett, der de fleste er betjente, men også noen ubetjente hytter.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>110</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Veksthus</sc:name>
+       <sc:id>C7_111</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Veksthus;</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>111</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Verkstedbygning</sc:name>
+       <sc:id>C7_112</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Verkstedbygning; bygning for spesialproduksjon eller reparasjon</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>112</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Videregående skole</sc:name>
+       <sc:id>C7_113</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Videregående skole; skolebygning for skole etter grunnskolen. Allmennfaglig eller yrkesrettet.Ikke høgskole</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>113</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Våninghus som benyttes som fritidsbolig</sc:name>
+       <sc:id>C7_114</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Våningh. benyttes som fritidsb; våningshus som benyttes som fritidsbolig</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>114</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Våninghus tomannsbolig, vertikaldelt</sc:name>
+       <sc:id>C7_115</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Del av våningh.tomannsb/vert.; bolighus med to boliger, inkl. våningshus på gårdsbruk</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>115</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Våningshus</sc:name>
+       <sc:id>C7_116</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Våningshus; enebolig på gårdsbruk, kan også omfatte enebolig med hybelleilighet, sokkelleilighet ol</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>116</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Våningshus tomannsbolig, horisontaldelt</sc:name>
+       <sc:id>C7_117</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Våningsh. tomannsb./horisont.; bolighus med to boliger, inkl. våningshus på gårdsbruk</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>117</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Zoologisk og botanisk hage</sc:name>
+       <sc:id>C7_118</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Zoologisk/botanisk hage (byg.); bygninger i tilknytning til zoologisk og botanisk hage, gjelder også utstillingsbygninger i dyrepark.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>118</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>BygningsstatusKode</sc:name>
+     <sc:id>C8</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>Lovlige statuser for bygningstiltak.</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:taggedValues>
+      <sc:TaggedValue>
+       <sc:name>codeList</sc:name>
+       <sc:values>
+        <sc:Value>http://skjema.geonorge.no/legg_inn_riktig_url</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+      <sc:TaggedValue>
+       <sc:name>asDictionary</sc:name>
+       <sc:values>
+        <sc:Value>true</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+     </sc:taggedValues>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>BygningErTattIBruk</sc:name>
+       <sc:id>C8_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Dette gjelder bygninger som er konvertert fra GAB.  Etter gammel bygningslov var dette det begrepet som ble brukt.  Etter ny PBL er statusen enten midlertidig brukstillatelse eller ferdigattest, men i GAB skilles det ikke på dette.  Derfor konverteres alt til tatt i bruk.  Koden bruker også for etterregistrering av gamle bygg, og bygninger som oppdages i marka uten at de har vært gjennom en byggesaksbehandling.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>BygningGodkjentRevetBrent</sc:name>
+       <sc:id>C8_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kode for at bygningen er godkjent revet eller brent.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Ferdigattest</sc:name>
+       <sc:id>C8_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kode for at det er utferdiget ferdigattest.
+For bygg som er behandlet etter søknad  i samsvar med Plan- og BygningsLoven §93, kan som hovedregel benyttes dato for ferdigattest (evt. midlertidig brukstillatelse) som kommunen utsteder. Forøvrig regnes at et bygg er tatt i bruk når minst halve bygget er ferdig/tatt i bruk.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>FritattForSoknadsplikt</sc:name>
+       <sc:id>C8_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Brukes for bygninger under 50m2 som er fritatt for søknadsplikt</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Igangsettingstillatelse</sc:name>
+       <sc:id>C8_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Angir at det er gitt igangsettingstillatelse.
+
+For bygg som er behandlet etter søknad i samsvar med Plan- og BygningsLoven § 93, vil som hovedregel dato for gitt igangsettingstillatelse kunne benyttes. For andre bygg gjelder som hovedregel at byggearbeidet ansees igangsatt når pelingsarbeider, forskaling av grunnmur eller støping av såle er påbegynt.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>IkkePliktigRegistrert</sc:name>
+       <sc:id>C8_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>kode for bygninger som ikke er pliktig registrert i henhold til Plan- og bygningsloven.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>MeldingsakRegistrerTiltak</sc:name>
+       <sc:id>C8_7</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kode for at det er registrert tiltak for meldingssak.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>7</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>MeldingsakTiltakFullfort</sc:name>
+       <sc:id>C8_8</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kode for at det er fullført tiltak for meldingssak.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>8</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>MidlertidigBrukstillatelse</sc:name>
+       <sc:id>C8_9</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kode for at det er gitt midlertidig brukstillatelse</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>9</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Rammetillatelse</sc:name>
+       <sc:id>C8_10</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kode som angir at det er gitt rammetillatelse.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>10</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>Kommunenummer</sc:name>
+     <sc:id>C9</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>nummerering av kommuner i henhold til Statistisk sentralbyrå sin offisielle liste samt et utvalg av utgåtte numre
+
+Merknad: Det presiseres at kommune alltid skal ha 4 sifre, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 sifre.</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:taggedValues>
+      <sc:TaggedValue>
+       <sc:name>codeList</sc:name>
+       <sc:values>
+        <sc:Value>https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+      <sc:TaggedValue>
+       <sc:name>asDictionary</sc:name>
+       <sc:values>
+        <sc:Value>true</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+     </sc:taggedValues>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>NaringsgruppeKode</sc:name>
+     <sc:id>C10</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>Lovlige koder for næringsgruppe som bygning kan tilhøre
+
+Denne tilsvarer Statistisk sentralbyrås Standard for næringsgruppering. I tillegg har den kode for Bolig og Annet</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:taggedValues>
+      <sc:TaggedValue>
+       <sc:name>codeList</sc:name>
+       <sc:values>
+        <sc:Value>http://skjema.geonorge.no/legg_inn_riktig_url</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+      <sc:TaggedValue>
+       <sc:name>asDictionary</sc:name>
+       <sc:values>
+        <sc:Value>false</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+     </sc:taggedValues>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>Annen tjenesteyting</sc:name>
+       <sc:id>C10_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for annen tjenesteyting</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Annet som ikke er næring</sc:name>
+       <sc:id>C10_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for annet som ikke er næring</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bergverksdrift og utvinning</sc:name>
+       <sc:id>C10_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for bergverksdrift og utvinning</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bolig</sc:name>
+       <sc:id>C10_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for bolig</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Bygge- og anleggsvirksomhet</sc:name>
+       <sc:id>C10_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for bygge- og anleggsvirksomhet</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Elektrisitets-, gass-, damp- og varmtvannsforsyning</sc:name>
+       <sc:id>C10_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for elektrisitets-, gass-, damp- og varmtvannsforsyningkraft- og vannforsyning</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Faglig, vitenskaplig og teknisk tjenesteyting</sc:name>
+       <sc:id>C10_7</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for faglig, vitenskaplig og teknisk tjenesteyting</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>7</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Finansierings- og forsikringsvirksomhet</sc:name>
+       <sc:id>C10_8</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for finansierings- og forsikringsvirksomhet</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>8</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Forretningsmessig tjenesteyting</sc:name>
+       <sc:id>C10_9</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for forretningsmessig tjenesteyting</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>9</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Helse- og sosialtjenester</sc:name>
+       <sc:id>C10_10</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for helse- og sosialtjenester</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>10</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>IkkeOppgitt</sc:name>
+       <sc:id>C10_11</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Kode for ikke oppgitt næringsgruppe</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>11</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Industri</sc:name>
+       <sc:id>C10_12</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for industri</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>12</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Informasjon og kommunikasjon</sc:name>
+       <sc:id>C10_13</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for informasjon og kommunikasjon</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>13</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Internasjonale organisasjoner og organer</sc:name>
+       <sc:id>C10_14</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for internasjonale organisasjoner og organer</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>14</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Jordbruk, skogbruk og fiske</sc:name>
+       <sc:id>C10_15</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for jordbruk, skogbruk og fiske</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>15</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Kulturell virksomhet, underholdning og fritidsaktiviteter</sc:name>
+       <sc:id>C10_16</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for kulturell virksomhet, underholdning og fritidsaktiviteter</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>16</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Lønnet arbeid i private husholdninger</sc:name>
+       <sc:id>C10_17</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for lønnet arbeid i private husholdninger</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>17</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Offentlig administrasjon og forsvar, og trygdeordninger underlagt offentlig forvaltning</sc:name>
+       <sc:id>C10_18</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for offentlig administrasjon og forsvar, og trygdeordninger underlagt offentlig forvaltning</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>18</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Omsetning og drift av fast eiendom</sc:name>
+       <sc:id>C10_19</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for omsetning og drift av fast eiendom</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>19</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Overnattings- og serveringsvirksomhet</sc:name>
+       <sc:id>C10_20</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for overnattings- og serveringsvirksomhet</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>20</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Transport og lagring</sc:name>
+       <sc:id>C10_21</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for transport og lagring</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>21</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Undervisning</sc:name>
+       <sc:id>C10_22</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for undervisning</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>22</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Vannforsyning, avløps- og renovasjonsvirksomhet</sc:name>
+       <sc:id>C10_23</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for industri</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>23</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Varehandel, reparasjon av motorvogner</sc:name>
+       <sc:id>C10_24</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Næringsgruppe for varehandel, reparasjon av motorvogner</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>24</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+    <sc:Class>
+     <sc:name>OpprinnelsesKode</sc:name>
+     <sc:id>C11</sc:id>
+     <sc:stereotypes>
+      <sc:Stereotype>codelist</sc:Stereotype>
+     </sc:stereotypes>
+     <sc:descriptors>
+      <sc:documentation>
+       <sc:descriptorValues>
+        <sc:DescriptorValue>angir hvordan bygget opprinnelig ble registrert.</sc:DescriptorValue>
+       </sc:descriptorValues>
+      </sc:documentation>
+     </sc:descriptors>
+     <sc:taggedValues>
+      <sc:TaggedValue>
+       <sc:name>codeList</sc:name>
+       <sc:values>
+        <sc:Value>http://skjema.geonorge.no/legg_inn_riktig_url</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+      <sc:TaggedValue>
+       <sc:name>asDictionary</sc:name>
+       <sc:values>
+        <sc:Value>true</sc:Value>
+       </sc:values>
+      </sc:TaggedValue>
+     </sc:taggedValues>
+     <sc:properties>
+      <sc:Property>
+       <sc:name>FritattForSøknadsplikt</sc:name>
+       <sc:id>C11_1</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bygg som er fritatt for søknadsplikt etter §§ 4-1, 4-2 og 4-3 i byggesaksforskriften.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>1</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Fylkesforsyningsnemnda</sc:name>
+       <sc:id>C11_2</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bygg registrert av fylkeskommune eller fylkesforsyningsnemda</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>2</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>GenerertPgaTilbygg</sc:name>
+       <sc:id>C11_3</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bygninger som er generert i GAB på grunnlag av registering av data for tilbygg.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>3</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>Massivregistreringer</sc:name>
+       <sc:id>C11_4</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Massivetablering av bygningsregisteret
+
+Massivregistering av bygninger. Landsdekkende prosjekt der alle bygninger over 15 m2 skulle legges inn i GAB med koordinat, bygningstype og eiendomspeker (gnr/bnr/fnr).
+Prosjektoppstart: 1993 og avsluttet 1995.
+
+Også andre bygninger som er massivregistert i ettertid kommer i denne kategorien.  Det gjelder blant annet bygningspunkter etablert i forbindelse med kartleggingsprosjekter i regi av Geovekst.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>4</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>RuinVedRegistreringspunktSEFRAK</sc:name>
+       <sc:id>C11_5</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bygninger som var registert som ruin i forbindelse med SEFRAK-registreringene.  (SEkretariatet For Registrering Av faste Kulturminner i Norge).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>5</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>SEFRAK</sc:name>
+       <sc:id>C11_6</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Registrert via de opprinnelige SEFRAK-registreringene (SEkretariatet For Registrering Av faste Kulturminner i Norge).</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>6</sc:sequenceNumber>
+      </sc:Property>
+      <sc:Property>
+       <sc:name>VanligRegistrering</sc:name>
+       <sc:id>C11_7</sc:id>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Vanlig registrering i GAB eller Matrikkel.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:sequenceNumber>7</sc:sequenceNumber>
+      </sc:Property>
+     </sc:properties>
+    </sc:Class>
+   </sc:classes>
+   <sc:packages>
+    <sc:Package>
+     <sc:name>MatrikkelenBygningspunkt-20211101</sc:name>
+     <sc:id>P2</sc:id>
+     <sc:classes>
+      <sc:Class>
+       <sc:name>Bygning</sc:name>
+       <sc:id>C1</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Bygning er matrikkelens representasjon av en planlagt, under oppføring, fullført eller av en eller annen grunn utgått bygning. Alle bygninger oppført etter 1983 er registrert. I enkelte kommuner har man registrert samtlige bygninger.
+
+En bygning er identifisert med sitt bygningsnummer som er unikt på tvers av kommuner. Enhver bygning har en bygningsstatus som angir tilstand ved siste registrering. Det lagres også historikk for dette.
+
+En bygning har en eller flere bruksenheter som beskriver logiske enheter ved bygningen (leiligheter, lokaler). Hver av disse kan ha en egen knytning til adresse og matrikkelenhet.
+For bygninger registreres enkelte endringer slik at det er mulig å se hva de enkelte endringer medførte for bygningen. Dette er aktuelt for ombygginger og tilbygging som medfører byggesaksbehandlinger. Dette blir gjort ved at det registreres en "bygningsendring" når endringen påbegynnes. Ved bygningsendringens ferdigstilling vil bygningen endres med verdier fra bygningsendringen.
+
+Merknad: Bygninger over 15 kvadratmeter skal registreres i matrikkelen</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:supertypes>
+        <sc:SupertypeId>C2</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>bygningstype</sc:name>
+         <sc:id>C1_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>Bygningstype sier hva bygningen er brukt til</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>BYGGTYP_NBR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C7</sc:typeId>
+         <sc:typeName>BygningstypeKode</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>identBygning</sc:name>
+         <sc:id>C1_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>unik identifikasjon av et objekt</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeId>C4</sc:typeId>
+         <sc:typeName>IdentBygning</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>representasjonspunkt</sc:name>
+         <sc:id>C1_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>Representasjonspunkt for bygningen. Punktet angis med geometritypen Punkt definert i SOSI
+
+Skal plasseres innenfor bygningens omriss.
+
+Punkt registreres også uten at en har omrisset, men da settes ikke kvalitetsmerket for at den er verifisert mot bygningens omriss.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>Punkt</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeName>GM_Point</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>uuidBygning</sc:name>
+         <sc:id>C1_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>Objektidentifikator realisert som UUID, forvaltet av matrikkelsystemet</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>UUIDBYGNING</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>Bygg</sc:name>
+       <sc:id>C2</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>Omfatter bygning og bygningsendring. Se definisjon på disse.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:isAbstract>true</sc:isAbstract>
+       <sc:supertypes>
+        <sc:SupertypeId>C3</sc:SupertypeId>
+       </sc:supertypes>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>bruksenhet</sc:name>
+         <sc:id>C2_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>Utdrag fra bruksenhet-objektet i Matrikkelen.
+Inneholder koblinger (id) mellom adresse, matrikkelenhet og bruksenhet/bygning.
+Bruksenhet er bygning eller del av bygning (lokale), f.eks. bolig, kontor, verksted el.l.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>BRUKSENHET</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1..*</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeId>C5</sc:typeId>
+         <sc:typeName>Bruksenhet</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>bygningsnummer</sc:name>
+         <sc:id>C2_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>En entydig identifikasjon av bygningen. Bygningsnumrene er unike på landsbasis, og tildeles automatisk.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>BYGGNR</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>Integer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>bygningsstatus</sc:name>
+         <sc:id>C2_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>Viser bygningens nåværende status.
+
+Merknad:
+I spesielle tilfeller kan et bygg få igangsettingstillatelse og ferdigattest for en del av bygget, og så igangsettingstillatelse for en annen del.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>BYGGSTAT</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeId>C8</sc:typeId>
+         <sc:typeName>BygningsstatusKode</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>harKulturminne</sc:name>
+         <sc:id>C2_4</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>angir om bygget har registrert kulturminner fra Askeladden eller ikke.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>HARKULTURMINNE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>4</sc:sequenceNumber>
+         <sc:typeName>Boolean</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>harSefrakminne</sc:name>
+         <sc:id>C2_5</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>angir om bygget er registrert i SEFRAK registeret.
+SEFRAK inneholder bygninger bygd før 1900 eventuelt 1945 i deler av Nord-Norge.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>HARSEFRAKMINNE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>5</sc:sequenceNumber>
+         <sc:typeName>Boolean</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>kommunenavn</sc:name>
+         <sc:id>C2_6</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>Navn (norsk) på en kommune</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>KOMMUNENAVN</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>6</sc:sequenceNumber>
+         <sc:typeName>CharacterString</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>kommunenummer</sc:name>
+         <sc:id>C2_7</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>nummerering av kommuner i henhold til SSB sin offisielle liste
+
+Merknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 siffer.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>1</sc:cardinality>
+         <sc:sequenceNumber>7</sc:sequenceNumber>
+         <sc:typeId>C9</sc:typeId>
+         <sc:typeName>Kommunenummer</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>naringsgruppe</sc:name>
+         <sc:id>C2_8</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>Hvilken næringsgruppe som opptar størst andel av samlet areal i bygget.
+Unntak: Dersom bolig er kombinert med annen næring skal bygget ikke gis næringsgruppe bolig.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>NARINGSGRUPPE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>8</sc:sequenceNumber>
+         <sc:typeId>C10</sc:typeId>
+         <sc:typeName>NaringsgruppeKode</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>opprinnelse</sc:name>
+         <sc:id>C2_9</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>angir hvordan bygget opprinnelig ble registrert.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>OPPRINNELSE</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>9</sc:sequenceNumber>
+         <sc:typeId>C11</sc:typeId>
+         <sc:typeName>OpprinnelsesKode</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>sefrakIdent</sc:name>
+         <sc:id>C2_10</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>&lt;font color="#333333"&gt;sefrakminnets objektnummer, bestående av henvisning til (evt utgått) kommune, registreringskretsnummer og husløpenummer &lt;/font&gt;</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:cardinality>0..*</sc:cardinality>
+         <sc:sequenceNumber>10</sc:sequenceNumber>
+         <sc:typeId>C6</sc:typeId>
+         <sc:typeName>SefrakIdent</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+      <sc:Class>
+       <sc:name>SOSI_ObjektBygg</sc:name>
+       <sc:id>C3</sc:id>
+       <sc:stereotypes>
+        <sc:Stereotype>featuretype</sc:Stereotype>
+       </sc:stereotypes>
+       <sc:descriptors>
+        <sc:documentation>
+         <sc:descriptorValues>
+          <sc:DescriptorValue>abstrakt objekt som bærer en rekke egenskaper som er fagområde-uavhengige og kan benyttes for alle objekttyper
+
+Merknad:
+Spesielt i produktspesifikasjonsarbeid vil en velge egenskaper og av grensningslinjer fra denne klassen.</sc:DescriptorValue>
+         </sc:descriptorValues>
+        </sc:documentation>
+       </sc:descriptors>
+       <sc:isAbstract>true</sc:isAbstract>
+       <sc:properties>
+        <sc:Property>
+         <sc:name>datauttaksdato</sc:name>
+         <sc:id>C3_1</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>dato for uttak fra en database
+
+Merknad:
+Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>DATAUTTAKSDATO</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>1</sc:sequenceNumber>
+         <sc:typeName>Date</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>oppdateringsdato</sc:name>
+         <sc:id>C3_2</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>dato for siste endring på objektetdataene
+
+Merknad:
+Oppdateringsdato kan være forskjellig fra Datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).
+
+-Definition-
+Date and time at which this version of the spatial object was inserted or changed in the spatial data set.</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>OPPDATERINGSDATO</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>2</sc:sequenceNumber>
+         <sc:typeName>Date</sc:typeName>
+        </sc:Property>
+        <sc:Property>
+         <sc:name>stedfestingVerifisert</sc:name>
+         <sc:id>C3_3</sc:id>
+         <sc:descriptors>
+          <sc:documentation>
+           <sc:descriptorValues>
+            <sc:DescriptorValue>angivelse om stedfestingen (koordinatene) er  kontrollert  og funnet i orden (verifisert)</sc:DescriptorValue>
+           </sc:descriptorValues>
+          </sc:documentation>
+         </sc:descriptors>
+         <sc:taggedValues>
+          <sc:TaggedValue>
+           <sc:name>SOSI_navn</sc:name>
+           <sc:values>
+            <sc:Value>STED_VERIF</sc:Value>
+           </sc:values>
+          </sc:TaggedValue>
+         </sc:taggedValues>
+         <sc:cardinality>0..1</sc:cardinality>
+         <sc:sequenceNumber>3</sc:sequenceNumber>
+         <sc:typeName>Boolean</sc:typeName>
+        </sc:Property>
+       </sc:properties>
+      </sc:Class>
+     </sc:classes>
+    </sc:Package>
+   </sc:packages>
+  </sc:Package>
+ </sc:packages>
+</sc:Model>
