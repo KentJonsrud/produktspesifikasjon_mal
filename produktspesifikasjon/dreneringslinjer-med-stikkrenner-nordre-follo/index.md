@@ -64,6 +64,25 @@ Dekning kun i deler av tidligere Ski kommune.*
 
 **Nivåbeskrivelse**: Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser
 
+### stikkrenner
+
+**Nivå**: dataset
+
+
+## Datainnhold og struktur
+
+
+
+### Datamodell - stikkrenner
+
+
+
+<a href="stikkrenner/stikkrenner_feature_catalogue_overview.png" title="Klikk for stor visning"><img src="stikkrenner/stikkrenner_feature_catalogue_overview.png" alt="Datamodell stikkrenner" style="max-width: 100%; height: auto;" /></a>
+
+
+
+➡️ [Se full datamodell for omfang "stikkrenner" (diagram per pakke og objektkatalog)](stikkrenner/objektkatalog.html)
+
 ## Datakvalitet
 
 **Nivå**: dataset
@@ -79,6 +98,7 @@ Dekning kun i deler av tidligere Ski kommune.*
 | Tjeneste | Endepunkt | Type | Format | Leveranseenheter |
 | --- | --- | --- | --- | --- |
 | Geonorge filnedlastning | [Lenke](https://nedlasting.geonorge.no/geonorge/kommunaleDokData/af36a16e-7a08-4bfd-8c39-68e54e3cc584.zip) | GEONORGE:FILEDOWNLOAD |  |  |
+| GML/XSD-skjema: stikkrenner | [Lenke](https://raw.githubusercontent.com/KentJonsrud/produktspesifikasjon_mal/main/produktspesifikasjon/dreneringslinjer-med-stikkrenner-nordre-follo/stikkrenner/schema/xsd/INPUT/stikkrenner.xsd) | Nedlasting | XSD |  |
 
 ## Metadata
 
@@ -108,3 +128,5 @@ Dekning kun i deler av tidligere Ski kommune.*
 
 Det tas forbehold om feil i kartgrunnlaget.
 Det tas forbehold om riktigheten eller fullstendigheten av kartgrunnlaget. Det kan ikke rettes krav som følge av at disse opplysningene benyttes som grunnlag til beslutninger
+
+

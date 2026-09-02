@@ -1,0 +1,138 @@
+@startuml
+' For wide diagrams, render with: plantuml -DPLANTUML_LIMIT_SIZE=16384 ...
+' The 'scale max' directive below caps the rendered output to prevent the
+' default PlantUML 4096px size limit from cropping the diagram.
+scale max 4000*4000
+
+title Dreneringslinjer med stikkrenner Nordre Follo - stikkrenner - Objekttyper
+
+skinparam backgroundColor #F5F5F5
+skinparam shadowing false
+skinparam RoundCorner 6
+skinparam ArrowColor #6C8198
+skinparam wrapWidth 200
+skinparam class {
+  BackgroundColor #FBF2E8
+  BorderColor #9C8578
+  FontColor #2D201A
+  HeaderBackgroundColor #EFE1D6
+  HeaderFontColor #2D201A
+  AttributeIconSize 0
+}
+skinparam note {
+  BackgroundColor #FFFFFF
+  BorderColor #6C8198
+  FontColor #2D201A
+}
+skinparam stereotypeCBackgroundColor #EAD9CE
+skinparam stereotypeCBorderColor #9C8578
+skinparam stereotypeCFontColor #2D201A
+
+package "Objekttyper" {
+
+  class StikkrenneKulvert <<featureType>> {
+    + bruksområde [1] : BruksområdeStikkrenneKulvert
+    + tilknyttetLukkaDren [0..1] : TilknyttetLukkaDrenStikkrenneKulvert
+    + gjennomløpForElvBekk [0..1] : GjennomløpForElvBekkStikkrenneKulvert
+    + materialtype [1] : MaterialtypeStikkrenneKulvert
+    + tverrsnittsform [1] : TverrsnittsformStikkrenneKulvert
+    + typeInnløp [1] : TypeInnløpStikkrenneKulvert
+    + typeUtløp [1] : TypeUtløpStikkrenneKulvert
+    + lengde [0..1] : Real
+    + bredde_Innvendig [0..1] : Real
+    + høyde_Innvendig [0..1] : Real
+    + overfyllingInnløp [1] : Real
+    + harInnløpsrist [0..1] : HarInnløpsristStikkrenneKulvert
+    + varmekabler [0..1] : VarmekablerStikkrenneKulvert
+    + eier [0..1] : EierStikkrenneKulvert
+    + posisjon [0..1] : Punkt
+    + senterlinje [0..1] : Kurve
+    + legeme3Dgeometri [0..1] : GM_Solid
+  }
+
+  abstract class Fellesegenskaper <<featureType>> {
+    + identifikasjon [1] : Identifikasjon
+    + oppdateringsdato [1] : Date
+    + sluttdato [0..1] : Date
+    + datafangstdato [1] : Date
+    + verifiseringsdato [0..1] : Date
+    + registreringsversjon [0..1] : Registreringsversjon
+    + informasjon [0..1] : CharacterString
+  }
+
+  abstract class "KvalitetPåkrevd" as KvalitetP_krevd <<featureType>> {
+    + kvalitet [1] : Posisjonskvalitet
+  }
+
+  abstract class KvalitetOpsjonell <<featureType>> {
+    + kvalitet [0..1] : Posisjonskvalitet
+  }
+
+  class StikkrenneKulvert <<featureType>> {
+    + bruksområde [1] : BruksområdeStikkrenneKulvert
+    + navn [0..1] : CharacterString
+    + tilknyttetLukkaDren [0..1] : Tilknyttet lukka drenStikkrenneKulvert
+    + gjennomløpForElvBekk [0..1] : Gjennomløp for elv/bekkStikkrenneKulvert
+    + materialtype [1] : MaterialtypeStikkrenneKulvert
+    + belegningStikkrenne [0..1] : Belegning stikkrenneStikkrenneKulvert
+    + tverrsnittsform [1] : TverrsnittsformStikkrenneKulvert
+    + typeInnløp [1] : Type innløpStikkrenneKulvert
+    + belegningInnløp [0..1] : Belegning innløpStikkrenneKulvert
+    + typeUtløp [1] : Type utløpStikkrenneKulvert
+    + belegningUtløp [0..1] : Belegning utløpStikkrenneKulvert
+    + fundamentering [0..1] : FundamenteringStikkrenneKulvert
+    + prefabrikkert [0..1] : PrefabrikkertStikkrenneKulvert
+    + lengde [0..1] : Real
+    + diameter_Innvendig [0..1] : Real
+    + bredde_Innvendig [0..1] : Real
+    + høyde_Innvendig [0..1] : Real
+    + retning [0..1] : RetningStikkrenneKulvert
+    + vinkel [0..1] : VinkelStikkrenneKulvert
+    + helningFall [0..1] : Real
+    + tykkelseOverfylling [0..1] : Real
+    + overfyllingUtløp [0..1] : Real
+    + overfyllingInnløp [1] : Real
+    + harInnløpsrist [0..1] : Har innløpsristStikkrenneKulvert
+    + varmekabler [0..1] : VarmekablerStikkrenneKulvert
+    + antallTininger [0..1] : Real
+    + rehabilitering [0..1] : RehabiliteringStikkrenneKulvert
+    + spesielleProblem [0..1] : Spesielle problemStikkrenneKulvert
+    + spesielleHensynFiskevandring [1] : Spesielle hensyn fiskevandringStikkrenneKulvert
+    + etableringsår [1] : Real
+    + driftsmerking [0..1] : CharacterString
+    + produktnavn_Rør [0..1] : CharacterString
+    + tilleggsinformasjon [0..1] : CharacterString
+    + arkivnummer [0..1] : CharacterString
+    + arkivreferanse [0..1] : CharacterString
+    + prosjektreferanse [0..1] : CharacterString
+    + prosjektInternObjekt_ID [0..1] : CharacterString
+    + FKB_ID [0..1] : CharacterString
+    + eier [0..1] : EierStikkrenneKulvert
+    + vedlikeholdsansvarlig [0..1] : VedlikeholdsansvarligStikkrenneKulvert
+    + posisjon [0..1] : Punkt
+    + senterlinje [0..1] : Kurve
+    + område [0..1] : Flate
+    + høyde_Passasje [0..1] : Real
+    + lineærPosisjon [0..*] : LineærPosisjonPunkt
+  }
+
+  class Identifikasjon <<dataType>> {
+    + lokalId [1] : CharacterString
+    + navnerom [1] : CharacterString
+    + versjonId [0..1] : CharacterString
+  }
+
+  class Posisjonskvalitet <<dataType>> {
+    + datafangstmetode [1] : Datafangstmetode
+    + nøyaktighet [0..1] : Integer
+    + synbarhet [0..1] : Synbarhet
+    + datafangstmetodeHøyde [0..1] : Datafangstmetode
+    + nøyaktighetHøyde [0..1] : Integer
+  }
+}
+
+  KvalitetOpsjonell <|-- StikkrenneKulvert
+  Fellesegenskaper <|-- KvalitetP_krevd
+  Fellesegenskaper <|-- KvalitetOpsjonell
+
+@enduml
