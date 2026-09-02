@@ -78,6 +78,12 @@
         "level": "dataset",
         "levelDescription": "Gjelder hele datasettet. Hvis omfang ikke er oppgitt under en overskrift, gjelder teksten for hele datasettet og alle leveranser"
       }
+    },
+    {
+      "specificationScope": {
+        "scopeIdentification": "stikkrenner",
+        "level": "dataset"
+      }
     }
   ],
   "dataQualitySection": {
@@ -101,6 +107,25 @@
             }
           }
         }
+      }
+    },
+    {
+      "delivery": {
+        "deliveryMedium": {
+          "deliveryMediumName": "GML/XSD-skjema: stikkrenner",
+          "deliveryService": {
+            "serviceEndpoint": "https://raw.githubusercontent.com/KentJonsrud/produktspesifikasjon_mal/main/produktspesifikasjon/dreneringslinjer-med-stikkrenner-nordre-follo/stikkrenner/schema/xsd/INPUT/stikkrenner.xsd",
+            "serviceProperty": {
+              "type": "Fil",
+              "value": "Nedlasting"
+            }
+          }
+        },
+        "deliveryFormat": [
+          {
+            "formatName": "XSD"
+          }
+        ]
       }
     }
   ],
