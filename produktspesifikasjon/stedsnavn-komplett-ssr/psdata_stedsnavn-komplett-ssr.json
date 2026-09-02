@@ -4,7 +4,7 @@
   "format": "text/html",
   "date": {
     "creation": "2019-01-29",
-    "revision": "2026-08-24"
+    "revision": "2026-08-31"
   },
   "language": "nor",
   "contact": {
@@ -175,14 +175,14 @@
       "temporalElement": {
         "timePeriod": {
           "beginPosition": "2019-01-29",
-          "endPosition": "2026-08-24"
+          "endPosition": "2026-08-31"
         }
       }
     },
     "date": {
       "creation": "2019-01-29",
       "publication": "2019-01-29",
-      "revision": "2026-08-24"
+      "revision": "2026-08-31"
     },
     "language": "nor"
   },
@@ -310,7 +310,7 @@
   "metadataSection": {
     "metadataStandard": "ISO19115",
     "metadataStandardVersion": "2003",
-    "metadataDate": "2026-08-26",
+    "metadataDate": "2026-09-01",
     "language": "nor",
     "contact": {
       "organizationName": "Kartverket",
